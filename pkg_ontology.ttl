@@ -1,0 +1,384 @@
+# =============================================================================
+# PERMANENT EXCLUSIONS — employer-proprietary maps:
+#   pitchstone.mm — proprietary data from a former employer
+#   neogov.mm     — proprietary data from a current/former employer
+# Both must never be parsed, queried, embedded, or referenced by any script
+# or pipeline in this project. The parser must skip both by filename.
+# This exclusion applies to all future work on this project.
+# =============================================================================
+
+# =============================================================================
+# Personal Knowledge Graph Ontology (pkg:)
+# Author:  Chu Nnodu
+# Created: 2026-03-23
+# Base:    https://pkg.chunnodu.com/
+#
+# Design decisions:
+#   - Reuse skos: for concept hierarchy and lateral links
+#   - Reuse schema: for typed resources (Book, Course, WebPage, etc.)
+#   - Reuse dc: for descriptive metadata (title, date, creator)
+#   - pkg: custom namespace only for types and predicates with no standard fit
+#   - All Freeplane nodes become typed instances; URLs are Resource instances
+#   - All parent->child edges carry an explicit named predicate
+# =============================================================================
+
+@prefix pkg:    <https://pkg.chunnodu.com/ontology#> .
+@prefix pkgc:   <https://pkg.chunnodu.com/concept/> .
+@prefix pkgr:   <https://pkg.chunnodu.com/resource/> .
+@prefix pkgn:   <https://pkg.chunnodu.com/note/> .
+@prefix pkgh:   <https://pkg.chunnodu.com/howto/> .
+@prefix pkgp:   <https://pkg.chunnodu.com/presentation/> .
+@prefix pkgwg:  <https://pkg.chunnodu.com/workinggroup/> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <https://schema.org/> .
+@prefix dc:     <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+
+# =============================================================================
+# ONTOLOGY METADATA
+# =============================================================================
+
+<https://pkg.chunnodu.com/ontology> a owl:Ontology ;
+    dc:title   "Personal Knowledge Graph — pkg.chunnodu.com" ;
+    dc:creator "Chu Nnodu" ;
+    dc:date    "2026-03-23" ;
+    rdfs:comment "Ontology for the pkgraphrag project. Derived from 12 consolidated Freeplane mindmaps. Week 2 deliverable of the 12-week GraphRAG build plan." .
+
+
+# =============================================================================
+# CLASSES
+# =============================================================================
+
+# --- Knowledge concepts -------------------------------------------------------
+# skos:Concept used directly. No subclassing needed — it is already the
+# standard class for "a unit of knowledge in a controlled vocabulary."
+
+# --- Resources ---------------------------------------------------------------
+
+pkg:Resource a owl:Class ;
+    rdfs:label   "Resource" ;
+    rdfs:comment "Any external resource referenced in a mindmap node." .
+
+schema:WebPage rdfs:subClassOf pkg:Resource ;
+    rdfs:label   "Web Page" ;
+    rdfs:comment "An online article, blog post, or web page." .
+
+schema:SoftwareApplication rdfs:subClassOf pkg:Resource ;
+    rdfs:label   "Tool" ;
+    rdfs:comment "A software tool, platform, or service." .
+
+# --- Learning materials (subclass of Resource) -------------------------------
+
+pkg:LearningMaterial a owl:Class ;
+    rdfs:subClassOf pkg:Resource ;
+    rdfs:label      "Learning Material" ;
+    rdfs:comment    "A structured resource intended for learning." .
+
+schema:Book rdfs:subClassOf pkg:LearningMaterial ;
+    rdfs:label "Book" .
+
+schema:Course rdfs:subClassOf pkg:LearningMaterial ;
+    rdfs:label "Course" .
+
+pkg:Webinar a owl:Class ;
+    rdfs:subClassOf pkg:LearningMaterial ;
+    rdfs:label      "Webinar" ;
+    rdfs:comment    "An online seminar or recorded talk." .
+
+# --- Custom types (no suitable standard equivalent) --------------------------
+
+pkg:HowTo a owl:Class ;
+    rdfs:label   "How-To" ;
+    rdfs:comment "A procedural guide, set of steps, or code recipe." .
+
+pkg:Presentation a owl:Class ;
+    rdfs:label   "Presentation" ;
+    rdfs:comment "A talk or deck given or prepared by the author." .
+
+pkg:WorkingGroup a owl:Class ;
+    rdfs:label   "Working Group" ;
+    rdfs:comment "A community, standards group, or professional organisation." .
+
+pkg:PersonalNote a owl:Class ;
+    rdfs:label   "Personal Note" ;
+    rdfs:comment "A personal annotation, reminder, reading list, or journal entry." .
+
+pkg:Event a owl:Class ;
+    rdfs:label   "Event" ;
+    rdfs:comment "A conference, meetup, or webinar the author attended or tracks." .
+
+pkg:Task a owl:Class ;
+    rdfs:label   "Task" ;
+    rdfs:comment "An actionable item, to-do, or next action. Covers GTD nodes in dlvr.mm, life.mm etc." .
+
+pkg:Project a owl:Class ;
+    rdfs:label   "Project" ;
+    rdfs:comment "A named collection of tasks and resources with a shared goal. Covers Projects and Ventures in ajared.mm." .
+
+pkg:Goal a owl:Class ;
+    rdfs:label   "Goal" ;
+    rdfs:comment "A personal or professional objective. Covers Goals and Habits branches in life.mm." .
+
+pkg:LogEntry a owl:Class ;
+    rdfs:label   "Log Entry" ;
+    rdfs:comment "A dated journal or work diary entry. Covers WORK DIARY and WILT nodes." .
+
+pkg:BlogPost a owl:Class ;
+    rdfs:subClassOf pkg:Presentation ;
+    rdfs:label      "Blog Post" ;
+    rdfs:comment    "A written article or blog post, published or in draft. Covers blog.mm content." .
+
+pkg:Organization a owl:Class ;
+    rdfs:label   "Organization" ;
+    rdfs:comment "A company, client, employer, or institution. Covers Clients in ajared.mm, companies in careerDevelopment.mm." .
+
+
+# =============================================================================
+# PROPERTIES
+# =============================================================================
+
+# --- Concept to Concept ------------------------------------------------------
+
+pkg:hasSubTopic a owl:ObjectProperty ;
+    rdfs:subPropertyOf skos:narrower ;
+    rdfs:label         "has sub-topic" ;
+    rdfs:domain        skos:Concept ;
+    rdfs:range         skos:Concept ;
+    rdfs:comment       "A concept has a more specific child concept. Subproperty of skos:narrower so SPARQL reasoners can traverse it as a standard narrower link." .
+
+# skos:related is used directly for Freeplane arrowlinks (cross-links).
+# No custom predicate needed.
+
+# --- Concept to external content ---------------------------------------------
+
+pkg:hasResource a owl:ObjectProperty ;
+    rdfs:label   "has resource" ;
+    rdfs:domain  skos:Concept ;
+    rdfs:range   pkg:Resource ;
+    rdfs:comment "Links a concept to an external resource about it." .
+
+pkg:hasLearningMaterial a owl:ObjectProperty ;
+    rdfs:subPropertyOf pkg:hasResource ;
+    rdfs:label         "has learning material" ;
+    rdfs:domain        skos:Concept ;
+    rdfs:range         pkg:LearningMaterial ;
+    rdfs:comment       "Links a concept to a book, course, or webinar." .
+
+pkg:hasProcedure a owl:ObjectProperty ;
+    rdfs:label   "has procedure" ;
+    rdfs:domain  skos:Concept ;
+    rdfs:range   pkg:HowTo ;
+    rdfs:comment "Links a concept to a how-to or step-by-step guide." .
+
+pkg:hasPresentation a owl:ObjectProperty ;
+    rdfs:label   "has presentation" ;
+    rdfs:domain  skos:Concept ;
+    rdfs:range   pkg:Presentation ;
+    rdfs:comment "Links a concept to a presentation the author gave on it." .
+
+pkg:hasNote a owl:ObjectProperty ;
+    rdfs:label   "has note" ;
+    rdfs:comment "Links any subject to a personal annotation or reminder. Domain is open — notes can hang off concepts, resources, or events." .
+
+# --- Resource metadata (reusing standard vocabs) -----------------------------
+# dc:title    — human-readable label for a resource
+# schema:url  — the actual URL string on a Resource instance
+# dc:date     — date added or publication date
+
+# --- Task / Project / Goal ---------------------------------------------------
+
+pkg:hasTask a owl:ObjectProperty ;
+    rdfs:label   "has task" ;
+    rdfs:range   pkg:Task ;
+    rdfs:comment "Links a project or concept to an actionable task." .
+
+pkg:hasProject a owl:ObjectProperty ;
+    rdfs:label   "has project" ;
+    rdfs:range   pkg:Project ;
+    rdfs:comment "Links a concept or goal to a named project." .
+
+pkg:hasGoal a owl:ObjectProperty ;
+    rdfs:label   "has goal" ;
+    rdfs:range   pkg:Goal ;
+    rdfs:comment "Links a concept or life area to a personal or professional goal." .
+
+pkg:hasLogEntry a owl:ObjectProperty ;
+    rdfs:label   "has log entry" ;
+    rdfs:range   pkg:LogEntry ;
+    rdfs:comment "Links a project, job, or concept to a dated journal entry." .
+
+pkg:hasOrganization a owl:ObjectProperty ;
+    rdfs:label   "has organization" ;
+    rdfs:range   pkg:Organization ;
+    rdfs:comment "Links a project, concept, or task to a company, client, or institution." .
+
+pkg:status a owl:DatatypeProperty ;
+    rdfs:label   "status" ;
+    rdfs:domain  pkg:Task ;
+    rdfs:range   xsd:string ;
+    rdfs:comment "GTD status of a task: active | done | waiting | someday." .
+
+pkg:dueDate a owl:DatatypeProperty ;
+    rdfs:label   "due date" ;
+    rdfs:domain  pkg:Task ;
+    rdfs:range   xsd:date ;
+    rdfs:comment "The due date of a task. Covers Calendar branch in dlvr.mm and dated entries in blog.mm." .
+
+pkg:dateLogged a owl:DatatypeProperty ;
+    rdfs:label   "date logged" ;
+    rdfs:domain  pkg:LogEntry ;
+    rdfs:range   xsd:date ;
+    rdfs:comment "The date a log entry was written." .
+
+# --- Provenance --------------------------------------------------------------
+
+pkg:sourceMap a owl:DatatypeProperty ;
+    rdfs:label   "source map" ;
+    rdfs:range   xsd:string ;
+    rdfs:comment "The Freeplane .mm filename this triple was parsed from. Enables per-map filtering in SPARQL." .
+
+
+# =============================================================================
+# SAMPLE INSTANCES — linkeddataSemanticWeb.mm
+# Validates the ontology against real map content before the Week 3 parser.
+# =============================================================================
+
+# --- Root concept ------------------------------------------------------------
+
+pkgc:AILinkedDataSemanticWeb
+    a               skos:Concept ;
+    skos:prefLabel  "AI + Linked Data + Semantic Web" ;
+    pkg:sourceMap   "linkeddataSemanticWeb.mm" .
+
+# --- Principles of Linked Data -----------------------------------------------
+
+pkgc:PrinciplesOfLinkedData
+    a               skos:Concept ;
+    skos:prefLabel  "Principles of Linked Data" ;
+    pkg:sourceMap   "linkeddataSemanticWeb.mm" .
+
+pkgc:UseURIsAsNames
+    a               skos:Concept ;
+    skos:prefLabel  "Use URIs as names for things" ;
+    pkg:sourceMap   "linkeddataSemanticWeb.mm" .
+
+pkgc:UseHTTPURIs
+    a               skos:Concept ;
+    skos:prefLabel  "Use HTTP URIs so people can look up those names" ;
+    pkg:sourceMap   "linkeddataSemanticWeb.mm" .
+
+pkgc:ProvideUsefulInfo
+    a               skos:Concept ;
+    skos:prefLabel  "When someone looks up a URI, provide useful information" ;
+    pkg:sourceMap   "linkeddataSemanticWeb.mm" .
+
+pkgc:IncludeLinksToOtherURIs
+    a               skos:Concept ;
+    skos:prefLabel  "Include links to other URIs so they can discover more things" ;
+    pkg:sourceMap   "linkeddataSemanticWeb.mm" .
+
+pkgc:TypesOfControlledVocabularies
+    a               skos:Concept ;
+    skos:prefLabel  "Types of Controlled Vocabularies" ;
+    pkg:sourceMap   "linkeddataSemanticWeb.mm" .
+
+# --- Hierarchy ---------------------------------------------------------------
+
+pkgc:AILinkedDataSemanticWeb
+    pkg:hasSubTopic pkgc:PrinciplesOfLinkedData ;
+    pkg:hasSubTopic pkgc:TypesOfControlledVocabularies .
+
+pkgc:PrinciplesOfLinkedData
+    pkg:hasSubTopic pkgc:UseURIsAsNames ;
+    pkg:hasSubTopic pkgc:UseHTTPURIs ;
+    pkg:hasSubTopic pkgc:ProvideUsefulInfo ;
+    pkg:hasSubTopic pkgc:IncludeLinksToOtherURIs .
+
+# --- How-To ------------------------------------------------------------------
+
+pkgh:CreateVirtuosoInstance
+    a             pkg:HowTo ;
+    dc:title      "Create a sample Virtuoso instance" ;
+    schema:url    "https://hub.docker.com/r/openlink/virtuoso-closedsource-8" ;
+    pkg:sourceMap "linkeddataSemanticWeb.mm" .
+
+pkgc:AILinkedDataSemanticWeb
+    pkg:hasProcedure pkgh:CreateVirtuosoInstance .
+
+# --- Presentations -----------------------------------------------------------
+
+pkgp:PathsToPersonalKnowledgeGraphs
+    a             pkg:Presentation ;
+    dc:title      "Paths to Personal Knowledge Graphs" ;
+    pkg:sourceMap "linkeddataSemanticWeb.mm" .
+
+pkgp:MCPPresentation
+    a             pkg:Presentation ;
+    dc:title      "MCP — Model Context Protocol" ;
+    pkg:sourceMap "linkeddataSemanticWeb.mm" .
+
+pkgc:AILinkedDataSemanticWeb
+    pkg:hasPresentation pkgp:PathsToPersonalKnowledgeGraphs ;
+    pkg:hasPresentation pkgp:MCPPresentation .
+
+# --- Working groups ----------------------------------------------------------
+
+pkgwg:PKG
+    a               pkg:WorkingGroup ;
+    skos:prefLabel  "PKG Working Group" ;
+    pkg:sourceMap   "linkeddataSemanticWeb.mm" .
+
+pkgwg:EPG
+    a               pkg:WorkingGroup ;
+    skos:prefLabel  "EPG Working Group" ;
+    pkg:sourceMap   "linkeddataSemanticWeb.mm" .
+
+pkgc:AILinkedDataSemanticWeb
+    pkg:hasResource pkgwg:PKG ;
+    pkg:hasResource pkgwg:EPG .
+
+# --- Web resources -----------------------------------------------------------
+
+pkgr:ComunicaDev
+    a             schema:SoftwareApplication ;
+    dc:title      "Comunica" ;
+    schema:url    "https://comunica.dev/" ;
+    pkg:sourceMap "linkeddataSemanticWeb.mm" .
+
+pkgr:ChainML
+    a             schema:WebPage ;
+    dc:title      "ChainML" ;
+    schema:url    "https://www.chainml.net/" ;
+    pkg:sourceMap "linkeddataSemanticWeb.mm" .
+
+pkgr:HuggingFaceTransformers
+    a             schema:SoftwareApplication ;
+    dc:title      "HuggingFace Transformers" ;
+    schema:url    "https://github.com/huggingface/transformers" ;
+    pkg:sourceMap "linkeddataSemanticWeb.mm" .
+
+pkgc:AILinkedDataSemanticWeb
+    pkg:hasResource pkgr:ComunicaDev ;
+    pkg:hasResource pkgr:ChainML ;
+    pkg:hasResource pkgr:HuggingFaceTransformers .
+
+# --- Personal notes (TO READ) ------------------------------------------------
+
+pkgn:ToRead_VectorReality
+    a             pkg:PersonalNote ;
+    dc:title      "TO READ: From shiny object to sober reality - the vector debate" ;
+    schema:url    "https://venturebeat.com/ai/from-shiny-object-to-sober-reality-the-vector-debate/" ;
+    pkg:sourceMap "linkeddataSemanticWeb.mm" .
+
+pkgn:ToRead_ValidatingRDF
+    a             pkg:PersonalNote ;
+    dc:title      "TO READ: Validating RDF (book)" ;
+    schema:url    "https://book.validatingrdf.com/" ;
+    pkg:sourceMap "linkeddataSemanticWeb.mm" .
+
+pkgc:AILinkedDataSemanticWeb
+    pkg:hasNote pkgn:ToRead_VectorReality ;
+    pkg:hasNote pkgn:ToRead_ValidatingRDF .

@@ -1,0 +1,4526 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix pkg: <https://pkg.chunnodu.com/ontology#> .
+@prefix pkgc: <https://pkg.chunnodu.com/concept/> .
+@prefix pkgn: <https://pkg.chunnodu.com/note/> .
+@prefix pkgr: <https://pkg.chunnodu.com/resource/> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkgc:ID_723893597 a skos:Concept ;
+    dc:date "2014-04-27"^^xsd:date ;
+    skos:prefLabel "Blog" ;
+    pkg:hasSubTopic pkgc:ID_1001255120,
+        pkgc:ID_1096125246,
+        pkgc:ID_1209031041,
+        pkgc:ID_127167076,
+        pkgc:ID_1456102611,
+        pkgc:ID_1483609973,
+        pkgc:ID_150312499,
+        pkgc:ID_151494336,
+        pkgc:ID_1517718866,
+        pkgc:ID_1555313123,
+        pkgc:ID_1556185692,
+        pkgc:ID_1560368260,
+        pkgc:ID_1710155187,
+        pkgc:ID_1810328652,
+        pkgc:ID_1819680702,
+        pkgc:ID_1823581347,
+        pkgc:ID_1917243850,
+        pkgc:ID_218607033,
+        pkgc:ID_247261236,
+        pkgc:ID_391629696,
+        pkgc:ID_616998378,
+        pkgc:ID_696184757,
+        pkgc:ID_885272663 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1000953090 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "<i class=\"fab fa-instagram\"></i>" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1001255120 a skos:Concept ;
+    dc:date "2024-06-29"^^xsd:date ;
+    skos:prefLabel "Fieldstones" ;
+    pkg:hasSubTopic pkgc:ID_1171064624,
+        pkgc:ID_155267296,
+        pkgc:ID_1725686665,
+        pkgc:ID_230016553,
+        pkgc:ID_251312785,
+        pkgc:ID_580467150 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1003236328 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "set expectations" ;
+    pkg:hasSubTopic pkgc:ID_1320072869,
+        pkgc:ID_361614569,
+        pkgc:ID_835361441 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1003370251 a skos:Concept ;
+    dc:date "2022-01-26"^^xsd:date ;
+    skos:prefLabel "2020" ;
+    pkg:hasSubTopic pkgc:ID_1060116485,
+        pkgc:ID_1206298945,
+        pkgc:ID_1350795437,
+        pkgc:ID_1475294067,
+        pkgc:ID_1524581241,
+        pkgc:ID_1567574993,
+        pkgc:ID_1760620684,
+        pkgc:ID_1875331685,
+        pkgc:ID_1935042485,
+        pkgc:ID_1938068284,
+        pkgc:ID_314686266,
+        pkgc:ID_378372431,
+        pkgc:ID_500199977,
+        pkgc:ID_561422653,
+        pkgc:ID_562818341,
+        pkgc:ID_685801510,
+        pkgc:ID_707170488,
+        pkgc:ID_714471596,
+        pkgc:ID_719321035,
+        pkgc:ID_734908776,
+        pkgc:ID_737624195,
+        pkgc:ID_749878966,
+        pkgc:ID_755507522,
+        pkgc:ID_764825327,
+        pkgc:ID_873454950,
+        pkgc:ID_915939183,
+        pkgc:ID_942467869,
+        pkgc:ID_94808832 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1005913229 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "write inside new coffee shop" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1009872287 a skos:Concept ;
+    dc:date "2023-09-13"^^xsd:date ;
+    skos:prefLabel "write about mind maps" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1010402967 a skos:Concept ;
+    dc:date "2025-02-23"^^xsd:date ;
+    skos:prefLabel "75% in practice" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1013121203 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "2: What time of day can i be least responsive" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1013491819 a skos:Concept ;
+    dc:date "2024-07-29"^^xsd:date ;
+    skos:prefLabel "product ownership" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1019678022 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "get progressively more specific until concrete idea" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1023510399 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "keep shipping" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1027534387 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "pay for land" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1030222264 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "problem a customer wants to solve" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1033754250 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    skos:prefLabel "varnishes" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_103625289 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "is this vague or hyper specific" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1038820215 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "new normals" ;
+    pkg:hasSubTopic pkgc:ID_1237029546,
+        pkgc:ID_1255567626,
+        pkgc:ID_486508000 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1039313212 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "even have a hotel where people check in and pay for their stay" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1042839987 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "think more specialization" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1043047615 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "things you can navigate to" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1043329635 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "reorganizing elements into a pattern or structure" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1043949641 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "steps" ;
+    pkg:hasSubTopic pkgc:ID_1027534387,
+        pkgc:ID_1257162739,
+        pkgc:ID_1545797699,
+        pkgc:ID_1691630447,
+        pkgc:ID_336809894,
+        pkgc:ID_685061031 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1047336278 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "break steps into action items" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1047429491 a skos:Concept ;
+    dc:date "2021-11-30"^^xsd:date ;
+    skos:prefLabel "you never forget a good teacher" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1047761904 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "clergy" ;
+    pkg:hasSubTopic pkgc:ID_1777223061,
+        pkgc:ID_530503877 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1049503193 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "Lessons" ;
+    pkg:hasSubTopic pkgc:ID_1839699093 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_105104166 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "niche audience" ;
+    pkg:hasSubTopic pkgc:ID_1710817758,
+        pkgc:ID_1889776812,
+        pkgc:ID_682497559,
+        pkgc:ID_797160257 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1055148513 a skos:Concept ;
+    dc:date "2021-06-06"^^xsd:date ;
+    skos:prefLabel "5, 2 offers, 1 No offer because of h1b, 1 never heard back, 1 heard but not really." ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1058027707 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "makes and breaks commitments, or waits for you to call them out" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1059391940 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "analysis - dividing into component parts" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1060116485 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "April 18: The Anti Library" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1061405917 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "what is broad direction to objective" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1066029370 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "share info" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_106816418 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "skill-stacking" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_107244435 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "not a spec, boundaries and rules of the game" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1075775774 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "design environment to buypass having you make a decision" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_108087430 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "where this method thrives" ;
+    pkg:hasSubTopic pkgc:ID_1749717534,
+        pkgc:ID_273055545,
+        pkgc:ID_582153900 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1082346783 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "3 basic things to draw" ;
+    pkg:hasSubTopic pkgc:ID_1129890712,
+        pkgc:ID_1766475959,
+        pkgc:ID_321682573 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1082376124 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "more use cases for hyper local delivery" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1085775290 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "unbundling - separating out what should be separate" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1089465697 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "it's important to move fast and cover different ideas" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1089604873 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Personal Mission Statement - Work" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1090281522 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "during classes he would keep reminding us about the tests and exams" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1092266508 a skos:Concept ;
+    dc:date "2020-08-08"^^xsd:date ;
+    skos:prefLabel "visualizing" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1093987010 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "systems for getting the important things done" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1096125246 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "Setup" ;
+    pkg:hasSubTopic pkgc:ID_1226518576,
+        pkgc:ID_1816760048,
+        pkgc:ID_1937676298,
+        pkgc:ID_861768272,
+        pkgc:ID_982098651 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1096899092 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "1: Finally find time to write" ;
+    pkg:hasSubTopic pkgc:ID_1013121203,
+        pkgc:ID_1338244087,
+        pkgc:ID_1750191968 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1097335226 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "joyous exploration" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1098093194 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    skos:prefLabel "small pieces of dried acrylic paint" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1098717826 a skos:Concept ;
+    dc:date "2023-11-28"^^xsd:date ;
+    skos:prefLabel "style is the answer to everything" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1101155622 a skos:Concept ;
+    dc:date "2023-11-28"^^xsd:date ;
+    skos:prefLabel "personal data tracking" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1101609051 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Entity Relationship Diagrams from Customer Interviews" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1101782954 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "remember" ;
+    pkg:hasSubTopic pkgc:ID_1154381434,
+        pkgc:ID_1246355097,
+        pkgc:ID_1994199741 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1101814649 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Logistics Part II" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1102247548 a skos:Concept ;
+    dc:date "2025-05-29"^^xsd:date ;
+    skos:prefLabel "Some Contrary Ideas" ;
+    pkg:hasSubTopic pkgc:ID_1110300833,
+        pkgc:ID_1201772455,
+        pkgc:ID_1487108778,
+        pkgc:ID_175019740,
+        pkgc:ID_18140367,
+        pkgc:ID_1821441040,
+        pkgc:ID_226277201,
+        pkgc:ID_540135620,
+        pkgc:ID_737524893,
+        pkgc:ID_84535694 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1104960955 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "game could go in countless different eays" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1110300833 a skos:Concept ;
+    dc:date "2025-05-30"^^xsd:date ;
+    skos:prefLabel "with the same circumstances, people from every group on earth are able to perform at a high level" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1110417372 a skos:Concept ;
+    dc:date "2021-02-26"^^xsd:date ;
+    skos:prefLabel "infrastructure exists" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1111611026 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "list 3, 5, 10+ topics under each bucket" ;
+    pkg:hasSubTopic pkgc:ID_183184515 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1118554238 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "tell a story, give readers a takeway for themselves" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1119076102 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "Turning 30" ;
+    pkg:hasSubTopic pkgc:ID_1093987010,
+        pkgc:ID_1840979738,
+        pkgc:ID_55768687,
+        pkgc:ID_909956486 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1126849403 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "solr, lucene" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1129890712 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "connection lines" ;
+    pkg:hasSubTopic pkgc:ID_1281162800,
+        pkgc:ID_1296186971 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1130037637 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "list potential solutions, choose what's likely to succeed" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1131437618 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "git" ;
+    pkg:hasSubTopic pkgc:ID_370158596 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1142562388 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    skos:prefLabel "to produce" ;
+    pkg:hasSubTopic pkgc:ID_1098093194,
+        pkgc:ID_148886945 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1148974193 a skos:Concept ;
+    dc:date "2021-12-07"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1153122336 a skos:Concept ;
+    dc:date "2024-07-21"^^xsd:date ;
+    skos:prefLabel "execution problem" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1153943785 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "bread boarding would miss the point" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1154381434 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "relevant knowledge" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1155551334 a skos:Concept ;
+    dc:date "2023-11-28"^^xsd:date ;
+    skos:prefLabel "that thing" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1156633440 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "akin alabi" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1160750033 a skos:Concept ;
+    dc:date "2024-03-08"^^xsd:date ;
+    skos:prefLabel "march" ;
+    pkg:hasSubTopic pkgc:ID_11797976,
+        pkgc:ID_1580829123 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1168187740 a skos:Concept ;
+    dc:date "2021-02-13"^^xsd:date ;
+    skos:prefLabel "passport woes" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1170196550 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "6. Things That Shouldn’t Go Together: “7 Things KFC And Miley Cyrus Have In Common”" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1170295959 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "start a blog" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1170756137 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "environment" ;
+    pkg:hasSubTopic pkgc:ID_1075775774,
+        pkgc:ID_1261856018,
+        pkgc:ID_1720342769,
+        pkgc:ID_1954756715 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1170986946 a skos:Concept ;
+    dc:date "2021-01-25"^^xsd:date ;
+    skos:prefLabel "And that's #business" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1171064624 a skos:Concept ;
+    dc:date "2024-06-29"^^xsd:date ;
+    skos:prefLabel "there are always opportunities through which businessmen can profit handsomely if they will only recognize and seize them" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1176220587 a skos:Concept ;
+    dc:date "2021-01-25"^^xsd:date ;
+    skos:prefLabel "I do #business" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1178482803 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    skos:prefLabel "atopolis: greek for without place" ;
+    pkg:hasSubTopic pkgc:ID_1033754250,
+        pkgc:ID_1142562388,
+        pkgc:ID_1404015214,
+        pkgc:ID_1675849586,
+        pkgc:ID_1882124097,
+        pkgc:ID_1909447178,
+        pkgc:ID_621673758 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_11797976 a skos:Concept ;
+    dc:date "2024-03-08"^^xsd:date ;
+    skos:prefLabel "locate the groundnut next to the bananas" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1180323171 a skos:Concept ;
+    dc:date "2024-03-08"^^xsd:date ;
+    skos:prefLabel "shipdaily" ;
+    pkg:hasSubTopic pkgc:ID_1013491819,
+        pkgc:ID_1153122336,
+        pkgc:ID_1160750033,
+        pkgc:ID_1392370963,
+        pkgc:ID_1414877541,
+        pkgc:ID_1508878026,
+        pkgc:ID_81132831 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1186228771 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "blue" ;
+    pkg:hasSubTopic pkgc:ID_247289006,
+        pkgc:ID_699091660 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1192225648 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "good roommate" ;
+    pkg:hasSubTopic pkgc:ID_1303453229,
+        pkgc:ID_1387014689,
+        pkgc:ID_153453613,
+        pkgc:ID_182619400,
+        pkgc:ID_1869865238,
+        pkgc:ID_365657650,
+        pkgc:ID_422797462,
+        pkgc:ID_485856337,
+        pkgc:ID_704973317,
+        pkgc:ID_761719791,
+        pkgc:ID_787854084 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1192947543 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "angry verbal reaction to conflict" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1195208839 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "what is the situation here" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1199431813 a skos:Concept ;
+    dc:date "2024-07-29"^^xsd:date ;
+    skos:prefLabel "testers incentive" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_120158171 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "determine what we already know" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1201772455 a skos:Concept ;
+    dc:date "2025-05-30"^^xsd:date ;
+    skos:prefLabel "donald j trump is absolutely hilarious, if you don't see it your political views may have distorted reality." ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1203242747 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "#c5a29d" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1206298945 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "May 26 - Fraym PIC" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1209031041 a skos:Concept ;
+    dc:date "2020-01-25"^^xsd:date ;
+    skos:prefLabel "Writing List" ;
+    pkg:hasSubTopic pkgc:ID_1180323171,
+        pkgc:ID_1378487504,
+        pkgc:ID_1913630344,
+        pkgc:ID_492264673 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1214807856 a skos:Concept ;
+    dc:date "2024-08-05"^^xsd:date ;
+    skos:prefLabel "title: cxxxx\"s xxx + xxx xxx" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1215250428 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "the challenge:" ;
+    pkg:hasSubTopic pkgc:ID_1235234558,
+        pkgc:ID_1501335505,
+        pkgc:ID_1802513920 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1218920021 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "serendipity" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1219125617 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "what should you have done differently" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_12198216 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "risks" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1224075147 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "affordances go below the line" ;
+    pkg:hasSubTopic pkgc:ID_571849401 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1226518576 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "ajared.ng" ;
+    pkg:hasSubTopic pkgc:ID_1921941173,
+        pkgc:ID_1981534776 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1228892103 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "stack your skills" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1233123192 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "spraying in bundles" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1235234558 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "on a specific solution" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1235476075 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Product Management Sacred Seven" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1237029546 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1246355097 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "from long term memory" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1251986083 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "https://github.com/wting/pelican-svbtle" ;
+    pkg:hasResource pkgr:res_ID_1251986083 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1255567626 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "stoops" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1257162739 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "commence use" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1257357589 a skos:Concept ;
+    dc:date "2021-07-20"^^xsd:date ;
+    skos:prefLabel "website: content platform" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_126120611 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "What PROMISE are you making - and how confident am I in your ability to deliver on that promise" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1261856018 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "find a community to immerse yourself in" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1265457230 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "celebrating wins like launching an application, instead of the real win which is traction" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1267790154 a skos:Concept ;
+    dc:date "2023-11-28"^^xsd:date ;
+    skos:prefLabel "reading and readers, and non readers" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1268179475 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "write from phone" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1271141949 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "state of logistics flowscape" ;
+    pkg:hasSubTopic pkgc:ID_1042839987,
+        pkgc:ID_1066029370,
+        pkgc:ID_1417581568,
+        pkgc:ID_1531385257,
+        pkgc:ID_1645024070,
+        pkgc:ID_1679415693,
+        pkgc:ID_36104926,
+        pkgc:ID_367084218,
+        pkgc:ID_434628877,
+        pkgc:ID_462138909,
+        pkgc:ID_623721811,
+        pkgc:ID_657336764,
+        pkgc:ID_88072417,
+        pkgc:ID_944921024,
+        pkgc:ID_973290202 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_127167076 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Product Weekly" ;
+    pkg:hasSubTopic pkgc:ID_211152276,
+        pkgc:ID_756485992,
+        pkgc:ID_788687111 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1272120682 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "elaborative interrogation" ;
+    pkg:hasSubTopic pkgc:ID_1419170714,
+        pkgc:ID_966489024 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1275955129 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "wrong level of detail in drawings" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1281162800 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "from place to place" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_128412284 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "it's easy to fall into that trap in real life" ;
+    pkg:hasSubTopic pkgc:ID_1265457230,
+        pkgc:ID_1460552147,
+        pkgc:ID_1682834562,
+        pkgc:ID_1796168974,
+        pkgc:ID_1975902749,
+        pkgc:ID_1999520077 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1284576356 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "green" ;
+    pkg:hasSubTopic pkgc:ID_42242951 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1286817087 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "there's always different ways to approach a solution" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1287350365 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "needs to be prompted to take action on roommate activities" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1289336198 a skos:Concept ;
+    dc:date "2021-01-25"^^xsd:date ;
+    skos:prefLabel "If I #like it" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1293155887 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "funeral concert" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_129506501 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Waiting list of Riders with no delivery vehicle" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1296186971 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "show how affordances take user" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1297238720 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "when that time came around the lab would be deadly quiet" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1303453229 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "discusses move out plans ahead of time with up to a month's notice" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1308969651 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Debate or Challenge" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1312657967 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "7: Mass audiences vs Nice" ;
+    pkg:hasSubTopic pkgc:ID_103625289,
+        pkgc:ID_1820999492,
+        pkgc:ID_769410891,
+        pkgc:ID_976083800 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1314562871 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "Mistakes" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1317140051 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "how can a young adult buy land in 2020?" ;
+    pkg:hasSubTopic pkgc:ID_1351689229 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1320072869 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "beginners mindset" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1325291264 a skos:Concept ;
+    dc:date "2023-09-22"^^xsd:date ;
+    skos:prefLabel "Copywriting, 101" ;
+    pkg:hasSubTopic pkgc:ID_1597835330,
+        pkgc:ID_1597920334,
+        pkgc:ID_1830806468,
+        pkgc:ID_543912761,
+        pkgc:ID_760541172,
+        pkgc:ID_789770111 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1327856895 a skos:Concept ;
+    dc:date "2020-07-28"^^xsd:date ;
+    skos:prefLabel "Management" ;
+    pkg:hasSubTopic pkgc:ID_1605335048,
+        pkgc:ID_1708044174,
+        pkgc:ID_450756087,
+        pkgc:ID_940656716 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_133065286 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "analyze" ;
+    pkg:hasSubTopic pkgc:ID_1810952849,
+        pkgc:ID_244778483,
+        pkgc:ID_341883519,
+        pkgc:ID_823979980 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1335600972 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    skos:prefLabel "Celebrating Title blocks" ;
+    pkg:hasSubTopic pkgc:ID_1090281522,
+        pkgc:ID_128412284,
+        pkgc:ID_1297238720,
+        pkgc:ID_1660428317,
+        pkgc:ID_1662396697,
+        pkgc:ID_1858939788,
+        pkgc:ID_1925728463,
+        pkgc:ID_304843322,
+        pkgc:ID_532073639,
+        pkgc:ID_621148264,
+        pkgc:ID_649884240,
+        pkgc:ID_840349170 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1338244087 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "1: What time of day am i most productive" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_133897658 a skos:Concept ;
+    dc:date "2021-02-26"^^xsd:date ;
+    skos:prefLabel "legendary original piece" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_134144640 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "daily writing habit" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1345709029 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "like buttons and fields" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1350795437 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "May 6 - DLVR Search Map" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1351241023 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "doesn't make commitments, gets mad when asked to make commitments, proposes or agrees to things they won't stick to" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1351689229 a skos:Concept ;
+    dc:date "2021-07-20"^^xsd:date ;
+    skos:prefLabel "invest in unexploited asset" ;
+    pkg:hasSubTopic pkgc:ID_1257357589,
+        pkgc:ID_1583626032,
+        pkgc:ID_1963205903 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1353196099 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "How to [do something]" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1360531837 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "Buying land in 2020" ;
+    pkg:hasSubTopic pkgc:ID_1317140051,
+        pkgc:ID_143912286,
+        pkgc:ID_1563318533,
+        pkgc:ID_1626081709,
+        pkgc:ID_190500232,
+        pkgc:ID_847239437,
+        pkgc:ID_956202742 ;
+    pkg:hasTask pkgc:ID_1360531837_task ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1360531837_task a pkg:Task ;
+    dc:title "Buying land in 2020" ;
+    pkg:status "done" .
+
+pkgc:ID_136231935 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "direction > concept > ideas" ;
+    pkg:hasSubTopic pkgc:ID_1061405917,
+        pkgc:ID_1764114526 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1364126777 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "discomfort of not knowing" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1378487504 a skos:Concept ;
+    dc:date "2020-12-04"^^xsd:date ;
+    skos:prefLabel "by date" ;
+    pkg:hasSubTopic pkgc:ID_1003370251,
+        pkgc:ID_1497821907,
+        pkgc:ID_1846657050,
+        pkgc:ID_534337854 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1382432793 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "10: reflections/feedback on ship daily" ;
+    pkg:hasSubTopic pkgc:ID_1543565724,
+        pkgc:ID_155565611,
+        pkgc:ID_1788631342,
+        pkgc:ID_1988666727,
+        pkgc:ID_69453851 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1382862425 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "frameworks for generating new ideas" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1385106717 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "nollywood" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1387014689 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "keeps record and pays back everything they owe" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1389515986 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "learn with rapid skill acquistion" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1390964987 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "determine concept" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1392090717 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "racks up debts with no intention to payback" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1392370963 a skos:Concept ;
+    dc:date "2024-08-05"^^xsd:date ;
+    skos:prefLabel """Hi, when you water your plants it drips down to the part of my balcony i use the most.
+I've gotten my chair and yoga mat soaked so far. Please take care so it doesn't keep happening :)""" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1395201859 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Craiglist for Design" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1397344779 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "location - where" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1397559842 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "influencers" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1398089633 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "however, one thing common about developing new products is that there's a fuzzy front end, where many things are in flux" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_140105772 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "2: How to Never Run out of Ideas" ;
+    pkg:hasSubTopic pkgc:ID_1111611026,
+        pkgc:ID_1480046452,
+        pkgc:ID_808192189 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1404015214 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    skos:prefLabel "with powder pigment" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1406296351 a skos:Concept ;
+    dc:date "2025-02-26"^^xsd:date ;
+    skos:prefLabel "how will you do things differently moving forward so this doesn't happen again?" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_141408070 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "pelican content -o output -s pelicanconf.py" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1414877541 a skos:Concept ;
+    dc:date "2024-07-29"^^xsd:date ;
+    skos:prefLabel "the value of a scrum master" ;
+    pkg:hasSubTopic pkgc:ID_444891059,
+        pkgc:ID_962821199 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_141724120 a skos:Concept ;
+    dc:date "2021-02-26"^^xsd:date ;
+    skos:prefLabel "list of 50 first dates" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1417581568 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "can you handle 50 more deliveries" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1419170714 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "who, what, where, when, how why" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1425523071 a skos:Concept ;
+    dc:date "2020-09-18"^^xsd:date ;
+    skos:prefLabel "<a class=\"sc-github\" href=\"https://github.com/lopezm1\" target=\"_blank\"><i class=\"fa fa-github\"></i></a>" ;
+    pkg:hasResource pkgr:res_ID_1425523071 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1430392116 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "government" ;
+    pkg:hasSubTopic pkgc:ID_1156633440,
+        pkgc:ID_1917025366,
+        pkgc:ID_1955553973 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1431342989 a skos:Concept ;
+    dc:date "2021-01-25"^^xsd:date ;
+    skos:prefLabel "I give you my #bill" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1436148909 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "if a big company comes in to buy, you can sell" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_143912286 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "parents would buy land as good investment" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1447258399 a skos:Concept ;
+    dc:date "2021-10-02"^^xsd:date ;
+    skos:prefLabel "mentorship through books" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1448956016 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "X ways" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1449153018 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "change environment" ;
+    pkg:hasSubTopic pkgc:ID_1005913229,
+        pkgc:ID_1268179475,
+        pkgc:ID_1499481129,
+        pkgc:ID_1912904967,
+        pkgc:ID_769110592 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1456102611 a skos:Concept ;
+    dc:date "2017-01-22"^^xsd:date ;
+    skos:prefLabel "Website Analysis" ;
+    pkg:hasSubTopic pkgc:ID_1747199551 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1457774686 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "create" ;
+    pkg:hasSubTopic pkgc:ID_1043329635,
+        pkgc:ID_565799470,
+        pkgc:ID_8651729 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1460552147 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "celebrating the first customer interview, instead of the 15-20 you need to actually start seeing patterns during discovery" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1462877219 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "<i class=\"fab fa-facebook\"></i>" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1462911187 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "for executing or implementing" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1467622428 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "company or industry" ;
+    pkg:hasSubTopic pkgc:ID_308510252 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_14696074 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "recommendation: brute force logistics" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1475294067 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "April 24: State of Delivery in Covid" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1476037639 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "icons" ;
+    pkg:hasSubTopic pkgc:ID_1131437618,
+        pkgc:ID_1884429429,
+        pkgc:ID_547520691,
+        pkgc:ID_587524995,
+        pkgc:ID_689779377 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1477411982 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "leaving space for decisions and choices to be made later" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1480046452 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "write down 3 core content buckets" ;
+    pkg:hasSubTopic pkgc:ID_105104166,
+        pkgc:ID_1467622428,
+        pkgc:ID_920075388 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1483609973 a skos:Concept ;
+    dc:date "2020-01-25"^^xsd:date ;
+    skos:prefLabel "Brute Force Logistics" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1484439505 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "what was the cause of the mistake" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1487108778 a skos:Concept ;
+    dc:date "2025-05-30"^^xsd:date ;
+    skos:prefLabel "there will be another wave of pan african consciousness, cooperation, like in the 60's but this time also trade like in the old world pre-colonization." ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_148886945 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1491857569 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Product Ownership: Devil in the details" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1496881924 a skos:Concept ;
+    dc:date "2021-01-25"^^xsd:date ;
+    skos:prefLabel "If you have a #gooddeal" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1497821907 a skos:Concept ;
+    dc:date "2022-01-26"^^xsd:date ;
+    skos:prefLabel "2021" ;
+    pkg:hasSubTopic pkgc:ID_1545590504,
+        pkgc:ID_306973867 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1499481129 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "write in new app" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1499862953 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "is months late on rent without any attempt to talk about it" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1500647927 a skos:Concept ;
+    dc:date "2022-01-20"^^xsd:date ;
+    skos:prefLabel "thoughts on minimalism" ;
+    pkg:hasSubTopic pkgc:ID_339357938 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1501335505 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "without getting down into fine details" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_150312499 a skos:Concept ;
+    dc:date "2020-11-28"^^xsd:date ;
+    skos:prefLabel "Screen Shot 2020-08-23 at 9.06.04 PM.png" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_150383207 a skos:Concept ;
+    dc:date "2021-11-03"^^xsd:date ;
+    skos:prefLabel "What to do when you lose your job" ;
+    pkg:hasSubTopic pkgc:ID_617030462 ;
+    pkg:hasTask pkgc:ID_150383207_task ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_150383207_task a pkg:Task ;
+    dc:title "What to do when you lose your job" ;
+    pkg:status "done" .
+
+pkgc:ID_1505247249 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Share a Resource" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_150876296 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "market opportunity that has opened up" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1508878026 a skos:Concept ;
+    dc:date "2024-08-05"^^xsd:date ;
+    skos:prefLabel "a story about a thing" ;
+    pkg:hasSubTopic pkgc:ID_1214807856,
+        pkgc:ID_647423657,
+        pkgc:ID_866646729 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1513235517 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "procrastination" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1513686409 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "give advice, tell them where you learned it yourself" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_151494336 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Thought Leadership: Publish 12 Articles in Field" ;
+    pkg:hasSubTopic pkgc:ID_1101814649,
+        pkgc:ID_1235476075,
+        pkgc:ID_1491857569,
+        pkgc:ID_1692852574,
+        pkgc:ID_1721510247,
+        pkgc:ID_1742255104,
+        pkgc:ID_1787429425,
+        pkgc:ID_1798049081,
+        pkgc:ID_1889146033,
+        pkgc:ID_294231446,
+        pkgc:ID_553141671,
+        pkgc:ID_595187698,
+        pkgc:ID_64148765,
+        pkgc:ID_680956852,
+        pkgc:ID_949709909 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1516890541 a skos:Concept ;
+    dc:date "2023-09-13"^^xsd:date ;
+    skos:prefLabel "i would write" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1517718866 a skos:Concept ;
+    dc:date "2014-04-27"^^xsd:date ;
+    skos:prefLabel "Entrepreneurship series" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_151798512 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "vision of leadership to create something" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1522077998 a skos:Concept ;
+    dc:date "2025-02-23"^^xsd:date ;
+    skos:prefLabel "conscious incompetence" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1523614988 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "competition and pressure on resources" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1524278599 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "what is this about?" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1524581241 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "April 29: Simplicity" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1526968649 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "Habits" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1531385257 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "think local" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1534127764 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "dimensions of curiosity" ;
+    pkg:hasSubTopic pkgc:ID_1097335226,
+        pkgc:ID_1364126777,
+        pkgc:ID_250564305,
+        pkgc:ID_434689293,
+        pkgc:ID_90823104 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_153453613 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "is never late on rent without advance notice" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1536362283 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Industry Insights and trends" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1537843668 a skos:Concept ;
+    dc:date "2021-10-02"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1539260213 a skos:Concept ;
+    dc:date "2021-06-06"^^xsd:date ;
+    skos:prefLabel "Hiring is Broken" ;
+    pkg:hasSubTopic pkgc:ID_1055148513,
+        pkgc:ID_1545451493,
+        pkgc:ID_1677434432,
+        pkgc:ID_1739293618,
+        pkgc:ID_182361684,
+        pkgc:ID_395245187,
+        pkgc:ID_989460617 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_153931213 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "#a1665e" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1542134720 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "once you have a well defined process, most people will be able to learn it" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1543052266 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "50% from group discussion" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1543565724 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "is there anything still holding you back from putting yourself out there" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1545451493 a skos:Concept ;
+    dc:date "2021-06-06"^^xsd:date ;
+    skos:prefLabel "resume writing can be very introspective if you let it happen" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1545590504 a skos:Concept ;
+    dc:date "2022-01-26"^^xsd:date ;
+    skos:prefLabel "Jan 2 - workspace design themes for workfrom home" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1545797699 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "complete development" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1551861677 a skos:Concept ;
+    dc:date "2020-08-21"^^xsd:date ;
+    skos:prefLabel "https://github.com/alexandrevicenzi/Flex" ;
+    pkg:hasResource pkgr:res_ID_1551861677 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_155267296 a skos:Concept ;
+    dc:date "2024-06-29"^^xsd:date ;
+    skos:prefLabel "it should go without saying that no business can long survive unless it makes a profit" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1555313123 a skos:Concept ;
+    dc:date "2020-01-28"^^xsd:date ;
+    skos:prefLabel "Personal MBA" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_155565611 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "when will you start ship 30 for 30" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1556020293 a skos:Concept ;
+    dc:date "2024-07-21"^^xsd:date ;
+    skos:prefLabel "it's easy in hindsight to list all the places" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1556185692 a skos:Concept ;
+    dc:date "2025-06-05"^^xsd:date ;
+    skos:prefLabel "https://levelupwithethanevans.substack.com/p/bad-code-doesnt-kill-projects-poor" ;
+    pkg:hasResource pkgr:res_ID_1556185692 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1560368260 a skos:Concept ;
+    dc:date "2025-07-14"^^xsd:date ;
+    skos:prefLabel """pelican content -o output -s pelicanconf.py &&
+ghp-import output -b gh-pages &&
+git push -f git@github.com:chunnodu/chunnodu  gh-pages:master""" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1562931914 a skos:Concept ;
+    dc:date "2021-02-26"^^xsd:date ;
+    skos:prefLabel "say a company is hustling" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1563318533 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "now, go buy some land" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1563493301 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "use an analogy" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1563562422 a skos:Concept ;
+    dc:date "2021-01-25"^^xsd:date ;
+    skos:prefLabel "I #deal on #deals" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1566730562 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "evaluate" ;
+    pkg:hasSubTopic pkgc:ID_1576890414,
+        pkgc:ID_1597245419,
+        pkgc:ID_777580629 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1567405771 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "deliveries are here to stay" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1567574993 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "May 3 - Zine: How to take advantage of local data" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1569606853 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "more regulation" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1572369627 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "customize" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1576890414 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "through checking and critiquing" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1580829123 a skos:Concept ;
+    dc:date "2024-03-08"^^xsd:date ;
+    skos:prefLabel "gaduwa estate is porous" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1580894217 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "were there any warning signs you missed" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1583240214 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "stash and store links of things that inspire" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1583626032 a skos:Concept ;
+    dc:date "2021-07-20"^^xsd:date ;
+    skos:prefLabel "messaging and communities" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1584713893 a skos:Concept ;
+    dc:date "2020-08-08"^^xsd:date ;
+    skos:prefLabel "nice simple landscape layout concept" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1595144689 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "techniques to demolish impostor syndrome" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1597245419 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "based on criteria and standards" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1597835330 a skos:Concept ;
+    dc:date "2023-09-22"^^xsd:date ;
+    skos:prefLabel "\"Finally solve X so you can Y\"" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1597920334 a skos:Concept ;
+    dc:date "2023-09-22"^^xsd:date ;
+    skos:prefLabel "1. Find the problem you solve" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1599963717 a skos:Concept ;
+    dc:date "2024-07-29"^^xsd:date ;
+    skos:prefLabel "managers incentive" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1600157863 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "capture thoughts as they come" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1602825858 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "ghp-import output -b gh-pages" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1605335048 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "8 types of waste <Muda>" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1610817106 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "commercial use" ;
+    pkg:hasSubTopic pkgc:ID_1039313212,
+        pkgc:ID_684918577 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1612312911 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "long walk, record yourself talking, use as outline" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1613155718 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "how do you get to it" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1618375600 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "switch use at any time" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1622534231 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "making the project more specific and concrete" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1623486449 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Book Review or" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1624538330 a skos:Concept ;
+    dc:date "2021-10-02"^^xsd:date ;
+    skos:prefLabel "mentorship by example - follow creatives" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1626081709 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "buying land" ;
+    pkg:hasSubTopic pkgc:ID_1043949641,
+        pkgc:ID_1148974193,
+        pkgc:ID_1170295959,
+        pkgc:ID_1941720906,
+        pkgc:ID_302584434,
+        pkgc:ID_499820661,
+        pkgc:ID_634846617 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1633167311 a skos:Concept ;
+    dc:date "2020-02-29"^^xsd:date ;
+    skos:prefLabel "Enterpreneurs should be teachers" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1635216290 a skos:Concept ;
+    dc:date "2021-10-02"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1636178927 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "cream" ;
+    pkg:hasSubTopic pkgc:ID_627134510 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1636768657 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "discusses move out plans without giving a rent period for others to make plans" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1642410377 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "your ideas have a home" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1645024070 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "better together" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1647120569 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "roaming around on the internet" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1648962774 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "turn to practical detail" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1650698099 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "https://github.com/gfidente/pelican-svbhack" ;
+    pkg:hasResource pkgr:res_ID_1650698099 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1653850650 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "look for patterns and overlap" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1654325246 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "requirement or mandate a business has to solve" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1660133441 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Palace of thinking, Creative hitlist" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1660428317 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "as we all dug into our engineering drawings on AutoCad, some for the first time on their own" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1661350299 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "define problem" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1662396697 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "it labels the work and takes key datails about the drawing, metadata if you would" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1665462433 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "clarity" ;
+    pkg:hasNote pkgn:note_ID_1665462433 ;
+    pkg:hasSubTopic pkgc:ID_1195208839,
+        pkgc:ID_1865047206,
+        pkgc:ID_1985327053 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1673948934 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "using a procedure" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1675849586 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    skos:prefLabel "onto canvases" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1676639641 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "GIS and the semantic web" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1677434432 a skos:Concept ;
+    dc:date "2021-06-06"^^xsd:date ;
+    skos:prefLabel "expat, multiple job offers" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1677639538 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "#c58c85" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1679415693 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "easier to start" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1682834562 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "forgetting that the action is when the rubber meets the road" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1683283564 a skos:Concept ;
+    dc:date "2020-07-28"^^xsd:date ;
+    skos:prefLabel "Data" ;
+    pkg:hasSubTopic pkgc:ID_1101609051,
+        pkgc:ID_1676639641,
+        pkgc:ID_416440636 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1687911014 a skos:Concept ;
+    dc:date "2021-01-25"^^xsd:date ;
+    skos:prefLabel "I #buy your #deal" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1690308364 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "sense making" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1691630447 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "commence development" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1691942288 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "8: The Golden Intersection(personal story * actionable advice)" ;
+    pkg:hasSubTopic pkgc:ID_1118554238,
+        pkgc:ID_1513686409,
+        pkgc:ID_690530212 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1692852574 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Openlink" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1693668112 a skos:Concept ;
+    dc:date "2021-12-25"^^xsd:date ;
+    skos:prefLabel "What i learned from driving to dllas" ;
+    pkg:hasSubTopic pkgc:ID_501538311 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1695163105 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "concrete but flexible" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_16961724 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "moneybags" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1708044174 a skos:Concept ;
+    dc:date "2020-07-28"^^xsd:date ;
+    skos:prefLabel "Innovation" ;
+    pkg:hasSubTopic pkgc:ID_379674529 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1710155187 a skos:Concept ;
+    dc:date "2020-03-25"^^xsd:date ;
+    skos:prefLabel "Adieu Whatsapp" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1710817758 a skos:Concept ;
+    dc:date "2021-09-30"^^xsd:date ;
+    skos:prefLabel "data/knowledge centric crowd" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1711293450 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "very common process that happens a lot" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1713475599 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "keeps from detailing an idea without surveying the field enough" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1713686234 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "chapter summaries" ;
+    pkg:hasSubTopic pkgc:ID_1228892103,
+        pkgc:ID_1389515986,
+        pkgc:ID_1726904949,
+        pkgc:ID_1771689907,
+        pkgc:ID_1839279091,
+        pkgc:ID_66320858,
+        pkgc:ID_673301874 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1714837612 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "rabbit holes" ;
+    pkg:hasSubTopic pkgc:ID_1998636023,
+        pkgc:ID_477643617,
+        pkgc:ID_760189363 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1720342769 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "look for role models" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1721510247 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Boiling the Ocean: Education as a Key Business Competence" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1725686665 a skos:Concept ;
+    dc:date "2024-06-29"^^xsd:date ;
+    skos:prefLabel "rejected any ideas that a successful man's son should be pampered or spoiled or given money as a gift after he was old enough to earn his own living" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1726904949 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "it's just practice" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_17286341 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "did you make a mistake in strategy or method" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_173240971 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "did the mistake reveal any character trait holding you back e.g hubris or inflexibility" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1734488636 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "<iclass=\"fab fa-twitter\"></i>" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1739099307 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "find your blind spots" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1739293618 a skos:Concept ;
+    dc:date "2021-06-06"^^xsd:date ;
+    skos:prefLabel "plum.io" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1742255104 a skos:Concept ;
+    dc:date "2025-07-26"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1745072730 a skos:Concept ;
+    dc:date "2025-02-23"^^xsd:date ;
+    skos:prefLabel "conscious competence" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1747199551 a skos:Concept ;
+    dc:date "2017-01-22"^^xsd:date ;
+    skos:prefLabel "Questions" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1749717534 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "and can quickly jump around and entertain different possibilities" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1750191968 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "Your sacred hours are the overlap, pick one hour to defend ruthlessly" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_175019740 a skos:Concept ;
+    dc:date "2025-05-30"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1760620684 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "May 11 - Flowscape: Delivery Business Owner" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1764114526 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "what are specific & concrete ideas to move in direction" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1766376979 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "things a user can act on" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1766475959 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "affordances" ;
+    pkg:hasSubTopic pkgc:ID_1345709029,
+        pkgc:ID_1766376979,
+        pkgc:ID_86537769 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1769451824 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "similarly we can sketch and discuss the key components of an interface idea" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1769539280 a skos:Concept ;
+    dc:date "2021-02-24"^^xsd:date ;
+    skos:prefLabel "setting up jenkins" ;
+    pkg:hasSubTopic pkgc:ID_329904492 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1771689907 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "strategic planning" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1774115025 a skos:Concept ;
+    dc:date "2021-01-25"^^xsd:date ;
+    skos:prefLabel "You #pay" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1775441830 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "2. Dollar Signs: “$4 Million Is How Much You Need To Retire Comfortably, According To These 7 Financial Experts”" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1777223061 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "odumeje" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_178088500 a skos:Concept ;
+    dc:date "2020-09-18"^^xsd:date ;
+    skos:prefLabel "personal access token" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1786533604 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Simplicity" ;
+    pkg:hasSubTopic pkgc:ID_1092266508,
+        pkgc:ID_1584713893,
+        pkgc:ID_753653180,
+        pkgc:ID_877463317 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1787429425 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Personal Knowledge Graphs" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1788631342 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "what's next on writing journey" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1796168974 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "buying gear for a new workout program, instead of finish" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1798049081 a skos:Concept ;
+    dc:date "2025-07-26"^^xsd:date ;
+    skos:prefLabel "Retail Primitives" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1800183701 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "hardly takes initiative to resolve general issues" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1802513920 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "be concrete enough to make progress" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1805718236 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "what are the key components or interactions" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1810328652 a skos:Concept ;
+    dc:date "2022-03-05"^^xsd:date ;
+    skos:prefLabel "Web Analytics" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1810903529 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "speeches" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1810952849 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "determine how parts relate to each other" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1811007317 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "6: Proven Headline formats" ;
+    pkg:hasSubTopic pkgc:ID_286664306,
+        pkgc:ID_344936 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1813804579 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "is this for me?" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_18140367 a skos:Concept ;
+    dc:date "2025-05-30"^^xsd:date ;
+    skos:prefLabel "when you say blockchain in your product description i mentally tune out." ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1816760048 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "dlvrforme.com" ;
+    pkg:hasSubTopic pkgc:ID_1476037639 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1818325612 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "git push -f git@github.com:chunnodu/chunnodu gh-pages:master" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1819291241 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "did you make a mistake in execution" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1819680702 a skos:Concept ;
+    dc:date "2020-01-25"^^xsd:date ;
+    skos:prefLabel "5 ways" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1820999492 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "Homework: Choose Idea, define your audience" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1821441040 a skos:Concept ;
+    dc:date "2025-05-30"^^xsd:date ;
+    skos:prefLabel "AGI is nowhere in sight, if it means some sort of interconnected, uncontrollable superconsciousness that arises from machines" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1823581347 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "The fuzzy front end of product development" ;
+    pkg:hasSubTopic pkgc:ID_1398089633,
+        pkgc:ID_1542134720,
+        pkgc:ID_1690308364,
+        pkgc:ID_508835990,
+        pkgc:ID_552095519,
+        pkgc:ID_882775837 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_182361684 a skos:Concept ;
+    dc:date "2021-06-06"^^xsd:date ;
+    skos:prefLabel "can be optimized" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1824160204 a skos:Concept ;
+    dc:date "2021-01-25"^^xsd:date ;
+    skos:prefLabel "As a business man sir what do you do?" ;
+    pkg:hasSubTopic pkgc:ID_1170986946,
+        pkgc:ID_1176220587,
+        pkgc:ID_1289336198,
+        pkgc:ID_1431342989,
+        pkgc:ID_1496881924,
+        pkgc:ID_1563562422,
+        pkgc:ID_1687911014,
+        pkgc:ID_1774115025,
+        pkgc:ID_1965094238,
+        pkgc:ID_686798156 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_182619400 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "makes and sticks to commitments, or renegotiates them early when things come up" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1830806468 a skos:Concept ;
+    dc:date "2023-09-22"^^xsd:date ;
+    skos:prefLabel "A dead-simple formula:" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_183184515 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "quick hacks" ;
+    pkg:hasSubTopic pkgc:ID_1049503193,
+        pkgc:ID_1314562871,
+        pkgc:ID_1353196099,
+        pkgc:ID_1448956016,
+        pkgc:ID_1526968649,
+        pkgc:ID_327146976,
+        pkgc:ID_559851973,
+        pkgc:ID_587063719,
+        pkgc:ID_693205441,
+        pkgc:ID_894528941 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_183236309 a skos:Concept ;
+    dc:date "2020-11-28"^^xsd:date ;
+    skos:prefLabel "Social bikes part 2" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1832696309 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "State of Delivery in Covid" ;
+    pkg:hasSubTopic pkgc:ID_1082376124,
+        pkgc:ID_1271141949,
+        pkgc:ID_14696074,
+        pkgc:ID_1567405771,
+        pkgc:ID_1569606853,
+        pkgc:ID_1917047047,
+        pkgc:ID_1982201064,
+        pkgc:ID_694454576 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1839279091 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "managing expectations" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1839699093 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "things i could write a page about the city" ;
+    pkg:hasSubTopic pkgc:ID_1038820215,
+        pkgc:ID_1126849403,
+        pkgc:ID_1218920021,
+        pkgc:ID_1523614988,
+        pkgc:ID_1897151976,
+        pkgc:ID_1930975658,
+        pkgc:ID_594696762,
+        pkgc:ID_7256950,
+        pkgc:ID_874956087,
+        pkgc:ID_928789223,
+        pkgc:ID_951463566 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1840979738 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "spent it learning" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1846657050 a skos:Concept ;
+    dc:date "2022-02-02"^^xsd:date ;
+    skos:prefLabel "2022" ;
+    pkg:hasSubTopic pkgc:ID_1949999743,
+        pkgc:ID_577765647 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1852686547 a skos:Concept ;
+    dc:date "2021-11-29"^^xsd:date ;
+    skos:prefLabel "ontology of a receipt" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1853317089 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "personal use" ;
+    pkg:hasSubTopic pkgc:ID_1642410377,
+        pkgc:ID_1647120569,
+        pkgc:ID_265134018 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1855540117 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "carrying out;;" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_185732806 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "africa and diaspora" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1858939788 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "if you had the best title block and never drew anything you'd still fail" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1865047206 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "what is going on" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1869865238 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "communicates early and often about plans that affect others e.g. rent, chores, etc" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1871529400 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "doesn't communicate and responds sullenly to attempts to" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1871594227 a skos:Concept ;
+    dc:date "2021-10-22"^^xsd:date ;
+    skos:prefLabel "good roommate, bad roommate" ;
+    pkg:hasSubTopic pkgc:ID_1192225648,
+        pkgc:ID_1932825980,
+        pkgc:ID_379837686,
+        pkgc:ID_860816804,
+        pkgc:ID_998289227 ;
+    pkg:hasTask pkgc:ID_1871594227_task ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1871594227_task a pkg:Task ;
+    dc:title "good roommate, bad roommate" ;
+    pkg:status "done" .
+
+pkgc:ID_1875331685 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "May 29 - Pyramid Principle" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1880142120 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "5. The Success Story: “How A Small Team Managed To Secure A 7-Figure Investment In Less Than 1 Week”" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1880394224 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "to help us design at the right level of abstraction" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1881362492 a skos:Concept ;
+    dc:date "2020-09-18"^^xsd:date ;
+    skos:prefLabel "30771a8701ed0e0119b30748ca45141986606855" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1882124097 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    skos:prefLabel "layers them, mosaic like" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1884429429 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "facebook" ;
+    pkg:hasSubTopic pkgc:ID_1462877219 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1889146033 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Asynchronous Communication: Using Telegram for Teams" ;
+    pkg:hasSubTopic pkgc:ID_771121238 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1889776812 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "management & information systems" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1890287466 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "email subjects" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1896642871 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "10% from reading" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1897151976 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "alone but not lonely" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1897223488 a skos:Concept ;
+    dc:date "2021-12-25"^^xsd:date ;
+    skos:prefLabel "vs driving more than 1 dayu" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_190500232 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "usually stored value, sometimes great return" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1907091190 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "without specifying a particular visual design" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1909447178 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    skos:prefLabel "binders" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1912904967 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "write with pen and paper" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1913124551 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "result in  a project with independent, well understood parts" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1913630344 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "By Category" ;
+    pkg:hasSubTopic pkgc:ID_1327856895,
+        pkgc:ID_1683283564,
+        pkgc:ID_612256077,
+        pkgc:ID_913625636 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1915951623 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "remove unknowns and tricky problems" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1917025366 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "shina peller" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1917047047 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "niche deliveries will increase" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1917243850 a skos:Concept ;
+    dc:date "2020-01-28"^^xsd:date ;
+    skos:prefLabel "Reading" ;
+    pkg:hasSubTopic pkgc:ID_493200519 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1919696046 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "has to be reminded of debts" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1921941173 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "https://github.com/arulrajnet/attila" ;
+    pkg:hasResource pkgr:res_ID_1921941173 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1923885046 a skos:Concept ;
+    dc:date "2020-09-02"^^xsd:date ;
+    skos:prefLabel "https://github.com/pelican-plugins/simple-footnotes" ;
+    pkg:hasResource pkgr:res_ID_1923885046 ;
+    pkg:hasSubTopic pkgc:ID_448368759 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1925728463 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "the point is a detail that is only valuable if the drawing is completed" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1926553484 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "did you make any assumptions that turned out wrong" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1930234855 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "is sometimes late on rent but always catches up" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1930877906 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "stay aligned with what's being discussed" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1930975658 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "daily inspiration" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1932825980 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "i've had good roommates, bad roomates, and a roommate from hell" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1935042485 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "April 7: Questions for Company Brand Communication" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1935263369 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "identify what you still need to know" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1937676298 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "process" ;
+    pkg:hasSubTopic pkgc:ID_1572369627,
+        pkgc:ID_800476462,
+        pkgc:ID_836923764,
+        pkgc:ID_915995891 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1938068284 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "May 5 - Service Design" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1938932418 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "like screens, dialogs, or menus that pop up" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1940368273 a skos:Concept ;
+    dc:date "2025-02-23"^^xsd:date ;
+    skos:prefLabel "unconscious incompetence" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1941276994 a skos:Concept ;
+    dc:date "2023-09-13"^^xsd:date ;
+    skos:prefLabel "put some weird quirky insights out" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1941720906 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "buying a domain name" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1949999743 a skos:Concept ;
+    dc:date "2022-03-05"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1950038265 a skos:Concept ;
+    dc:date "2020-11-27"^^xsd:date ;
+    skos:prefLabel "you enjoy it and others do too" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1951262977 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Flowscape - Delivery Business Owner" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1954756715 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "find a mentor" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1955553973 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "peter obi" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1963205903 a skos:Concept ;
+    dc:date "2021-07-20"^^xsd:date ;
+    skos:prefLabel "crypto" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1963586830 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "write about not writing" ;
+    pkg:hasSubTopic pkgc:ID_291426274,
+        pkgc:ID_338748371,
+        pkgc:ID_993590692 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1963759332 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "set pen size on Ipad to large diameter" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1965094238 a skos:Concept ;
+    dc:date "2021-01-25"^^xsd:date ;
+    skos:prefLabel "You get it to me" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1966782222 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "brown" ;
+    pkg:hasSubTopic pkgc:ID_1203242747,
+        pkgc:ID_153931213,
+        pkgc:ID_1677639538 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1968665269 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "surround yourself with other creatives" ;
+    pkg:hasSubTopic pkgc:ID_608553071 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_197393943 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "0: Welcome aboard" ;
+    pkg:hasSubTopic pkgc:ID_134144640,
+        pkgc:ID_1382862425,
+        pkgc:ID_1595144689,
+        pkgc:ID_436182376 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1975294543 a skos:Concept ;
+    dc:date "2025-02-23"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1975304286 a skos:Concept ;
+    dc:date "2025-02-26"^^xsd:date ;
+    skos:prefLabel "if you saw someone else making a similar mistake, how would you advise them?" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1975902749 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "celebrating receiving funding, instead of figuring out a profitable business" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1981534776 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "https://github.com/Pelican-Elegant/elegant" ;
+    pkg:hasResource pkgr:res_ID_1981534776 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1982201064 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "new delivery businesses" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1985327053 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "what do we really need to do" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1988666727 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "what parts are solid and what needs work" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_199237914 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "10. X Number: “19 TED Talks Everyone Should Watch To Learn More About Climate Change”" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1992792737 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "consensus mechanism" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1994199741 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "retrieve, recognize, recall" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1994438110 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "1. Big Numbers: “3,000 People Just Filed For Unemployment. Here’s What That Means For America”" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1998248860 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "not deliverable yet" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1998636023 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "technical unknowns" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_1999520077 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "spend time planning" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_211152276 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Product X" ;
+    pkg:hasSubTopic pkgc:ID_1308969651,
+        pkgc:ID_1505247249,
+        pkgc:ID_1536362283,
+        pkgc:ID_1623486449,
+        pkgc:ID_610830137 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_218607033 a skos:Concept ;
+    dc:date "2020-08-20"^^xsd:date ;
+    skos:prefLabel "Mindmapping" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_219628766 a skos:Concept ;
+    dc:date "2021-10-02"^^xsd:date ;
+    skos:prefLabel "mentorship by proxy" ;
+    pkg:hasSubTopic pkgc:ID_1447258399,
+        pkgc:ID_1537843668,
+        pkgc:ID_1624538330,
+        pkgc:ID_652551795 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_225111407 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Questions for Company Brand Communication" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_226277201 a skos:Concept ;
+    dc:date "2025-05-30"^^xsd:date ;
+    skos:prefLabel "sam altman types shilling generative AI and LLMs without showing a roadmap to fixing hallucination are borderline grifters." ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_227573845 a skos:Concept ;
+    dc:date "2025-02-23"^^xsd:date ;
+    skos:prefLabel "20% from audio visual sources" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_228805704 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "construct meaning" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_229140559 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "8. The Topic Within The Topic: “7 Ways The Collectable Market Is Changing (And Why You Should Learn About NFTs)”" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_230016553 a skos:Concept ;
+    dc:date "2024-06-29"^^xsd:date ;
+    skos:prefLabel "there is always room for improvment - and for savings in business, be it in the home office, the plant or wherever" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_235025007 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "30% from demonstration" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_237531012 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "fat marker sketches" ;
+    pkg:hasSubTopic pkgc:ID_1153943785,
+        pkgc:ID_1713475599,
+        pkgc:ID_1963759332,
+        pkgc:ID_772265092,
+        pkgc:ID_821587900,
+        pkgc:ID_880068075,
+        pkgc:ID_893225048 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_243555146 a skos:Concept ;
+    dc:date "2023-09-13"^^xsd:date ;
+    skos:prefLabel "put some lessons out" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_244778483 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "and to an overall structure" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_247261236 a skos:Concept ;
+    dc:date "2024-07-04"^^xsd:date ;
+    skos:prefLabel "Command for publishing" ;
+    pkg:hasSubTopic pkgc:ID_141408070,
+        pkgc:ID_1602825858,
+        pkgc:ID_1818325612 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_247289006 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "#51aca4" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_250564305 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "social curiousity" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_251312785 a skos:Concept ;
+    dc:date "2024-06-29"^^xsd:date ;
+    skos:prefLabel "give employees a direct personal interest in the success of the enterprise" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_258182681 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "problem based learning" ;
+    pkg:hasSubTopic pkgc:ID_1047336278,
+        pkgc:ID_1130037637,
+        pkgc:ID_120158171,
+        pkgc:ID_1661350299,
+        pkgc:ID_1935263369 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_261822610 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "assessing yourself" ;
+    pkg:hasSubTopic pkgc:ID_1219125617,
+        pkgc:ID_1406296351,
+        pkgc:ID_1484439505,
+        pkgc:ID_1580894217,
+        pkgc:ID_17286341,
+        pkgc:ID_173240971,
+        pkgc:ID_1819291241,
+        pkgc:ID_1926553484,
+        pkgc:ID_1975304286,
+        pkgc:ID_431512208 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_263958794 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "techniques for staying at the right level of detail" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_265134018 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "you can invite people there" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_268418216 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "shipdaily" ;
+    pkg:hasSubTopic pkgc:ID_1096899092,
+        pkgc:ID_1312657967,
+        pkgc:ID_1382432793,
+        pkgc:ID_140105772,
+        pkgc:ID_1691942288,
+        pkgc:ID_1811007317,
+        pkgc:ID_197393943,
+        pkgc:ID_643871747,
+        pkgc:ID_67409118,
+        pkgc:ID_725980270,
+        pkgc:ID_945483699 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_269822000 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "cubana group - business partners" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_273055545 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "it's such a lightweight notation" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_277126177 a skos:Concept ;
+    dc:date "2024-07-29"^^xsd:date ;
+    skos:prefLabel "someone on the team should have an interest in improvement etc" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_284440584 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "9. Question/Answer: “Struggling To Be Productive? Here’s An Amazing 10-Minute Routine To Get You Focused Again”" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_286664306 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "formats" ;
+    pkg:hasSubTopic pkgc:ID_1170196550,
+        pkgc:ID_1775441830,
+        pkgc:ID_1880142120,
+        pkgc:ID_199237914,
+        pkgc:ID_1994438110,
+        pkgc:ID_229140559,
+        pkgc:ID_284440584,
+        pkgc:ID_537216805,
+        pkgc:ID_709933545,
+        pkgc:ID_869602663 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_291426274 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "what do you want to write about" ;
+    pkg:hasSubTopic pkgc:ID_1009872287,
+        pkgc:ID_737026118 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_294231446 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Brute force Logistics" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_302062157 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "healines" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_302584434 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "considerations" ;
+    pkg:hasSubTopic pkgc:ID_1397344779,
+        pkgc:ID_666931732 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_304843322 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    skos:prefLabel "one of the faculty who taught engineering drawing with AutoCAD in my 3rd year" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_306973867 a skos:Concept ;
+    dc:date "2022-01-26"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_308510252 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "delivery/supplychain" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_309562611 a skos:Concept ;
+    dc:date "2023-01-02"^^xsd:date ;
+    skos:prefLabel "estates" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_314686266 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "May 15 - GIS and the Semantic Web" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_315642680 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "create your voice by writing more" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_321032911 a skos:Concept ;
+    dc:date "2020-11-27"^^xsd:date ;
+    skos:prefLabel "become so good" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_321682573 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "places" ;
+    pkg:hasSubTopic pkgc:ID_1043047615,
+        pkgc:ID_1938932418 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_327146976 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "Trends" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_329904492 a skos:Concept ;
+    dc:date "2021-02-24"^^xsd:date ;
+    skos:prefLabel "Chu9029#jenkins00" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_331785439 a skos:Concept ;
+    dc:date "2021-06-23"^^xsd:date ;
+    skos:prefLabel "you always remember the ones who taught you something" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_332656249 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "apply" ;
+    pkg:hasSubTopic pkgc:ID_1462911187,
+        pkgc:ID_1673948934,
+        pkgc:ID_1855540117 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_336809894 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "secure land by fencing" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_338748371 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "what is it about writing that makes it so hard" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_339357938 a skos:Concept ;
+    dc:date "2022-01-24"^^xsd:date ;
+    skos:prefLabel "https://www.online-literature.com/tolstoy/2738/" ;
+    pkg:hasResource pkgr:res_ID_339357938 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_341612016 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "colours" ;
+    pkg:hasSubTopic pkgc:ID_1186228771,
+        pkgc:ID_1284576356,
+        pkgc:ID_1636178927,
+        pkgc:ID_1966782222 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_341883519 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "break down material into constituent parts" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_344936 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "headlines should do 3 important things" ;
+    pkg:hasSubTopic pkgc:ID_126120611,
+        pkgc:ID_1524278599,
+        pkgc:ID_1813804579 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_346994791 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "poor communication, never renegotiates anything but just doesn't participate" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_350640264 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "number of private jet" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_36104926 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "not going anywhere" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_361614569 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "understand the sacrifice" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_362046860 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "What I learned from 28 days of yoga" ;
+    pkg:hasSubTopic pkgc:ID_1635216290,
+        pkgc:ID_541886868 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_362310022 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "viral articles" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_364850795 a skos:Concept ;
+    dc:date "2021-02-26"^^xsd:date ;
+    skos:prefLabel "say a company believes this and wants to get talent on" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_365657650 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "takes and replaces before you notice, still tells you anyways" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_367084218 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "technology is good" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_370158596 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "<i class=\"fab fa-github\"></i>" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_374271158 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "write down an explanation of it in plain english" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_375125972 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "without designing the package etc" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_378372431 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "May 22 - Article describing Why DLVR app is wicked awesome" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_379674529 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "a flawless marketing campaign" ;
+    pkg:hasSubTopic pkgc:ID_1047761904,
+        pkgc:ID_1385106717,
+        pkgc:ID_1397559842,
+        pkgc:ID_1430392116,
+        pkgc:ID_16961724,
+        pkgc:ID_269822000,
+        pkgc:ID_53293765,
+        pkgc:ID_587268309,
+        pkgc:ID_667194008,
+        pkgc:ID_775615934,
+        pkgc:ID_835526483,
+        pkgc:ID_95227580 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_379837686 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "roomate from hell" ;
+    pkg:hasSubTopic pkgc:ID_1351241023,
+        pkgc:ID_1392090717,
+        pkgc:ID_1499862953,
+        pkgc:ID_1871529400,
+        pkgc:ID_346994791,
+        pkgc:ID_414315366,
+        pkgc:ID_452757129,
+        pkgc:ID_589029855,
+        pkgc:ID_591410184,
+        pkgc:ID_76061975,
+        pkgc:ID_810718676 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_382362719 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "bloom's taxonomy" ;
+    pkg:hasSubTopic pkgc:ID_1101782954,
+        pkgc:ID_133065286,
+        pkgc:ID_1457774686,
+        pkgc:ID_1566730562,
+        pkgc:ID_332656249,
+        pkgc:ID_46171578 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_391629696 a skos:Concept ;
+    dc:date "2020-01-28"^^xsd:date ;
+    skos:prefLabel "Books" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_395245187 a skos:Concept ;
+    dc:date "2021-06-06"^^xsd:date ;
+    skos:prefLabel "job seekers have to control their narrative" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_40853749 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Concepts" ;
+    pkg:hasSubTopic pkgc:ID_1019678022,
+        pkgc:ID_1059391940,
+        pkgc:ID_1085775290,
+        pkgc:ID_136231935,
+        pkgc:ID_1665462433,
+        pkgc:ID_504415245,
+        pkgc:ID_945422700 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_408904479 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "elements are the output" ;
+    pkg:hasSubTopic pkgc:ID_107244435,
+        pkgc:ID_1104960955,
+        pkgc:ID_1477411982,
+        pkgc:ID_1622534231,
+        pkgc:ID_1998248860 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_414315366 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "doesn't discuss move out plans without prompting, doesn't leave on the agreed date and doesn't say anything about this to anyone" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_416440636 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Knowledge representation path to AI" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_418730268 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "number of cows" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_418799888 a skos:Concept ;
+    dc:date "2025-02-23"^^xsd:date ;
+    skos:prefLabel "5% of a lecture" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_42242951 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "#87c49b" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_422797462 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "independent in times of lack, generous in times of plenty" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_425623288 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "reactive communication, only when issues come up" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_431512208 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "has making this mistake revealed any blind spots or skills to practice more" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_434628877 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "better deliveries - bless" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_434689293 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "thrill seeking" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_436037358 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "where you assemble all the components" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_436182376 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "toolkit of templates and styles for content library" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_442786184 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Dog Leg thinking" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_444256192 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "right people in the room" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_444891059 a skos:Concept ;
+    dc:date "2024-07-29"^^xsd:date ;
+    skos:prefLabel "the major value of a scrum master is as an impartial referee between the various profiles and incentives in your team" ;
+    pkg:hasSubTopic pkgc:ID_1199431813,
+        pkgc:ID_1599963717,
+        pkgc:ID_910431170 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_445283364 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "steps for research" ;
+    pkg:hasSubTopic pkgc:ID_1653850650,
+        pkgc:ID_537099867,
+        pkgc:ID_840843099,
+        pkgc:ID_849430272,
+        pkgc:ID_970786228 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_445582061 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Fraym PIC" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_448368759 a skos:Concept ;
+    dc:date "2020-09-02"^^xsd:date ;
+    skos:prefLabel "python -m pip install pelican-simple-footnotes" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_448450234 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "https://github.com/mc-buckets/brutalistpelican" ;
+    pkg:hasResource pkgr:res_ID_448450234 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_450756087 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Pyramid Principle" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_452757129 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "needy in times of lack, ungenerous in times of plenty" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_454267035 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Missing functionality on twitter" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_460918085 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "where in current system does new thing fit" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_46171578 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "understand" ;
+    pkg:hasSubTopic pkgc:ID_228805704,
+        pkgc:ID_853882175,
+        pkgc:ID_895074497 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_462138909 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "old era 2016" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_46649507 a skos:Concept ;
+    dc:date "2021-02-26"^^xsd:date ;
+    skos:prefLabel "I de find developers: Open Source Edition" ;
+    pkg:hasSubTopic pkgc:ID_1110417372,
+        pkgc:ID_133897658,
+        pkgc:ID_1562931914,
+        pkgc:ID_364850795,
+        pkgc:ID_662224045 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_472519912 a skos:Concept ;
+    dc:date "2020-10-25"^^xsd:date ;
+    skos:prefLabel "https://secure.plum.io/p/o93Pr7IyMGN98jHG9suN5A" ;
+    pkg:hasResource pkgr:res_ID_472519912 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_476731765 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "wire them together to make them work" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_477643617 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "unsolved design problems" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_479835669 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "tweets" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_480993653 a skos:Concept ;
+    dc:date "2024-07-21"^^xsd:date ;
+    skos:prefLabel "ideas never come when you're searching for an idea" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_484013206 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Good Bad Articles for each Job post" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_485856337 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "is proactive and open about things that concern everyone" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_486508000 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "bags" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_492264673 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "ship30" ;
+    pkg:hasSubTopic pkgc:ID_1500647927,
+        pkgc:ID_268418216 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_492813105 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "what the techniques do" ;
+    pkg:hasSubTopic pkgc:ID_1930877906,
+        pkgc:ID_554049718,
+        pkgc:ID_615883177 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_493200519 a skos:Concept ;
+    dc:date "2021-08-28"^^xsd:date ;
+    skos:prefLabel "Everybody Writes" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_499820661 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "buying hosting" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_500199977 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "Mar 2: The science of networks" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_501538311 a skos:Concept ;
+    dc:date "2021-12-25"^^xsd:date ;
+    skos:prefLabel "marathons are diferent from sprints" ;
+    pkg:hasSubTopic pkgc:ID_1897223488,
+        pkgc:ID_949790873 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_504415245 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "using concepts" ;
+    pkg:hasSubTopic pkgc:ID_1390964987,
+        pkgc:ID_1648962774 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_508835990 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "it might take different levels of effort and time" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_512653357 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "DLVR Search Map" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_516637813 a skos:Concept ;
+    dc:date "2025-02-23"^^xsd:date ;
+    skos:prefLabel "learning pyramid" ;
+    pkg:hasSubTopic pkgc:ID_1010402967,
+        pkgc:ID_1543052266,
+        pkgc:ID_1896642871,
+        pkgc:ID_1975294543,
+        pkgc:ID_227573845,
+        pkgc:ID_235025007,
+        pkgc:ID_418799888 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_521711334 a skos:Concept ;
+    dc:date "2021-11-04"^^xsd:date ;
+    skos:prefLabel "life stories/lessons" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_523611584 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "risk and rabbit holes" ;
+    pkg:hasSubTopic pkgc:ID_12198216,
+        pkgc:ID_1714837612,
+        pkgc:ID_1913124551,
+        pkgc:ID_1915951623 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_530503877 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "priest" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_532073639 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "this is a title blocl" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_53293765 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "afrobeats came through" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_534337854 a skos:Concept ;
+    dc:date "2023-01-02"^^xsd:date ;
+    skos:prefLabel "2023" ;
+    pkg:hasSubTopic pkgc:ID_1325291264,
+        pkgc:ID_309562611 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_536661377 a skos:Concept ;
+    dc:date "2024-07-29"^^xsd:date ;
+    skos:prefLabel "my engineering lead had a fair understanding of jira" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_537099867 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "gather information" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_537216805 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "3. Credible Names: “Mark Cuban’s Perspective On Bitcoin Is Fascinating. Here’s What It Is”" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_537840427 a skos:Concept ;
+    dc:date "2021-11-30"^^xsd:date ;
+    skos:prefLabel "members of the diaspora, enterpreneurship is patriotism" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_537910182 a skos:Concept ;
+    dc:date "2021-09-30"^^xsd:date ;
+    skos:prefLabel "personal productivity" ;
+    pkg:hasSubTopic pkgc:ID_1098717826,
+        pkgc:ID_1101155622,
+        pkgc:ID_1155551334,
+        pkgc:ID_1267790154 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_540135620 a skos:Concept ;
+    dc:date "2025-05-29"^^xsd:date ;
+    skos:prefLabel "iq tests are bullshit" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_541886868 a skos:Concept ;
+    dc:date "2021-10-02"^^xsd:date ;
+    skos:prefLabel "you can go from diletantte to basic working knowledge with 28 continuous days of focused practice" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_543912761 a skos:Concept ;
+    dc:date "2023-09-22"^^xsd:date ;
+    skos:prefLabel "2. Find 7 reasons it's a problem" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_547520691 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "instagram" ;
+    pkg:hasSubTopic pkgc:ID_1000953090 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_552095519 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "it could start with a" ;
+    pkg:hasSubTopic pkgc:ID_1030222264,
+        pkgc:ID_150876296,
+        pkgc:ID_151798512,
+        pkgc:ID_1654325246,
+        pkgc:ID_1711293450 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_553141671 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Graph Databases vs Others" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_554049718 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "debate pros and cons of each approach" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_55768687 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "direction," ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_559851973 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "Myths" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_560853966 a skos:Concept ;
+    dc:date "2020-08-21"^^xsd:date ;
+    skos:prefLabel "https://github.com/alvaroribas/pelican-minimal" ;
+    pkg:hasResource pkgr:res_ID_560853966 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_561422653 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "May 25 - Buying land in 2020" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_562818341 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "Feb 14: consensus mechanisim" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_564403033 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_565799470 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "put elements together to form a coherent whole" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_571849401 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "to show they can be found at that place" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_577765647 a skos:Concept ;
+    dc:date "2022-02-02"^^xsd:date ;
+    skos:prefLabel "last time you did something for the first time" ;
+    pkg:hasSubTopic pkgc:ID_775362064 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_580467150 a skos:Concept ;
+    dc:date "2024-06-29"^^xsd:date ;
+    skos:prefLabel "the crew's reaction to the presence of a working boss on the job; they felt they were partners with the boss in a mutual effort, rather than merely employees of some corporation" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_582153900 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "that we're not bogged down with wireframes" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_587063719 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "Tools" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_587268309 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "traditional ruler" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_587524995 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "twitter" ;
+    pkg:hasSubTopic pkgc:ID_1734488636 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_589029855 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "never takes initiative on general tasks, without prompting" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_591410184 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "doesn't participate in or respond to calls for roommate chores" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_594696762 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "rats" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_595187698 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Standards" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_602791752 a skos:Concept ;
+    dc:date "2025-02-23"^^xsd:date ;
+    skos:prefLabel "unconscious competence" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_608553071 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "call people, talk about ideas" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_610830137 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Lessons Learned" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_612256077 a skos:Concept ;
+    dc:date "2020-07-28"^^xsd:date ;
+    skos:prefLabel "DLVR" ;
+    pkg:hasSubTopic pkgc:ID_1832696309,
+        pkgc:ID_1951262977,
+        pkgc:ID_225111407,
+        pkgc:ID_484013206,
+        pkgc:ID_512653357,
+        pkgc:ID_660914705 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_615300968 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "write name of place and underline it" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_615883177 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "quickly draw different versions of entire flows" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_616998378 a skos:Concept ;
+    dc:date "2021-02-26"^^xsd:date ;
+    skos:prefLabel "PUBLISHED!" ;
+    pkg:hasSubTopic pkgc:ID_1102247548,
+        pkgc:ID_1335600972,
+        pkgc:ID_1633167311,
+        pkgc:ID_1824160204 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_617030462 a skos:Concept ;
+    dc:date "2021-11-03"^^xsd:date ;
+    skos:prefLabel "starts from before it happens" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_621148264 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "can be either drawn at the beginning or at the end" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_621673758 a skos:Concept ;
+    dc:date "2021-02-06"^^xsd:date ;
+    skos:prefLabel "mixes acrylic medium gels" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_623721811 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "thin quality" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_627134510 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "#dec69b" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_634846617 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "landing page, setup your emails" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_64148765 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "Shape Up: Finding the Elements of a Software Solution" ;
+    pkg:hasSubTopic pkgc:ID_1089465697,
+        pkgc:ID_1215250428,
+        pkgc:ID_1275955129,
+        pkgc:ID_1286817087,
+        pkgc:ID_1600157863,
+        pkgc:ID_237531012,
+        pkgc:ID_263958794,
+        pkgc:ID_408904479,
+        pkgc:ID_444256192,
+        pkgc:ID_492813105,
+        pkgc:ID_523611584,
+        pkgc:ID_84401823,
+        pkgc:ID_857804800 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_643871747 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "4: Overcome the fear of being judged" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_647423657 a skos:Concept ;
+    dc:date "2024-08-05"^^xsd:date ;
+    skos:prefLabel "thing happened" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_649884240 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "\"some people are still celebrating title blocks!\"" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_652551795 a skos:Concept ;
+    dc:date "2021-10-02"^^xsd:date ;
+    skos:prefLabel "mentorship through connecting with visionary" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_657336764 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "new era 2020 and beyond" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_660914705 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Article describing why DLVR Rider App is wicked awesome" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_662224045 a skos:Concept ;
+    dc:date "2021-02-26"^^xsd:date ;
+    skos:prefLabel "how would an open source strategy work for boiling the ocean" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_66320858 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "deep comprehension" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_666931732 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "use - residential or commercial" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_667194008 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "security" ;
+    pkg:hasSubTopic pkgc:ID_690139708 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_673301874 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "social and physical surroundings" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_67409118 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "9: You create your voice" ;
+    pkg:hasSubTopic pkgc:ID_1023510399,
+        pkgc:ID_315642680 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_680956852 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Knowledge Graphs" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_682497559 a skos:Concept ;
+    dc:date "2021-09-30"^^xsd:date ;
+    skos:prefLabel "mapping enthusiasts" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_684918577 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "build shops and sell" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_685061031 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "do necessary registration" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_685801510 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "Apr 30: Dog Leg thinking" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_686798156 a skos:Concept ;
+    dc:date "2021-01-25"^^xsd:date ;
+    skos:prefLabel "If you have #money to #buy my own" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_689779377 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "whatsapp" ;
+    pkg:hasSubTopic pkgc:ID_960084365 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_690139708 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "abba kyari" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_690530212 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "HomeworK: brainstorm 1 idea using the Golden Intersection" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_690607927 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "choose your concept" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_693205441 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "Best X List (best books, best podcasts, best documentaries, on a given subject)" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_694454576 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "flowscape from perspective of delivery company owner" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_69453851 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "are you committed to writing online" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_696087885 a skos:Concept ;
+    dc:date "2021-02-13"^^xsd:date ;
+    skos:prefLabel "https://github.com/getpelican/pelican-themes/tree/master/waterspill" ;
+    pkg:hasResource pkgr:res_ID_696087885 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_696184757 a skos:Concept ;
+    dc:date "2020-01-25"^^xsd:date ;
+    skos:prefLabel "Innovation" ;
+    pkg:hasSubTopic pkgc:ID_129506501,
+        pkgc:ID_1395201859,
+        pkgc:ID_1660133441,
+        pkgc:ID_1786533604,
+        pkgc:ID_1992792737,
+        pkgc:ID_40853749,
+        pkgc:ID_442786184,
+        pkgc:ID_454267035,
+        pkgc:ID_996973077 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_699091660 a skos:Concept ;
+    dc:date "2020-11-26"^^xsd:date ;
+    skos:prefLabel "#058c8c" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_702254285 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "takes a concept from electrical engineering" ;
+    pkg:hasSubTopic pkgc:ID_375125972,
+        pkgc:ID_436037358,
+        pkgc:ID_476731765 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_704973317 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "proposes conflict resolution" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_707170488 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "June 9 - Entity Relationship diagrams from customer interviews" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_708559463 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "keep a swipe file" ;
+    pkg:hasSubTopic pkgc:ID_1583240214,
+        pkgc:ID_1810903529,
+        pkgc:ID_1890287466,
+        pkgc:ID_302062157,
+        pkgc:ID_362310022,
+        pkgc:ID_479835669,
+        pkgc:ID_914558160 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_709933545 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "7. For The Industry: “All Online Writers Make These Same 9 Mistakes—And It Costs Them Loyal Readers”" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_714471596 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "May 8 - Concepts" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_719321035 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "May 4 - Steps to create a flowscape" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_7256950 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "there's a crack in everything, that's how the light gets in" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_725980270 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "5: Overcome Writers block" ;
+    pkg:hasSubTopic pkgc:ID_1449153018,
+        pkgc:ID_1612312911,
+        pkgc:ID_1963586830,
+        pkgc:ID_1968665269,
+        pkgc:ID_708559463 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_732772597 a skos:Concept ;
+    dc:date "2020-11-27"^^xsd:date ;
+    skos:prefLabel "watched maradona" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_734908776 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "April 23: Think possiblity" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_737026118 a skos:Concept ;
+    dc:date "2023-09-13"^^xsd:date ;
+    skos:prefLabel "if you had 24 hours, what would you do" ;
+    pkg:hasSubTopic pkgc:ID_1516890541,
+        pkgc:ID_1941276994,
+        pkgc:ID_243555146,
+        pkgc:ID_767684552 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_737524893 a skos:Concept ;
+    dc:date "2025-05-30"^^xsd:date ;
+    skos:prefLabel "also, specialization compounded over time is the major differentiator, not an innate capability." ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_737624195 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "Jun 11 - Missing Functionality on Twitter" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_749878966 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "Feb 24: Craiglist for design" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_753653180 a skos:Concept ;
+    dc:date "2020-08-08"^^xsd:date ;
+    skos:prefLabel "having a framework to think about it" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_755507522 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "Feb 1: .gov bulletin <brooklyn museum>" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_756485992 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "New Product Idea" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_760189363 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "misunderstood interdependencies" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_760541172 a skos:Concept ;
+    dc:date "2023-09-22"^^xsd:date ;
+    skos:prefLabel "Then, position your product as the solution to the problems, so that users can unlock the benefits." ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_76061975 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "doesn't replace things they take, takes, gets mad when called out" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_761719791 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "communicates openly about thoughts and feelings, interactions with roomates" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_764825327 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "Mar 18: 8 types of Waste<Muda>" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_766698497 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "where does it take you" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_767684552 a skos:Concept ;
+    dc:date "2023-09-13"^^xsd:date ;
+    skos:prefLabel "put some ideas out" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_769110592 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "write outsie" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_769410891 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "is this literal or emotional" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_771121238 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "what i learned about using it" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_772265092 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "and the 2d arrangements of elements is the fundamental problem" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_775362064 a skos:Concept ;
+    dc:date "2022-02-02"^^xsd:date ;
+    skos:prefLabel "jump rope" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_775615934 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "unusual" ;
+    pkg:hasSubTopic pkgc:ID_1233123192,
+        pkgc:ID_1293155887,
+        pkgc:ID_350640264,
+        pkgc:ID_418730268 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_777580629 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "make judgements" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_787854084 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "resolves general house issues with urgency to maintain balance" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_788687111 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Review a Product Experience" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_789770111 a skos:Concept ;
+    dc:date "2023-09-22"^^xsd:date ;
+    skos:prefLabel "3. Find 7 benefits solving it unlocks" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_797160257 a skos:Concept ;
+    dc:date "2021-09-30"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_800476462 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "install" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_808192189 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "create a place to write down ideas" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_810718676 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "angry verbal reaction with threat of physical, banging furniture" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_81132831 a skos:Concept ;
+    dc:date "2024-07-21"^^xsd:date ;
+    skos:prefLabel "how are ideas generated?" ;
+    pkg:hasSubTopic pkgc:ID_1556020293,
+        pkgc:ID_480993653 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_812840686 a skos:Concept ;
+    dc:date "2020-11-27"^^xsd:date ;
+    skos:prefLabel "Passion" ;
+    pkg:hasSubTopic pkgc:ID_1950038265,
+        pkgc:ID_321032911,
+        pkgc:ID_732772597 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_821587900 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "for when your idea is visual" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_823979980 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "through differntiating, organizing and attributing" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_82809583 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "feynman technique" ;
+    pkg:hasSubTopic pkgc:ID_1563493301,
+        pkgc:ID_1739099307,
+        pkgc:ID_374271158,
+        pkgc:ID_690607927 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_833013883 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "takes and doesn't replace until you call them out" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_835361441 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "don't expect shortcuts" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_835526483 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "zuby michael" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_836923764 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "deploy using" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_840349170 a skos:Concept ;
+    dc:date "2021-02-23"^^xsd:date ;
+    skos:prefLabel "as the exam went on he'd walk round looking at people's screens and make comments on our progress" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_840843099 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "put it all together" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_84401823 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "the questions we're trying to answer" ;
+    pkg:hasSubTopic pkgc:ID_1613155718,
+        pkgc:ID_1805718236,
+        pkgc:ID_460918085,
+        pkgc:ID_766698497 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_844410077 a skos:Concept ;
+    dc:date "2025-02-23"^^xsd:date ;
+    skos:prefLabel "stages of learning" ;
+    pkg:hasSubTopic pkgc:ID_1522077998,
+        pkgc:ID_1745072730,
+        pkgc:ID_1940368273,
+        pkgc:ID_602791752 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_84535694 a skos:Concept ;
+    dc:date "2025-05-29"^^xsd:date ;
+    skos:prefLabel "the world of work is going back to the old days when each person or family was essentially a company trading with the larger world or business environment, versus the industrialist age of working for a large enterprise and trading all your time for a salary" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_847239437 a skos:Concept ;
+    dc:date "2021-07-20"^^xsd:date ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_849430272 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "seek dissenting opinions" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_853882175 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "through interpreting, exemplifying, summarizing, classifying, comparing, inferring, explaining\\" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_855941879 a skos:Concept ;
+    dc:date "2020-09-02"^^xsd:date ;
+    skos:prefLabel "pelican plugins" ;
+    pkg:hasSubTopic pkgc:ID_1923885046 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_857804800 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "breadboarding" ;
+    pkg:hasSubTopic pkgc:ID_108087430,
+        pkgc:ID_1082346783,
+        pkgc:ID_1769451824,
+        pkgc:ID_1880394224,
+        pkgc:ID_1907091190,
+        pkgc:ID_702254285,
+        pkgc:ID_878678537 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_860816804 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "bad roommate" ;
+    pkg:hasSubTopic pkgc:ID_1058027707,
+        pkgc:ID_1192947543,
+        pkgc:ID_1287350365,
+        pkgc:ID_1636768657,
+        pkgc:ID_1800183701,
+        pkgc:ID_1919696046,
+        pkgc:ID_1930234855,
+        pkgc:ID_425623288,
+        pkgc:ID_833013883,
+        pkgc:ID_944034402,
+        pkgc:ID_974070083 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_861768272 a skos:Concept ;
+    dc:date "2020-09-18"^^xsd:date ;
+    skos:prefLabel "themes" ;
+    pkg:hasSubTopic pkgc:ID_1251986083,
+        pkgc:ID_1551861677,
+        pkgc:ID_1650698099,
+        pkgc:ID_448450234,
+        pkgc:ID_560853966,
+        pkgc:ID_696087885,
+        pkgc:ID_855941879 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_863595286 a skos:Concept ;
+    dc:date "2021-11-30"^^xsd:date ;
+    skos:prefLabel "now i have a favorite artist" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_8651729 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "through generating, planning, producing" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_86537769 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "or interface copy" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_866646729 a skos:Concept ;
+    dc:date "2024-08-05"^^xsd:date ;
+    skos:prefLabel "other similar things" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_869602663 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "4. “This Just Happened”: “The Government Just approved A $1.9 Trillion Dollar Relief Package. Here’s What Americans Can Expect”" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_873454950 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "April 25 - Palace of thinking, creative hitlist" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_874956087 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "persons of interest" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_877463317 a skos:Concept ;
+    dc:date "2020-08-08"^^xsd:date ;
+    skos:prefLabel "prioritizing deliberately" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_878678537 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "use words for everything instead of pictures" ;
+    pkg:hasSubTopic pkgc:ID_1224075147,
+        pkgc:ID_615300968 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_880068075 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "made with such broad strokes that adding detail is difficult/impossible" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_88072417 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "get creative to survice" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_882775837 a skos:Concept ;
+    dc:date "2025-05-28"^^xsd:date ;
+    skos:prefLabel "definition" ;
+    pkg:hasSubTopic pkgc:ID_1695163105 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_885272663 a skos:Concept ;
+    dc:date "2025-02-23"^^xsd:date ;
+    skos:prefLabel "The Science of Rapid Skill Acquisition" ;
+    pkg:hasSubTopic pkgc:ID_1003236328,
+        pkgc:ID_106816418,
+        pkgc:ID_1170756137,
+        pkgc:ID_1272120682,
+        pkgc:ID_1534127764,
+        pkgc:ID_1713686234,
+        pkgc:ID_258182681,
+        pkgc:ID_261822610,
+        pkgc:ID_382362719,
+        pkgc:ID_445283364,
+        pkgc:ID_516637813,
+        pkgc:ID_564403033,
+        pkgc:ID_82809583,
+        pkgc:ID_844410077 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_893225048 a skos:Concept ;
+    dc:date "2025-07-12"^^xsd:date ;
+    skos:prefLabel "we don't want to waste time on wireframes or unneccessary fidelity" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_894528941 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "Stats" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_895074497 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "from oral, written, graphic messages" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_90823104 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "enjoys stress of the challenge of learning" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_909956486 a skos:Concept ;
+    dc:date "2020-11-27"^^xsd:date ;
+    skos:prefLabel "its time for production" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_910431170 a skos:Concept ;
+    dc:date "2024-07-29"^^xsd:date ;
+    skos:prefLabel "developers incentive" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_913625636 a skos:Concept ;
+    dc:date "2020-07-28"^^xsd:date ;
+    skos:prefLabel "Personal" ;
+    pkg:hasSubTopic pkgc:ID_1089604873,
+        pkgc:ID_1119076102,
+        pkgc:ID_1168187740,
+        pkgc:ID_1178482803,
+        pkgc:ID_1360531837,
+        pkgc:ID_141724120,
+        pkgc:ID_150383207,
+        pkgc:ID_1513235517,
+        pkgc:ID_1539260213,
+        pkgc:ID_1693668112,
+        pkgc:ID_183236309,
+        pkgc:ID_1852686547,
+        pkgc:ID_1871594227,
+        pkgc:ID_219628766,
+        pkgc:ID_362046860,
+        pkgc:ID_445582061,
+        pkgc:ID_46649507,
+        pkgc:ID_537840427,
+        pkgc:ID_812840686,
+        pkgc:ID_863595286,
+        pkgc:ID_986697069,
+        pkgc:ID_988358366,
+        pkgc:ID_990402683 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_914558160 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "visuals" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_915939183 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "April 9: Personal Mission statement" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_915995891 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "picktheme" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_920075388 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "general audience" ;
+    pkg:hasSubTopic pkgc:ID_185732806,
+        pkgc:ID_521711334,
+        pkgc:ID_537910182 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_928789223 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "a lot going on" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_940656716 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Servuce Design" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_942467869 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "June 10 - Knowledge representation path to AI" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_944034402 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "communicates late or infrequently about plans affecting others" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_944921024 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "proactive about regulation" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_945422700 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "parallel thinking vs argument" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_945483699 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "3: Give yourself permission to create junk" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_94808832 a skos:Concept ;
+    dc:date "2020-12-03"^^xsd:date ;
+    skos:prefLabel "April 19: Good/bad articles for each job post" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_949709909 a skos:Concept ;
+    dc:date "2024-07-09"^^xsd:date ;
+    skos:prefLabel "Mindmapping" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_949790873 a skos:Concept ;
+    dc:date "2021-12-25"^^xsd:date ;
+    skos:prefLabel "driivng to dc" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_951463566 a skos:Concept ;
+    dc:date "2023-11-24"^^xsd:date ;
+    skos:prefLabel "lonely but not alone" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_95227580 a skos:Concept ;
+    dc:date "2021-07-23"^^xsd:date ;
+    skos:prefLabel "mc oluomo" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_956202742 a skos:Concept ;
+    dc:date "2020-12-18"^^xsd:date ;
+    skos:prefLabel "benefits of buying land" ;
+    pkg:hasSubTopic pkgc:ID_1436148909,
+        pkgc:ID_1610817106,
+        pkgc:ID_1618375600,
+        pkgc:ID_1853317089 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_960084365 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "<i class=\"fab fa-whatsapp\"></i>" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_962821199 a skos:Concept ;
+    dc:date "2024-07-29"^^xsd:date ;
+    skos:prefLabel "great at the forming stage, to set up processes and systems" ;
+    pkg:hasSubTopic pkgc:ID_277126177,
+        pkgc:ID_536661377 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_966489024 a skos:Concept ;
+    dc:date "2025-03-04"^^xsd:date ;
+    skos:prefLabel "self interrogation or self questioning" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_970786228 a skos:Concept ;
+    dc:date "2025-02-25"^^xsd:date ;
+    skos:prefLabel "filter sources" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_973290202 a skos:Concept ;
+    dc:date "2020-08-01"^^xsd:date ;
+    skos:prefLabel "set your growth target" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_974070083 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "independent in times of lack or plenty" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_976083800 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "is this a niche question or wide appeal question" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_982098651 a skos:Concept ;
+    dc:date "2020-08-06"^^xsd:date ;
+    skos:prefLabel "chunnodu.com" ;
+    pkg:hasSubTopic pkgc:ID_1425523071,
+        pkgc:ID_1769539280,
+        pkgc:ID_178088500,
+        pkgc:ID_1881362492,
+        pkgc:ID_341612016,
+        pkgc:ID_472519912 ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_986697069 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Personal Mission Statement - Life" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_988358366 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "PMS - Tie in all 4" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_989460617 a skos:Concept ;
+    dc:date "2021-06-06"^^xsd:date ;
+    skos:prefLabel "such a cost" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_990402683 a skos:Concept ;
+    dc:date "2021-11-30"^^xsd:date ;
+    skos:prefLabel "if you want to be remembered, teach people things" ;
+    pkg:hasSubTopic pkgc:ID_1047429491,
+        pkgc:ID_331785439 ;
+    pkg:hasTask pkgc:ID_990402683_task ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_990402683_task a pkg:Task ;
+    dc:title "if you want to be remembered, teach people things" ;
+    pkg:status "done" .
+
+pkgc:ID_993590692 a skos:Concept ;
+    dc:date "2021-09-16"^^xsd:date ;
+    skos:prefLabel "what are 10 things you'd rather be doing" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_996973077 a skos:Concept ;
+    dc:date "2020-06-23"^^xsd:date ;
+    skos:prefLabel "Think Possibility" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgc:ID_998289227 a skos:Concept ;
+    dc:date "2021-11-01"^^xsd:date ;
+    skos:prefLabel "what made you move out" ;
+    pkg:sourceMap "blog.mm" .
+
+pkgn:note_ID_1665462433 a pkg:PersonalNote ;
+    dc:title "CLARITY = SIMPLICITY OF PERCEPTION" .
+
+pkgr:res_ID_1251986083 a schema:WebPage ;
+    schema:url "https://github.com/wting/pelican-svbtle"^^xsd:anyURI .
+
+pkgr:res_ID_1425523071 a schema:WebPage ;
+    schema:url "https://github.com/lopezm1"^^xsd:anyURI .
+
+pkgr:res_ID_1551861677 a schema:WebPage ;
+    schema:url "https://github.com/alexandrevicenzi/Flex"^^xsd:anyURI .
+
+pkgr:res_ID_1556185692 a schema:WebPage ;
+    schema:url "https://levelupwithethanevans.substack.com/p/bad-code-doesnt-kill-projects-poor"^^xsd:anyURI .
+
+pkgr:res_ID_1650698099 a schema:WebPage ;
+    schema:url "https://github.com/gfidente/pelican-svbhack"^^xsd:anyURI .
+
+pkgr:res_ID_1921941173 a schema:WebPage ;
+    schema:url "https://github.com/arulrajnet/attila"^^xsd:anyURI .
+
+pkgr:res_ID_1923885046 a schema:WebPage ;
+    schema:url "https://github.com/pelican-plugins/simple-footnotes"^^xsd:anyURI .
+
+pkgr:res_ID_1981534776 a schema:WebPage ;
+    schema:url "https://github.com/Pelican-Elegant/elegant"^^xsd:anyURI .
+
+pkgr:res_ID_339357938 a schema:WebPage ;
+    schema:url "https://www.online-literature.com/tolstoy/2738/"^^xsd:anyURI .
+
+pkgr:res_ID_448450234 a schema:WebPage ;
+    schema:url "https://github.com/mc-buckets/brutalistpelican"^^xsd:anyURI .
+
+pkgr:res_ID_472519912 a schema:WebPage ;
+    schema:url "https://secure.plum.io/p/o93Pr7IyMGN98jHG9suN5A"^^xsd:anyURI .
+
+pkgr:res_ID_560853966 a schema:WebPage ;
+    schema:url "https://github.com/alvaroribas/pelican-minimal"^^xsd:anyURI .
+
+pkgr:res_ID_696087885 a schema:WebPage ;
+    schema:url "https://github.com/getpelican/pelican-themes/tree/master/waterspill"^^xsd:anyURI .
+
