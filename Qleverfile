@@ -1,0 +1,10 @@
+[DEFAULT]
+NAME              = pkg
+DESCRIPTION       = Personal Knowledge Graph
+
+INPUT_FILES       = all_triples_flat.ttl
+CAT_INPUT_FILES   = cat all_triples_flat.ttl
+
+PORT              = 7001
+ACCESS_TOKEN      = pkg_token
+UI_PORT           = 7100

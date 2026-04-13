@@ -1,6 +1,6 @@
 # Personal Knowledge GraphRAG — Consolidation Progress Summary
 
-**As of April 7, 2026 | Weeks 1–6 Complete**
+**As of April 12, 2026 | Weeks 1–7 Complete**
 
 > ⚠️ **`pitchstone.mm` and `neogov.mm` are permanently excluded** — both contain proprietary data from employers. They are never to be parsed, queried, embedded, or referenced in any pipeline output. The active working set is **10 maps**, not 12.
 
@@ -16,12 +16,72 @@
 | 4 | Parse remaining domains + LOD enrichment | ✅ Complete | All 10 maps parsed to `.ttl`; LOD enrichment done — 63 concepts linked to DBpedia/Wikidata; `lod_enrichment.ttl` (216 triples) |
 | 5 | SPARQL queries + graph validation | ✅ Complete | 12 SPARQL queries passing; 142,796 triples; 27,776 concepts; richcontent parser fix (970→277 missing labels) |
 | 6 | Generate embeddings → LanceDB vector DB | ✅ Complete | 31,983 concepts embedded (BAAI/bge-small-en-v1.5, 384-dim); `pkg_lancedb/` 85MB |
-| 7 | Build hybrid retrieval pipeline | ⬜ Pending | |
+| 7 | Build hybrid retrieval pipeline | ✅ Complete | `retrieve.py` — SPARQL graph expansion + LanceDB vector search; 5/5 smoke tests passing |
 | 8 | Connect Claude API + 20 Q&A test pairs | ⬜ Pending | |
 | 9 | Refine prompts + ontology gaps | ⬜ Pending | |
 | 10 | CLI query interface + documentation | ⬜ Pending | |
 | 11 | Final polish + architecture diagram | ⬜ Pending | |
 | 12 | Reflect + v2 roadmap | ⬜ Pending | |
+
+---
+
+## Week 7 Summary — Hybrid Retrieval Pipeline ✅
+
+Completed April 12, 2026. Built `retrieve.py` — a fully working hybrid retrieval module that combines LanceDB semantic search with rdflib graph expansion.
+
+### Architecture
+
+```
+NL Question
+    ↓
+[1] SemanticRetriever (LanceDB)
+    → BAAI/bge-small-en-v1.5 embedding of query
+    → top-K concept URIs + similarity scores (1 − _distance)
+
+    ↓
+[2] GraphRetriever (rdflib + SPARQL)
+    → For each URI: parent, children, siblings, notes, resources, LOD links
+    → 6 parameterised SPARQL templates per concept
+
+    ↓
+[3] HybridRetriever (orchestrator)
+    → Deduplicates by URI
+    → Sorts by semantic score descending
+    → Returns RetrievalResult (list of ConceptContext dataclasses)
+
+    ↓
+[4] Formatted output
+    → Plain-text context block (for LLM prompts)  or JSON (for programmatic use)
+```
+
+### Key Design Decisions
+
+- **Retrieval-first**: Vector search runs first to identify the most relevant URIs; SPARQL then enriches those specific nodes — avoiding full-graph traversal on every query.
+- **Dataclasses**: `ConceptContext` and `RetrievalResult` are typed, serialisable, and ready to pass directly to the Claude API in Week 8.
+- **Dual output formats**: `.as_text()` renders a human-readable context block; `.as_json()` exports full structured data.
+- **Source-map filtering**: Optional `--map` flag lets queries be scoped to a single mindmap (e.g. `careerDevelopment.mm`).
+- **Exclusions enforced**: `pitchstone.mm` and `neogov.mm` are hard-excluded at the graph load level, same as all prior weeks.
+
+### Smoke Test Results (5/5 ✅)
+
+| Query | Top Hit | Score | Source |
+|---|---|---|---|
+| "business model design" | Ideation | 0.712 | Books.mm |
+| "machine learning and data pipelines" | Generative Engine Optimization | 0.572 | ajared.mm |
+| "career development and job search strategy" | Career Development and Support | 0.551 | ajared.mm |
+| "linked data and semantic web" | Ontologies and Semantic Data Layer | 0.649 | ajared.mm |
+| "personal finance and life goals" | mindmap life goals | 0.502 | Books.mm |
+
+### CLI Usage
+
+```bash
+python retrieve.py "What do I know about business model design?"
+python retrieve.py "machine learning pipelines" --top-k 10 --map data.mm
+python retrieve.py "career goals" --format json
+```
+
+### Scripts
+- `retrieve.py` — main hybrid retrieval module; usable as both CLI tool and importable Python module
 
 ---
 

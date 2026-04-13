@@ -1,0 +1,23 @@
+2026-04-08 00:12:14.255 - INFO: [1mQLever index builder 9ec88a0, compiled on Mon Mar 30 20:25:26 UTC 2026 using git hash 9ec88a[22m
+2026-04-08 00:12:14.256 - INFO: Locale was not specified in settings file, default is en_US
+2026-04-08 00:12:14.256 - INFO: You specified "locale = en_US" and "ignore-punctuation = 0"
+2026-04-08 00:12:14.256 - INFO: By default, integers that cannot be represented by QLever will throw an exception
+2026-04-08 00:12:14.256 - WARN: Implicitly using the parallel parser for a single input file for reasons of backward compatibility; this is deprecated, please use the command-line option --parallel-parsing or -p
+2026-04-08 00:12:14.256 - INFO: Processing triples from single input stream /dev/stdin (parallel = true) ...
+2026-04-08 00:12:14.257 - INFO: Parsing input triples and creating partial vocabularies, one per batch ...
+2026-04-08 00:12:14.478 - ERROR: Error detected during parallel parsing, waiting for workers to finish ...
+2026-04-08 00:12:14.480 - ERROR: Creating the index for QLever failed with the following exception:  Parse error at byte position 4922446: @prefix or @base directives need to be at the beginning of the file when using the parallel parser. Later redundant redefinitions are fine. Use '--parallel-parsing false' if you can't guarantee this. If the reason for this error is that the input is a concatenation of Turtle files, each of which has the prefixes at the beginning, you should feed the files to QLever separately instead of concatenated
+The next 500 bytes are:
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+<https://pkg.chunnodu.com/concept/ID_1003453567> owl:sameAs dbr:Product_Development_and_Management_Association ;
+    skos:exactMatch dbr:Product_Development_and_Management_Association .
+
+<https://pkg.chunnodu.com/concept/ID_1034967455> owl:sameAs dbr:New_product_development,
+        wd:Q1362915 ;
+    skos:exactMatch dbr:New_product_development,
+
+
