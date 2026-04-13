@@ -2,7 +2,7 @@
 
 A hybrid GraphRAG system built from personal Freeplane mindmaps. Combines deterministic SPARQL querying over an RDF knowledge graph with semantic vector search via LanceDB to enable grounded, natural-language Q&A over a personal knowledge base.
 
-**Status:** Weeks 1–6 of 12 complete · Active development
+**Status:** Weeks 1–7 of 12 complete · Active development
 
 ---
 
@@ -27,7 +27,7 @@ pkg_store/             pkg_lancedb/
 (RDF triple store)     (31,983 vectors, 384-dim)
         │
         ▼
-   [Week 7] Hybrid retrieval pipeline
+retrieve.py                 ← Hybrid retrieval (SPARQL + LanceDB)
         │
         ▼
    [Week 8] Claude API → grounded Q&A
@@ -64,6 +64,7 @@ pkg_store/             pkg_lancedb/
 | `validate_rdf.py` | Runs 12 SPARQL queries to validate graph coverage, structure, and quality. |
 | `lod_enrich.py` | Enriches root + depth-1/2 concept nodes with DBpedia / Wikidata `owl:sameAs` links. |
 | `embed_to_lancedb.py` | Extracts concept labels from TTLs, prepends parent context, embeds via `BAAI/bge-small-en-v1.5`, stores in LanceDB. |
+| `retrieve.py` | Hybrid retrieval: LanceDB semantic search → SPARQL graph expansion. Usable as CLI tool or importable module. |
 | `visualise_ontology.py` | Renders the PKG ontology as a graph diagram. |
 | `setup_store.py` | Initialises the RDF triple store. |
 
@@ -99,8 +100,8 @@ See `pkg_ontology.ttl` for the full schema.
 | Week | Focus | Status |
 |---|---|---|
 | 1–6 | Foundations, parsing, enrichment, SPARQL, embeddings | ✅ Done |
-| 7 | Hybrid retrieval: SPARQL + LanceDB in a single pipeline | 🔄 Next |
-| 8 | Claude API integration: NL → retrieval → grounded answer | ⬜ |
+| 7 | Hybrid retrieval: SPARQL + LanceDB in a single pipeline | ✅ Done |
+| 8 | Claude API integration: NL → retrieval → grounded answer | 🔄 Next |
 | 9 | Answer quality refinement (80%+ pass rate target) | ⬜ |
 | 10 | CLI query interface | ⬜ |
 | 11–12 | Final polish, architecture diagram, v2 roadmap | ⬜ |
