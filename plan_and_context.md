@@ -30,8 +30,8 @@ Build a Hybrid GraphRAG system utilizing Freeplane mindmaps (.mm files) as the p
 | **6** | Mar 30–Apr 5 | ⚙️ Integration | Generate embeddings for RDF node labels + literals; store in LanceDB vector DB | Embeddings stored + searchable | [ ] |
 | **7** | Apr 6–12 | ⚙️ Integration | Build hybrid retrieval: SPARQL for structured traversal + semantic similarity for fuzzy NL matching | Retrieval pipeline returns grounded context | [ ] |
 | **8** | Apr 13–19 | ⚙️ Integration | Connect Claude API: NL question → SPARQL + semantic retrieval → grounded answer; test with 20 real questions | 20 Q&A pairs evaluated | [ ] |
-| **9** | Apr 20–26 | 📈 Expand | Improve answer quality: refine prompts, fix gaps in ontology, add missing triples from mind maps | Answer quality pass rate 80%+ | [ ] |
-| **10** | Apr 27–May 3 | 📈 Expand | Add simple CLI query interface; document the ontology and query patterns | Working CLI: ask a question, get an answer from your own knowledge | [ ] |
+| **9** | Apr 20–26 | 📈 Expand | Add RRF (second retrieval signal via FTS + fusion); refine prompts; fill ontology gaps flagged in Week 8 (data pipelines, RDF depth, life goals) | RRF working; 20/20 Q&A holding | [ ] |
+| **10** | Apr 27–May 3 | 📈 Expand | Document ontology and query patterns; write architecture notes | Repo fully documented | [x] |
 | **11** | May 4–10 | 🚀 Ship | Final polish: README, architecture diagram, example queries | Repo documented + demo-ready ✅ | [ ] |
 | **12** | May 11–17 | 🚀 Ship | Reflect + roadmap: what to add next (new domains, richer LOD links, UI) | v2 roadmap written | [ ] |
 

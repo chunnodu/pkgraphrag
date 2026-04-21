@@ -2,11 +2,13 @@
 
 A hybrid GraphRAG system built from personal Freeplane mindmaps. Combines deterministic SPARQL querying over an RDF knowledge graph with semantic vector search via LanceDB to enable grounded, natural-language Q&A over a personal knowledge base.
 
-**Status:** Weeks 1–7 of 12 complete · Active development
+**Status:** Weeks 1–8 of 12 complete · Week 9 in progress
 
 ---
 
 ## Architecture
+
+### Current (Weeks 1–8)
 
 ```
 Freeplane .mm files (10 maps)
@@ -21,17 +23,30 @@ outputs/*.ttl               ← 142,796 triples across 10 maps
    ▼         ▼
 validate_rdf.py        embed_to_lancedb.py
 (SPARQL queries)       (fastembed → LanceDB)
-   │                         │
-   ▼                         ▼
-pkg_store/             pkg_lancedb/
-(RDF triple store)     (31,983 vectors, 384-dim)
-        │
-        ▼
-retrieve.py                 ← Hybrid retrieval (SPARQL + LanceDB)
-        │
-        ▼
-   [Week 8] Claude API → grounded Q&A
+                             │
+                             ▼
+                       pkg_lancedb/          ← 31,983 vectors, 384-dim
+                             │
+                             ▼
+                       retrieve.py           ← Sequential: vector search → SPARQL graph expansion
+                             │
+                             ▼
+                       ask.py               ← Claude API → grounded Q&A
 ```
+
+**Key design note:** Retrieval is sequential, not parallel. `retrieve.py` runs vector search first to find the top-K entry-point URIs, then uses SPARQL to expand each URI outward (parent, children, siblings, notes, LOD links). There is only one ranked signal (vector similarity), so no fusion occurs. The LLM is invoked only after context is fully assembled — zero LLM calls in the retrieval path.
+
+### Week 9 Upgrade — RRF (Reciprocal Rank Fusion)
+
+![Architecture with RRF](architecture_rrf.svg)
+
+Adding a second independent retrieval signal (full-text keyword search on concept labels) enables true ranked-list fusion via RRF before graph expansion. The formula `score = Σ 1/(60 + rank)` merges both lists with no manual weight tuning.
+
+**Changes:**
+- Add LanceDB FTS index on concept labels (~1 line of config)
+- Add `KeywordRetriever` alongside `SemanticRetriever` in `retrieve.py`
+- Add ~20-line `rrf_fuse()` function to merge ranked lists
+- Graph expansion and everything downstream: **unchanged**
 
 ---
 
@@ -64,7 +79,9 @@ retrieve.py                 ← Hybrid retrieval (SPARQL + LanceDB)
 | `validate_rdf.py` | Runs 12 SPARQL queries to validate graph coverage, structure, and quality. |
 | `lod_enrich.py` | Enriches root + depth-1/2 concept nodes with DBpedia / Wikidata `owl:sameAs` links. |
 | `embed_to_lancedb.py` | Extracts concept labels from TTLs, prepends parent context, embeds via `BAAI/bge-small-en-v1.5`, stores in LanceDB. |
-| `retrieve.py` | Hybrid retrieval: LanceDB semantic search → SPARQL graph expansion. Usable as CLI tool or importable module. |
+| `retrieve.py` | Sequential hybrid retrieval: LanceDB vector search finds top-K URIs → SPARQL graph expansion enriches each. Usable as CLI or importable module. |
+| `ask.py` | End-to-end Q&A: calls `HybridRetriever`, assembles context, calls Claude API, returns structured result. No LLM in retrieval path. |
+| `test_qa.py` | Runs 20 test questions across all 10 maps, outputs JSON + markdown report. |
 | `visualise_ontology.py` | Renders the PKG ontology as a graph diagram. |
 | `setup_store.py` | Initialises the RDF triple store. |
 
@@ -100,11 +117,11 @@ See `pkg_ontology.ttl` for the full schema.
 | Week | Focus | Status |
 |---|---|---|
 | 1–6 | Foundations, parsing, enrichment, SPARQL, embeddings | ✅ Done |
-| 7 | Hybrid retrieval: SPARQL + LanceDB in a single pipeline | ✅ Done |
-| 8 | Claude API integration: NL → retrieval → grounded answer | 🔄 Next |
-| 9 | Answer quality refinement (80%+ pass rate target) | ⬜ |
-| 10 | CLI query interface | ⬜ |
-| 11–12 | Final polish, architecture diagram, v2 roadmap | ⬜ |
+| 7 | Hybrid retrieval: vector search → SPARQL graph expansion | ✅ Done |
+| 8 | Claude API integration: 20/20 Q&A tests passing (100%) | ✅ Done |
+| 9 | RRF upgrade + prompt refinement + ontology gap-filling | 🔄 In progress |
+| 10 | CLI query interface (`ask.py` already complete) | ✅ Done early |
+| 11–12 | Final polish, architecture diagrams, v2 roadmap | ⬜ |
 
 ---
 

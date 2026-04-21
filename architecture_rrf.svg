@@ -1,0 +1,131 @@
+<svg width="460" height="720" viewBox="0 0 460 720" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#666"/>
+    </marker>
+    <marker id="arrg" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#2a7a3a"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="460" height="720" fill="#f8f7f4"/>
+
+  <!-- Title -->
+  <text x="230" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#111">PKG-RAG — With RRF Upgrade</text>
+  <text x="230" y="44" text-anchor="middle" font-size="10" fill="#888">Two retrieval signals fused before graph expansion</text>
+
+  <!-- ── User Question ────────────────────────────────── -->
+  <rect x="105" y="58" width="250" height="62" rx="7" fill="#ead8f8" stroke="#9b5fcf" stroke-width="1.5"/>
+  <text x="230" y="82" text-anchor="middle" font-size="12" font-weight="700" fill="#3a0a6a">User Question</text>
+  <line x1="120" y1="92" x2="340" y2="92" stroke="#c8a8f0" stroke-width="0.7"/>
+  <text x="230" y="108" text-anchor="middle" font-size="10" fill="#5a2a8a">Natural language · any topic</text>
+
+  <!-- Fork to two paths -->
+  <line x1="175" y1="120" x2="175" y2="136" stroke="#666" stroke-width="1.5"/>
+  <line x1="285" y1="120" x2="285" y2="136" stroke="#2a7a3a" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <line x1="230" y1="120" x2="230" y2="128" stroke="#666" stroke-width="1.2"/>
+  <line x1="175" y1="128" x2="285" y2="128" stroke="#999" stroke-width="1"/>
+  <line x1="175" y1="136" x2="175" y2="150" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="285" y1="136" x2="285" y2="150" stroke="#2a7a3a" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrg)"/>
+  <text x="152" y="147" text-anchor="middle" font-size="9" fill="#888">Path A</text>
+  <text x="310" y="147" text-anchor="middle" font-size="9" font-weight="700" fill="#2a7a3a">Path B  ✦ NEW</text>
+
+  <!-- ── Path A: Query Embedder ─────────────────────── -->
+  <rect x="20" y="152" width="170" height="74" rx="7" fill="#fdefc8" stroke="#c49a2a" stroke-width="1.5"/>
+  <text x="105" y="175" text-anchor="middle" font-size="11" font-weight="700" fill="#5a3a00">Query Embedder</text>
+  <line x1="34" y1="184" x2="176" y2="184" stroke="#e8c870" stroke-width="0.7"/>
+  <text x="105" y="199" text-anchor="middle" font-size="9.5" fill="#6a4a10">Converts question to</text>
+  <text x="105" y="212" text-anchor="middle" font-size="9.5" fill="#6a4a10">a meaning vector</text>
+  <text x="105" y="222" text-anchor="middle" font-size="8" fill="#a87820">fastembed · local · no API</text>
+
+  <!-- ── Path B: Keyword Tokenizer (NEW) ──────────────── -->
+  <rect x="270" y="152" width="170" height="74" rx="7" fill="#d4f0da" stroke="#2a7a3a" stroke-width="2"/>
+  <rect x="390" y="144" width="36" height="16" rx="4" fill="#2a7a3a"/>
+  <text x="408" y="155" text-anchor="middle" font-size="8" font-weight="700" fill="white">NEW</text>
+  <text x="355" y="175" text-anchor="middle" font-size="11" font-weight="700" fill="#0a3a12">Keyword Tokenizer</text>
+  <line x1="284" y1="184" x2="426" y2="184" stroke="#80c888" stroke-width="0.7"/>
+  <text x="355" y="199" text-anchor="middle" font-size="9.5" fill="#1a5a22">Extracts search terms</text>
+  <text x="355" y="212" text-anchor="middle" font-size="9.5" fill="#1a5a22">from the question</text>
+  <text x="355" y="222" text-anchor="middle" font-size="8" fill="#3a8a42">simple tokenise · local</text>
+
+  <!-- Arrows down -->
+  <line x1="105" y1="226" x2="105" y2="252" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="355" y1="226" x2="355" y2="252" stroke="#2a7a3a" stroke-width="1.5" marker-end="url(#arrg)"/>
+
+  <!-- ── Vector Search ──────────────────────────────── -->
+  <rect x="20" y="254" width="170" height="74" rx="7" fill="#fdd8dc" stroke="#c0384a" stroke-width="1.5"/>
+  <text x="105" y="277" text-anchor="middle" font-size="11" font-weight="700" fill="#6a0010">Vector Search</text>
+  <line x1="34" y1="286" x2="176" y2="286" stroke="#f0a0a8" stroke-width="0.7"/>
+  <text x="105" y="302" text-anchor="middle" font-size="9.5" fill="#7a1020">Top-8 closest concepts</text>
+  <text x="105" y="315" text-anchor="middle" font-size="9.5" fill="#7a1020">by meaning</text>
+  <text x="105" y="324" text-anchor="middle" font-size="8" fill="#c0304a">LanceDB · cosine · local</text>
+
+  <!-- ── Full-Text Search (NEW) ─────────────────────── -->
+  <rect x="270" y="254" width="170" height="74" rx="7" fill="#d4f0da" stroke="#2a7a3a" stroke-width="2"/>
+  <rect x="390" y="246" width="36" height="16" rx="4" fill="#2a7a3a"/>
+  <text x="408" y="257" text-anchor="middle" font-size="8" font-weight="700" fill="white">NEW</text>
+  <text x="355" y="277" text-anchor="middle" font-size="11" font-weight="700" fill="#0a3a12">Full-Text Search</text>
+  <line x1="284" y1="286" x2="426" y2="286" stroke="#80c888" stroke-width="0.7"/>
+  <text x="355" y="302" text-anchor="middle" font-size="9.5" fill="#1a5a22">Keyword match against</text>
+  <text x="355" y="315" text-anchor="middle" font-size="9.5" fill="#1a5a22">concept labels</text>
+  <text x="355" y="324" text-anchor="middle" font-size="8" fill="#3a8a42">LanceDB FTS index · local</text>
+
+  <!-- Ranked list labels -->
+  <rect x="26" y="330" width="76" height="14" rx="3" fill="#fef4f5"/>
+  <text x="64" y="340" text-anchor="middle" font-size="8.5" fill="#c0304a">Ranked List A</text>
+  <rect x="278" y="330" width="76" height="14" rx="3" fill="#d4f0da"/>
+  <text x="316" y="340" text-anchor="middle" font-size="8.5" fill="#2a7a3a">Ranked List B</text>
+
+  <!-- Merge arrows to RRF -->
+  <path d="M 105,328 L 105,362 L 230,362 L 230,374" stroke="#666" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <path d="M 355,328 L 355,362 L 230,362" stroke="#2a7a3a" stroke-width="1.5" stroke-dasharray="4,2" fill="none"/>
+
+  <!-- ── RRF Fusion (NEW) ───────────────────────────── -->
+  <rect x="65" y="376" width="330" height="80" rx="7" fill="#d4f0da" stroke="#2a7a3a" stroke-width="2"/>
+  <rect x="350" y="368" width="36" height="16" rx="4" fill="#2a7a3a"/>
+  <text x="368" y="379" text-anchor="middle" font-size="8" font-weight="700" fill="white">NEW</text>
+  <text x="230" y="400" text-anchor="middle" font-size="12" font-weight="700" fill="#0a3a12">RRF Fusion</text>
+  <line x1="80" y1="410" x2="380" y2="410" stroke="#80c888" stroke-width="0.7"/>
+  <text x="230" y="426" text-anchor="middle" font-size="10" fill="#1a5a22">Merges both ranked lists, no manual weighting</text>
+  <text x="230" y="440" text-anchor="middle" font-size="10" fill="#1a5a22">score = Σ 1/(60 + rank) · ~20 lines of Python</text>
+  <text x="230" y="452" text-anchor="middle" font-size="8.5" fill="#3a8a42">parameter-free · always outperforms fixed weights</text>
+
+  <!-- Arrow to Graph Expansion -->
+  <line x1="230" y1="456" x2="230" y2="480" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="148" y="462" width="164" height="14" rx="3" fill="#f0faf2"/>
+  <text x="230" y="472" text-anchor="middle" font-size="8.5" fill="#3a7a42">fused + re-ranked URIs</text>
+
+  <!-- ── Graph Expansion (unchanged) ───────────────── -->
+  <rect x="65" y="482" width="330" height="74" rx="7" fill="#fdd8dc" stroke="#c0384a" stroke-width="1.5"/>
+  <text x="230" y="505" text-anchor="middle" font-size="11" font-weight="700" fill="#6a0010">Graph Expansion</text>
+  <text x="380" y="492" text-anchor="middle" font-size="8" fill="#aaa">unchanged</text>
+  <line x1="80" y1="514" x2="380" y2="514" stroke="#f0a0a8" stroke-width="0.7"/>
+  <text x="230" y="529" text-anchor="middle" font-size="9.5" fill="#7a1020">Walks knowledge graph from fused entry points</text>
+  <text x="230" y="543" text-anchor="middle" font-size="9.5" fill="#7a1020">pulls parent · children · siblings · notes · LOD</text>
+  <text x="230" y="553" text-anchor="middle" font-size="8" fill="#c0304a">rdflib SPARQL · 6 query templates · local</text>
+
+  <line x1="230" y1="556" x2="230" y2="576" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Context Builder (unchanged) ───────────────── -->
+  <rect x="65" y="578" width="330" height="50" rx="7" fill="#fde0cc" stroke="#c05e1e" stroke-width="1.5"/>
+  <text x="230" y="600" text-anchor="middle" font-size="11" font-weight="700" fill="#6a2000">Context Builder</text>
+  <text x="380" y="588" text-anchor="middle" font-size="8" fill="#aaa">unchanged</text>
+  <text x="230" y="618" text-anchor="middle" font-size="9.5" fill="#7a3010">Assembles structured text block · no LLM yet</text>
+
+  <line x1="230" y1="628" x2="230" y2="648" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Language Model (unchanged) ────────────────── -->
+  <rect x="65" y="650" width="330" height="50" rx="7" fill="#fff0e8" stroke="#c05e1e" stroke-width="2"/>
+  <text x="230" y="672" text-anchor="middle" font-size="11" font-weight="700" fill="#5a2800">Language Model · Claude Haiku</text>
+  <text x="380" y="660" text-anchor="middle" font-size="8" fill="#aaa">unchanged</text>
+  <text x="230" y="690" text-anchor="middle" font-size="9.5" fill="#7a4010">Writing only · flags gaps · grounded answer</text>
+
+  <!-- Legend -->
+  <rect x="65" y="708" width="10" height="10" rx="2" fill="#d4f0da" stroke="#2a7a3a" stroke-width="1.5"/>
+  <text x="80" y="717" font-size="9" fill="#2a7a3a" font-weight="600">New (RRF upgrade)</text>
+  <line x1="165" y1="700" x2="185" y2="700" stroke="#2a7a3a" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="190" y="704" font-size="9" fill="#2a7a3a">New data path</text>
+  <rect x="255" y="708" width="10" height="10" rx="2" fill="#fdd8dc" stroke="#c0384a" stroke-width="1.5"/>
+  <text x="270" y="717" font-size="9" fill="#888">Existing · unchanged</text>
+</svg>
