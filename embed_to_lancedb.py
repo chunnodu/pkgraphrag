@@ -234,9 +234,14 @@ if __name__ == "__main__":
 
     print(f"\n  Total concepts embedded: {grand_total:,}")
 
-    # Smoke-test
+    # ── FTS index (Week 9) ────────────────────────────────────────────────────
     db    = lancedb.connect(DB_PATH)
     table = db.open_table("concepts")
+    print("  Building FTS index on 'label' column...", end=" ", flush=True)
+    table.create_fts_index("label", replace=True)
+    print("done.")
+
+    # Smoke-test
     print(f"  LanceDB rows confirmed: {table.count_rows():,}\n")
 
     for query in [

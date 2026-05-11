@@ -1,6 +1,6 @@
 # Personal Knowledge GraphRAG — Consolidation Progress Summary
 
-**As of April 21, 2026 | Weeks 1–8 Complete · Week 9 In Progress**
+**As of May 1, 2026 | Weeks 1–9 Complete · Week 10 Starting**
 
 > ⚠️ **`pitchstone.mm` and `neogov.mm` are permanently excluded** — both contain proprietary data from employers. They are never to be parsed, queried, embedded, or referenced in any pipeline output. The active working set is **10 maps**, not 12.
 
@@ -18,10 +18,59 @@
 | 6 | Generate embeddings → LanceDB vector DB | ✅ Complete | 31,983 concepts embedded (BAAI/bge-small-en-v1.5, 384-dim); `pkg_lancedb/` 85MB |
 | 7 | Build hybrid retrieval pipeline | ✅ Complete | `retrieve.py` — SPARQL graph expansion + LanceDB vector search; 5/5 smoke tests passing |
 | 8 | Connect Claude API + 20 Q&A test pairs | ✅ Complete | `ask.py` + `test_qa.py`; 20/20 passed; avg 4.4s; 16,850 in / 6,242 out tokens |
-| 9 | RRF upgrade + prompt refinement + ontology gap-filling | 🔄 In progress | |
+| 9 | RRF upgrade + FTS index | ✅ Complete | True hybrid retrieval: vector + FTS → RRF fusion; `KeywordRetriever` + `rrf_fuse()` added to `retrieve.py`; FTS index build added to `embed_to_lancedb.py` |
 | 10 | CLI query interface + documentation | ✅ Done early | `ask.py` complete; CLI working |
 | 11 | Final polish + architecture diagram | ⬜ Pending | |
 | 12 | Reflect + v2 roadmap | ⬜ Pending | |
+
+---
+
+## Week 9 Summary — RRF Hybrid Retrieval ✅
+
+Completed May 1, 2026. Upgraded `retrieve.py` from sequential vector-then-graph to true parallel RRF fusion.
+
+### What changed
+
+The Week 7 "hybrid" retriever was a misnomer — it ran vector search then expanded results via SPARQL. Only one ranked signal existed, so no fusion occurred. Week 9 adds a second independent signal and fuses both before graph expansion.
+
+### Architecture (Week 9)
+
+```
+User Question
+    ├─ Path A → Embedder → LanceDB vector search → Ranked List A (cosine similarity)
+    └─ Path B → Tokeniser → LanceDB FTS on labels → Ranked List B (keyword match)
+                    ↓
+           rrf_fuse(list_a, list_b, k=60) → top-K fused URIs
+                    ↓
+           Graph Expansion (rdflib SPARQL) — unchanged from Week 7
+                    ↓
+           Context Block → Claude API
+```
+
+### New components
+
+| Component | Location | Description |
+|---|---|---|
+| `KeywordRetriever` | `retrieve.py` | Wraps LanceDB FTS; graceful fallback to vector-only if index absent |
+| `rrf_fuse()` | `retrieve.py` | Parameter-free RRF: `score = Σ 1/(60 + rank)` across both lists |
+| `--debug` flag | CLI | Shows per-path hits before fusion |
+| `in_vector` / `in_keyword` | `ConceptContext` | Provenance flags; visible in text output and JSON |
+| FTS index build | `embed_to_lancedb.py` | `create_fts_index("label")` appended to pipeline |
+
+### Smoke test results
+
+| Query | Vector-only result | RRF improvement |
+|---|---|---|
+| "business model design" | Ideation (0.826) | "Business Model" from Books.mm and ajared.mm fused to #1 |
+| "DLVR" | DLVR (0.807) | 4 keyword matches confirmed vector hits; "next steps" demoted |
+| "RDF SPARQL ontology" | Ontologies layer (0.582) | `"don't call it ontology"` surfaced via keyword-only; wasn't in vector top-5 |
+
+The third case is the canonical RRF win: a concept whose label *contains* the query term but doesn't embed close to it is now retrieved.
+
+### Constants
+- `DEFAULT_FETCH_K = 20` — per-path fetch width (before fusion)
+- `DEFAULT_TOP_K = 8` — fused hits passed to graph expansion (unchanged)
+- `RRF_K = 60` — standard smoothing constant
 
 ---
 

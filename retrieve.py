@@ -1,27 +1,27 @@
 """
 retrieve.py
-Week 7 — Hybrid Retrieval Pipeline
+Week 9 — RRF Hybrid Retrieval Pipeline
 
 Architecture:
   Question (NL)
-      ↓
-  [1] Vector Search (LanceDB) → top-K concept URIs, labels, similarity scores
-      ↓
-  [2] Graph Expansion (rdflib SPARQL) → for each URI, pull:
-        - parent label + siblings
-        - children (up to N)
-        - personal notes
-        - web resources
-        - LOD links (DBpedia / Wikidata)
-      ↓
-  [3] Merge + Deduplicate + Rank by relevance
-      ↓
-  [4] Format as structured context block (ready for LLM prompt)
+      ├─ Path A → Embedder → Vector Search (LanceDB) → Ranked List A (cosine similarity)
+      └─ Path B → Tokeniser → FTS on labels (LanceDB) → Ranked List B (keyword match)
+                      ↓
+             RRF Fusion: score_i = Σ 1 / (k + rank_i),  k=60
+                      ↓
+             Top-N fused URIs → Graph Expansion (rdflib SPARQL)
+                      ↓
+             Context Block → Language Model
+
+Why RRF: parameter-free, no manual weight tuning.  Fixes the known weakness where
+exact concept labels (proper nouns, acronyms, initialisms) have poor vector
+representations but match perfectly via full-text search.
 
 Usage (CLI):
     python retrieve.py "What do I know about business model design?"
     python retrieve.py "machine learning pipelines" --top-k 10 --map data.mm
     python retrieve.py "career goals" --format json
+    python retrieve.py "DLVR" --debug          # show per-path hits before fusion
 
 ⚠️  pitchstone.mm and neogov.mm are permanently excluded.
 """
@@ -57,11 +57,13 @@ DC     = Namespace("http://purl.org/dc/elements/1.1/")
 EXCLUDED_MAPS = {"pitchstone.mm", "neogov.mm"}
 
 # ── Defaults ──────────────────────────────────────────────────────────────────
-DEFAULT_TOP_K        = 8   # semantic hits to fetch
-DEFAULT_EXPAND_DEPTH = 2   # graph hops to expand from each hit
-DEFAULT_MAX_CHILDREN = 5   # max child concepts per hit
-DEFAULT_MAX_NOTES    = 2   # max personal notes per hit
-DEFAULT_MAX_RESOURCES = 3  # max web resources per hit
+DEFAULT_TOP_K         = 8    # final fused hits passed to graph expansion
+DEFAULT_FETCH_K       = 20   # per-path fetch size (before fusion); wider net
+RRF_K                 = 60   # RRF smoothing constant (standard value)
+DEFAULT_EXPAND_DEPTH  = 2    # graph hops to expand from each hit (unused directly)
+DEFAULT_MAX_CHILDREN  = 5    # max child concepts per hit
+DEFAULT_MAX_NOTES     = 2    # max personal notes per hit
+DEFAULT_MAX_RESOURCES = 3    # max web resources per hit
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -73,13 +75,15 @@ class ConceptContext:
     uri:        str
     label:      str
     source_map: str
-    score:      float           # semantic similarity (0–1)
+    score:      float           # RRF-fused score (week 9+); raw cosine in week 7–8
     parent:     Optional[str]   = None
     children:   list[str]       = field(default_factory=list)
     siblings:   list[str]       = field(default_factory=list)
     notes:      list[str]       = field(default_factory=list)
     resources:  list[str]       = field(default_factory=list)
     lod_links:  list[str]       = field(default_factory=list)
+    in_vector:  bool            = True   # present in vector-search path
+    in_keyword: bool            = False  # present in FTS keyword path
 
 
 @dataclass
@@ -95,7 +99,12 @@ class RetrievalResult:
             f"Retrieved {len(self.concepts)} relevant concept(s) from your personal knowledge graph.\n",
         ]
         for i, c in enumerate(self.concepts, 1):
-            lines.append(f"[{i}] {c.label}  (map: {c.source_map}, relevance: {c.score:.3f})")
+            src_tag = f"vector+keyword" if (c.in_vector and c.in_keyword) else (
+                      "keyword" if c.in_keyword else "vector")
+            lines.append(
+                f"[{i}] {c.label}  "
+                f"(map: {c.source_map}, rrf: {c.score:.4f}, src: {src_tag})"
+            )
             if c.parent:
                 lines.append(f"    Parent   : {c.parent}")
             if c.children:
@@ -121,7 +130,7 @@ class RetrievalResult:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 1. Semantic retriever (LanceDB)
+# 1. Semantic retriever (LanceDB vector search)
 # ─────────────────────────────────────────────────────────────────────────────
 
 class SemanticRetriever:
@@ -135,7 +144,7 @@ class SemanticRetriever:
     def search(
         self,
         query: str,
-        top_k: int = DEFAULT_TOP_K,
+        top_k: int = DEFAULT_FETCH_K,
         source_map: Optional[str] = None,
     ) -> list[dict]:
         """Return top-k semantic hits as raw dicts (uri, label, source_map, _distance)."""
@@ -147,7 +156,138 @@ class SemanticRetriever:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 2. Graph retriever (rdflib + SPARQL)
+# 2. Keyword retriever (LanceDB full-text search)
+# ─────────────────────────────────────────────────────────────────────────────
+
+class KeywordRetriever:
+    """
+    Wraps LanceDB full-text search (FTS) on the 'label' column.
+
+    Requires the FTS index to have been built on the table:
+        table.create_fts_index("label", replace=True)
+
+    This is done automatically by embed_to_lancedb.py (Week 9+).
+    Falls back gracefully (returns empty list + warning) if the index
+    is absent so the pipeline degrades to vector-only rather than crashing.
+    """
+
+    def __init__(self, db_path: str = DB_PATH):
+        self._db      = lancedb.connect(db_path)
+        self._table   = self._db.open_table("concepts")
+        self._enabled = self._check_fts()
+
+    def _check_fts(self) -> bool:
+        try:
+            indices = self._table.list_indices()
+            has_fts = any(
+                getattr(idx, "index_type", None) == "FTS"
+                or "FTS" in str(idx)
+                for idx in indices
+            )
+            if not has_fts:
+                print(
+                    "  ⚠  No FTS index found on 'label'. "
+                    "Run embed_to_lancedb.py to build it. "
+                    "Falling back to vector-only retrieval.",
+                    file=sys.stderr,
+                )
+            return has_fts
+        except Exception as e:
+            print(f"  ⚠  FTS check failed ({e}). Keyword path disabled.", file=sys.stderr)
+            return False
+
+    def search(
+        self,
+        query: str,
+        top_k: int = DEFAULT_FETCH_K,
+        source_map: Optional[str] = None,
+    ) -> list[dict]:
+        """Return top-k FTS hits as raw dicts (uri, label, source_map, _score)."""
+        if not self._enabled:
+            return []
+        try:
+            q = self._table.search(query, query_type="fts").limit(top_k)
+            if source_map:
+                q = q.where(f"source_map = '{source_map}'")
+            results = q.to_list()
+            # Filter excluded maps (belt-and-suspenders)
+            return [r for r in results if r.get("source_map", "") not in EXCLUDED_MAPS]
+        except Exception as e:
+            print(f"  ⚠  FTS search failed ({e}). Skipping keyword path.", file=sys.stderr)
+            return []
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 3. RRF fusion
+# ─────────────────────────────────────────────────────────────────────────────
+
+def rrf_fuse(
+    list_a: list[dict],
+    list_b: list[dict],
+    k:      int = RRF_K,
+    top_n:  int = DEFAULT_TOP_K,
+) -> list[dict]:
+    """
+    Reciprocal Rank Fusion over two ranked URI lists.
+
+    Formula: rrf_score(d) = Σ_list  1 / (k + rank(d, list))
+    Only lists where d appears contribute a term; absent → no contribution.
+
+    Args:
+        list_a: vector-search hits (dicts with "uri", "label", "source_map")
+        list_b: keyword-search hits (same schema)
+        k:      smoothing constant (default 60)
+        top_n:  number of fused results to return
+
+    Returns:
+        List of top_n dicts sorted by rrf_score descending, each with:
+            uri, label, source_map, rrf_score, in_vector, in_keyword
+    """
+    scores: dict[str, float] = {}
+    meta:   dict[str, dict]  = {}
+
+    for rank, hit in enumerate(list_a, start=1):
+        uri = hit["uri"]
+        scores[uri] = scores.get(uri, 0.0) + 1.0 / (k + rank)
+        if uri not in meta:
+            meta[uri] = {
+                "label":      hit.get("label", ""),
+                "source_map": hit.get("source_map", ""),
+                "in_vector":  True,
+                "in_keyword": False,
+            }
+        else:
+            meta[uri]["in_vector"] = True
+
+    for rank, hit in enumerate(list_b, start=1):
+        uri = hit["uri"]
+        scores[uri] = scores.get(uri, 0.0) + 1.0 / (k + rank)
+        if uri not in meta:
+            meta[uri] = {
+                "label":      hit.get("label", ""),
+                "source_map": hit.get("source_map", ""),
+                "in_vector":  False,
+                "in_keyword": True,
+            }
+        else:
+            meta[uri]["in_keyword"] = True
+
+    fused = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:top_n]
+    return [
+        {
+            "uri":        uri,
+            "label":      meta[uri]["label"],
+            "source_map": meta[uri]["source_map"],
+            "rrf_score":  round(score, 6),
+            "in_vector":  meta[uri]["in_vector"],
+            "in_keyword": meta[uri]["in_keyword"],
+        }
+        for uri, score in fused
+    ]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 4. Graph retriever (rdflib + SPARQL)
 # ─────────────────────────────────────────────────────────────────────────────
 
 class GraphRetriever:
@@ -220,12 +360,10 @@ class GraphRetriever:
         g.bind("dc",     DC)
 
         ttl_files = sorted(glob.glob(os.path.join(outputs_dir, "*.ttl")))
-        excluded = {f"outputs/{e}" for e in EXCLUDED_MAPS}  # belt-and-suspenders
 
         print(f"  Loading {len(ttl_files)} TTL files into graph...", end=" ", flush=True)
         for path in ttl_files:
             name = os.path.basename(path)
-            # Skip excluded maps at every level
             if any(ex in name for ex in EXCLUDED_MAPS):
                 continue
             sub = Graph()
@@ -241,32 +379,26 @@ class GraphRetriever:
     def expand(
         self,
         uri: str,
-        max_children: int  = DEFAULT_MAX_CHILDREN,
-        max_notes:    int  = DEFAULT_MAX_NOTES,
+        max_children:  int = DEFAULT_MAX_CHILDREN,
+        max_notes:     int = DEFAULT_MAX_NOTES,
         max_resources: int = DEFAULT_MAX_RESOURCES,
     ) -> dict:
         """Pull structured context for a single concept URI."""
-        # Parent
         parent_rows = self._sparql(self._Q_PARENT % uri)
-        parent = str(parent_rows[0][0]) if parent_rows else None
+        parent      = str(parent_rows[0][0]) if parent_rows else None
 
-        # Children
         child_rows = self._sparql(self._Q_CHILDREN % (uri, max_children))
         children   = [str(r[0]) for r in child_rows]
 
-        # Siblings
         sib_rows = self._sparql(self._Q_SIBLINGS % (uri, uri))
         siblings  = [str(r[0]) for r in sib_rows]
 
-        # Personal notes
         note_rows = self._sparql(self._Q_NOTES % (uri, max_notes))
         notes     = [str(r[0]).strip() for r in note_rows]
 
-        # Web resources
         res_rows  = self._sparql(self._Q_RESOURCES % (uri, max_resources))
         resources = [str(r[0]) for r in res_rows]
 
-        # LOD links
         lod_rows  = self._sparql(self._Q_LOD % uri)
         lod_links = [str(r[0]) for r in lod_rows]
 
@@ -281,60 +413,91 @@ class GraphRetriever:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 3. Hybrid retriever (orchestrator)
+# 5. HybridRetriever (RRF orchestrator)
 # ─────────────────────────────────────────────────────────────────────────────
 
 class HybridRetriever:
     """
-    Combines semantic (LanceDB) and graph (rdflib) retrieval into a single
-    ranked, deduplicated context object.
+    True hybrid retrieval: two independent signals fused via RRF, then
+    graph-expanded.
+
+    Signal A — semantic vector search (LanceDB, cosine distance)
+    Signal B — full-text search on concept labels (LanceDB FTS)
+
+    If FTS index is absent, falls back to vector-only (behaviour identical
+    to the Week 7 implementation).
     """
 
     def __init__(
         self,
-        db_path:     str = DB_PATH,
-        outputs_dir: str = OUTPUTS_DIR,
+        db_path:     str  = DB_PATH,
+        outputs_dir: str  = OUTPUTS_DIR,
         verbose:     bool = True,
     ):
         if verbose:
-            print("\n── Initialising HybridRetriever ────────────────────────────────")
-        self._sem   = SemanticRetriever(db_path)
-        self._graph = GraphRetriever(outputs_dir)
+            print("\n── Initialising HybridRetriever (RRF) ─────────────────────────")
+        self._sem     = SemanticRetriever(db_path)
+        self._kw      = KeywordRetriever(db_path)
+        self._graph   = GraphRetriever(outputs_dir)
+        self._verbose = verbose
         if verbose:
+            fts_status = "✓ FTS enabled" if self._kw._enabled else "⚠ FTS disabled (vector-only fallback)"
+            print(f"  {fts_status}")
             print("── Ready ───────────────────────────────────────────────────────\n")
 
     def retrieve(
         self,
-        query:       str,
-        top_k:       int  = DEFAULT_TOP_K,
-        source_map:  Optional[str] = None,
-        max_children: int = DEFAULT_MAX_CHILDREN,
-        max_notes:   int  = DEFAULT_MAX_NOTES,
-        max_resources: int = DEFAULT_MAX_RESOURCES,
+        query:         str,
+        top_k:         int           = DEFAULT_TOP_K,
+        source_map:    Optional[str] = None,
+        max_children:  int           = DEFAULT_MAX_CHILDREN,
+        max_notes:     int           = DEFAULT_MAX_NOTES,
+        max_resources: int           = DEFAULT_MAX_RESOURCES,
+        debug:         bool          = False,
     ) -> RetrievalResult:
         """
-        Run hybrid retrieval for a natural language query.
+        Run RRF hybrid retrieval for a natural language query.
+
+        Steps:
+          1. Vector search  (top FETCH_K hits)
+          2. Keyword search (top FETCH_K hits)
+          3. RRF fusion     → top_k fused URIs
+          4. Graph expansion of each URI
+          5. Return RetrievalResult sorted by RRF score
 
         Returns a RetrievalResult with fully-expanded ConceptContext objects.
         """
+        fetch_k = max(top_k * 2, DEFAULT_FETCH_K)   # wider net for fusion
 
         # ── Step 1: Semantic search ───────────────────────────────────────────
-        hits = self._sem.search(query, top_k=top_k, source_map=source_map)
-        if not hits:
+        vec_hits = self._sem.search(query, top_k=fetch_k, source_map=source_map)
+
+        # ── Step 2: Keyword search ────────────────────────────────────────────
+        kw_hits = self._kw.search(query, top_k=fetch_k, source_map=source_map)
+
+        if debug or self._verbose:
+            print(f"  Vector hits : {len(vec_hits):>3}  "
+                  f"Keyword hits: {len(kw_hits):>3}")
+
+        if debug:
+            print("\n  [Vector top-5]")
+            for i, h in enumerate(vec_hits[:5], 1):
+                score = round(1.0 - h.get("_distance", 0.0), 4)
+                print(f"    {i}. [{h['source_map']}] {h['label']}  ({score:.4f})")
+            print("\n  [Keyword top-5]")
+            for i, h in enumerate(kw_hits[:5], 1):
+                print(f"    {i}. [{h['source_map']}] {h['label']}")
+            print()
+
+        # ── Step 3: RRF fusion ────────────────────────────────────────────────
+        if not vec_hits and not kw_hits:
             return RetrievalResult(query=query, concepts=[])
 
-        # Deduplicate by URI (in case LanceDB returns duplicates)
-        seen_uris: set[str] = set()
-        deduped_hits = []
-        for h in hits:
-            if h["uri"] not in seen_uris:
-                seen_uris.add(h["uri"])
-                deduped_hits.append(h)
+        fused = rrf_fuse(vec_hits, kw_hits, k=RRF_K, top_n=top_k)
 
-        # ── Step 2: Graph expansion ────────────────────────────────────────────
+        # ── Step 4: Graph expansion ────────────────────────────────────────────
         concepts: list[ConceptContext] = []
-        for h in deduped_hits:
-            score = round(1.0 - h.get("_distance", 0.0), 4)
+        for h in fused:
             expansion = self._graph.expand(
                 h["uri"],
                 max_children=max_children,
@@ -345,13 +508,13 @@ class HybridRetriever:
                 uri        = h["uri"],
                 label      = h["label"],
                 source_map = h["source_map"],
-                score      = score,
+                score      = h["rrf_score"],
+                in_vector  = h["in_vector"],
+                in_keyword = h["in_keyword"],
                 **expansion,
             ))
 
-        # ── Step 3: Sort by semantic score descending ─────────────────────────
-        concepts.sort(key=lambda c: c.score, reverse=True)
-
+        # Already sorted by RRF score from rrf_fuse; just return
         return RetrievalResult(query=query, concepts=concepts)
 
 
@@ -361,40 +524,44 @@ class HybridRetriever:
 
 def _parse_args():
     p = argparse.ArgumentParser(
-        description="Hybrid GraphRAG retrieval — semantic + graph expansion",
+        description="GraphRAG hybrid retrieval — RRF (vector + FTS) + graph expansion",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=textwrap.dedent("""
             Examples:
               python retrieve.py "What do I know about business model design?"
               python retrieve.py "machine learning pipelines" --top-k 10
               python retrieve.py "career goals" --map careerDevelopment.mm
+              python retrieve.py "DLVR" --debug
               python retrieve.py "linked data" --format json
         """),
     )
-    p.add_argument("query",                        help="Natural language question or topic")
-    p.add_argument("--top-k",      type=int, default=DEFAULT_TOP_K,
-                   help=f"Number of semantic hits (default: {DEFAULT_TOP_K})")
-    p.add_argument("--map",        default=None,
+    p.add_argument("query",   help="Natural language question or topic")
+    p.add_argument("--top-k", type=int, default=DEFAULT_TOP_K,
+                   help=f"Final number of fused hits (default: {DEFAULT_TOP_K})")
+    p.add_argument("--map",   default=None,
                    help="Filter to a specific source map (e.g. data.mm)")
-    p.add_argument("--format",     choices=["text", "json"], default="text",
+    p.add_argument("--format", choices=["text", "json"], default="text",
                    help="Output format (default: text)")
-    p.add_argument("--max-children", type=int, default=DEFAULT_MAX_CHILDREN)
-    p.add_argument("--max-notes",    type=int, default=DEFAULT_MAX_NOTES)
-    p.add_argument("--max-resources",type=int, default=DEFAULT_MAX_RESOURCES)
+    p.add_argument("--debug",  action="store_true",
+                   help="Show per-path hits before fusion")
+    p.add_argument("--max-children",  type=int, default=DEFAULT_MAX_CHILDREN)
+    p.add_argument("--max-notes",     type=int, default=DEFAULT_MAX_NOTES)
+    p.add_argument("--max-resources", type=int, default=DEFAULT_MAX_RESOURCES)
     return p.parse_args()
 
 
 def main():
     args = _parse_args()
 
-    retriever = HybridRetriever()
+    retriever = HybridRetriever(verbose=True)
     result    = retriever.retrieve(
-        query        = args.query,
-        top_k        = args.top_k,
-        source_map   = args.map,
-        max_children = args.max_children,
-        max_notes    = args.max_notes,
-        max_resources= args.max_resources,
+        query         = args.query,
+        top_k         = args.top_k,
+        source_map    = args.map,
+        max_children  = args.max_children,
+        max_notes     = args.max_notes,
+        max_resources = args.max_resources,
+        debug         = args.debug,
     )
 
     if args.format == "json":
