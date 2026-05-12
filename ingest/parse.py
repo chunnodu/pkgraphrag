@@ -139,12 +139,25 @@ def process_map(filepath, output_dir):
     print(f"  Success: Extracted {len(g)} triples -> {out_file}")
 
 if __name__ == "__main__":
-    maps_dir = "/Users/chunnodu/Library/Mobile Documents/com~apple~CloudDocs/Career/MindMaps"
-    out_dir = "/Users/chunnodu/projects/graphrag/outputs"
-    
-    os.makedirs(out_dir, exist_ok=True)
-    
-    # Process all mm files directly to generate triples per map
-    for f in os.listdir(maps_dir):
+    import argparse
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    p = argparse.ArgumentParser(description="Parse Freeplane .mm files into RDF Turtle")
+    p.add_argument(
+        "--maps-dir",
+        default=os.environ.get("PKG_MAPS_DIR", ""),
+        help="Directory containing .mm files (or set PKG_MAPS_DIR env var)",
+    )
+    p.add_argument(
+        "--out-dir",
+        default=os.environ.get("PKG_OUT_DIR", os.path.join(_root, "outputs")),
+        help="Output directory for .ttl files (default: outputs/)",
+    )
+    args = p.parse_args()
+
+    if not args.maps_dir:
+        p.error("--maps-dir is required (or set PKG_MAPS_DIR=<path>)")
+
+    os.makedirs(args.out_dir, exist_ok=True)
+    for f in sorted(os.listdir(args.maps_dir)):
         if f.endswith(".mm") and not f.startswith("."):
-            process_map(os.path.join(maps_dir, f), out_dir)
+            process_map(os.path.join(args.maps_dir, f), args.out_dir)

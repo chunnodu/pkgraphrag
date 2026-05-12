@@ -1,5 +1,5 @@
 """
-validate_rdf.py
+validate.py
 Week 5 — SPARQL Query Suite + Graph Validation
 
 Loads all 10 parsed .ttl maps + lod_enrichment.ttl into a combined in-memory

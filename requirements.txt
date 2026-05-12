@@ -5,3 +5,5 @@ lancedb>=0.30.2
 fastembed>=0.8.0
 rdflib>=7.6.0
 pyarrow>=24.0.0
+requests>=2.28.0
+graphviz>=0.20.1

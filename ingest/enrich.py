@@ -1,5 +1,5 @@
 """
-lod_enrich.py
+enrich.py
 Week 4 — LOD Enrichment
 
 Queries DBpedia Lookup API for each unique skos:Concept label in the graph.
@@ -13,19 +13,23 @@ Matching strategy:
   - Rate-limited to 1 req/sec to be polite to DBpedia
 """
 
+import os
 import time
 import re
 import requests
 from rdflib import Graph, URIRef, Namespace
 from rdflib.namespace import SKOS, OWL
-import pyoxigraph
+
+# ── Paths (relative to project root) ─────────────────────────────────────────
+_HERE        = os.path.dirname(os.path.abspath(__file__))
+_ROOT        = os.path.dirname(_HERE)
+OUTPUTS_DIR  = os.path.join(_ROOT, "outputs")
+OUT_TTL      = os.path.join(OUTPUTS_DIR, "lod_enrichment.ttl")
 
 # ── Config ────────────────────────────────────────────────────────────────────
-STORE_PATH   = "/Users/chunnodu/projects/graphrag/pkg_store"
-OUT_TTL      = "/Users/chunnodu/projects/graphrag/outputs/lod_enrichment.ttl"
-DBPEDIA_API  = "https://lookup.dbpedia.org/api/search"
-DELAY        = 1.0   # seconds between requests
-MIN_LABEL_WORDS = 2  # skip labels shorter than this many words
+DBPEDIA_API     = "https://lookup.dbpedia.org/api/search"
+DELAY           = 1.0  # seconds between requests
+MIN_LABEL_WORDS = 2    # skip labels shorter than this many words
 
 # Generic labels that produce noisy DBpedia matches — skip them
 SKIP_LABELS = {
@@ -38,9 +42,12 @@ PKG  = Namespace("https://pkg.chunnodu.com/ontology#")
 PKGC = Namespace("https://pkg.chunnodu.com/concept/")
 
 
-def get_all_concepts(store_path):
-    """Pull every (concept_uri, prefLabel) pair from the Oxigraph store."""
-    store = pyoxigraph.Store(store_path)
+def get_all_concepts(outputs_dir=OUTPUTS_DIR):
+    """Load every (concept_uri, prefLabel) pair from all TTL files in outputs_dir."""
+    g = Graph()
+    for f in sorted(os.listdir(outputs_dir)):
+        if f.endswith(".ttl") and f != "lod_enrichment.ttl":
+            g.parse(os.path.join(outputs_dir, f), format="turtle")
     q = """
     PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
     SELECT DISTINCT ?concept ?label WHERE {
@@ -48,12 +55,8 @@ def get_all_concepts(store_path):
                  skos:prefLabel ?label .
     }
     """
-    results = []
-    for row in store.query(q):
-        uri   = str(row["concept"])
-        label = str(row["label"].value) if hasattr(row["label"], "value") else str(row["label"])
-        results.append((uri, label))
-    print(f"Found {len(results):,} concepts in store.")
+    results = [(str(row.concept), str(row.label)) for row in g.query(q)]
+    print(f"Found {len(results):,} concepts.")
     return results
 
 
@@ -142,7 +145,7 @@ def build_enrichment_graph(concepts):
 
 def main():
     print("=== Week 4: LOD Enrichment — DBpedia ===\n")
-    concepts = get_all_concepts(STORE_PATH)
+    concepts = get_all_concepts(OUTPUTS_DIR)
 
     print(f"\nQuerying DBpedia Lookup API (this will take a while)...")
     g = build_enrichment_graph(concepts)
