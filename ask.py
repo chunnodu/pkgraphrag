@@ -11,6 +11,7 @@ Usage (CLI):
     python ask.py "machine learning pipelines" --top-k 10
     python ask.py "career goals" --map careerDevelopment.mm
     python ask.py "linked data" --model claude-haiku-4-5-20251001
+    python ask.py "DLVR strategy" --debug --show-context
 
 Environment:
     ANTHROPIC_API_KEY  — required
@@ -70,6 +71,7 @@ def ask(
     source_map:   Optional[str] = None,
     max_tokens:   int = DEFAULT_MAX_TOKENS,
     verbose:      bool = True,
+    debug:        bool = False,
 ) -> dict:
     """
     Retrieve context then call Claude. Returns a dict with:
@@ -85,7 +87,7 @@ def ask(
     # ── 1. Retrieve ───────────────────────────────────────────────────────────
     t0 = time.perf_counter()
     result: RetrievalResult = retriever.retrieve(
-        query=query, top_k=top_k, source_map=source_map
+        query=query, top_k=top_k, source_map=source_map, debug=debug
     )
     context_text = result.as_text()
 
@@ -152,6 +154,8 @@ def _parse_args():
     p.add_argument("--max-tokens", type=int, default=DEFAULT_MAX_TOKENS)
     p.add_argument("--show-context", action="store_true",
                    help="Print the full retrieval context before the answer")
+    p.add_argument("--debug", action="store_true",
+                   help="Show per-path vector/keyword hits before RRF fusion")
     return p.parse_args()
 
 
@@ -170,6 +174,7 @@ def main():
             source_map = args.map,
             max_tokens = args.max_tokens,
             verbose    = True,
+            debug      = args.debug,
         )
     except EnvironmentError as e:
         print(f"\n❌  {e}", file=sys.stderr)
