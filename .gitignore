@@ -1,7 +1,14 @@
 .DS_Store
 .venv/
-KG_W1_Inventory_V*.xlsx
-KG_W1_Inventory.xlsx
+__pycache__/
+*.pyc
+outputs/
+pkg_lancedb/
+pkg_store/
+.~lock.*
+
+# Planning/scratch files
+KG_W1_Inventory*.xlsx
 Screenshot*
 find_mm_files.py
-outputs/
+12 WEEK YEAR 2026*.xlsx
