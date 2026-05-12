@@ -68,35 +68,34 @@ python test_qa.py --model claude-sonnet-4-6
 Freeplane .mm files (10 maps)
         │
         ▼
-parse_mm_to_rdf.py          ← .mm XML → RDF triples (rdflib)
+ingest/parse.py             ← .mm XML → RDF triples (rdflib)
         │
         ▼
 outputs/*.ttl               ← 142,796 triples across 10 maps
         │
    ┌────┴────┐
    ▼         ▼
-validate_rdf.py        embed_to_lancedb.py
-(SPARQL queries)       (fastembed → LanceDB + FTS index)
+ingest/      ingest/
+validate.py  embed.py       ← fastembed → LanceDB + FTS index
                              │
                              ▼
                        pkg_lancedb/          ← 31,983 vectors (384-dim) + FTS index
                              │
               ┌──────────────┴──────────────┐
               ▼                             ▼
-       Vector Search                  FTS on labels
-       (cosine similarity)            (exact/keyword match)
+  retrieval/semantic.py        retrieval/keyword.py
+  (cosine vector search)       (FTS on labels)
               │                             │
               └──────────┬──────────────────┘
                          ▼
-                   RRF Fusion (k=60)
-                   score = Σ 1/(60 + rank)
+              retrieval/fusion.py  ← RRF (k=60): score = Σ 1/(60 + rank)
                          │
                          ▼
-                  SPARQL Graph Expansion      ← parent, children, siblings,
-                  (top-8 fused URIs)             notes, resources, LOD links
+              retrieval/graph.py   ← SPARQL expansion: parent, children,
+              (top-8 fused URIs)      siblings, notes, resources, LOD links
                          │
                          ▼
-                    ask.py                   ← Claude API → grounded Q&A
+                    qa/ask.py      ← Claude API → grounded Q&A
 ```
 
 **Why RRF:** Vector search is great for semantic similarity but weak on exact labels — acronyms, proper nouns, initialisms. FTS catches these precisely. RRF merges both ranked lists with no manual weight tuning.
@@ -124,18 +123,37 @@ validate_rdf.py        embed_to_lancedb.py
 
 ---
 
-## Scripts
+## Package Structure
 
-| Script | Purpose |
-|---|---|
-| `parse_mm_to_rdf.py` | Parses all `.mm` files → `.ttl` RDF (rdflib). Handles node hierarchy, URLs, notes, tasks, timestamps, LOD exclusions. |
-| `validate_rdf.py` | Runs 12 SPARQL queries to validate graph coverage, structure, and quality. |
-| `lod_enrich.py` | Enriches root + depth-1/2 concept nodes with DBpedia / Wikidata `owl:sameAs` links. |
-| `embed_to_lancedb.py` | Extracts concept labels from TTLs, prepends parent context, embeds via `BAAI/bge-small-en-v1.5`, stores in LanceDB with FTS index. |
-| `retrieve.py` | RRF hybrid retrieval: vector search + FTS → RRF fusion → SPARQL graph expansion. Usable as CLI or importable module. |
-| `ask.py` | End-to-end Q&A: calls `HybridRetriever`, assembles context, calls Claude API, returns structured result. |
-| `test_qa.py` | Runs 20 test questions across all 10 maps, outputs JSON + markdown report. |
-| `visualise_ontology.py` | Renders the PKG ontology as a graph diagram. |
+```
+retrieval/          Runtime retrieval pipeline
+  models.py         Shared constants, namespaces, ConceptContext, RetrievalResult
+  semantic.py       SemanticRetriever — LanceDB cosine vector search
+  keyword.py        KeywordRetriever  — LanceDB FTS on concept labels
+  fusion.py         rrf_fuse()        — Reciprocal Rank Fusion
+  graph.py          GraphRetriever    — rdflib SPARQL graph expansion
+  hybrid.py         HybridRetriever   — orchestrator + CLI entry point
+
+qa/                 LLM layer
+  ask.py            ask() function, SYSTEM_PROMPT, CLI entry point
+  test_qa.py        20-question regression test suite
+
+ingest/             Build-time pipeline (run once to rebuild the knowledge base)
+  parse.py          .mm XML → RDF triples (rdflib)
+  validate.py       12 SPARQL validation queries
+  enrich.py         DBpedia / Wikidata owl:sameAs enrichment
+  embed.py          fastembed → LanceDB vectors + FTS index
+
+utils/
+  visualise.py      Renders pkg_ontology.ttl as a graph diagram
+
+docs/
+  architecture.mermaid / architecture_final.html
+  PROGRESS.md       Week-by-week log + v2 roadmap
+  plan_and_context.md
+```
+
+Root-level `ask.py`, `retrieve.py`, and `test_qa.py` are thin shims that delegate to the packages above — existing CLI usage is unchanged.
 
 ---
 
