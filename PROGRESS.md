@@ -1,6 +1,6 @@
 # Personal Knowledge GraphRAG — Consolidation Progress Summary
 
-**As of May 1, 2026 | Weeks 1–9 Complete · Week 10 Starting**
+**As of May 10, 2026 | Weeks 1–12 Complete ✅**
 
 > ⚠️ **`pitchstone.mm` and `neogov.mm` are permanently excluded** — both contain proprietary data from employers. They are never to be parsed, queried, embedded, or referenced in any pipeline output. The active working set is **10 maps**, not 12.
 
@@ -19,9 +19,88 @@
 | 7 | Build hybrid retrieval pipeline | ✅ Complete | `retrieve.py` — SPARQL graph expansion + LanceDB vector search; 5/5 smoke tests passing |
 | 8 | Connect Claude API + 20 Q&A test pairs | ✅ Complete | `ask.py` + `test_qa.py`; 20/20 passed; avg 4.4s; 16,850 in / 6,242 out tokens |
 | 9 | RRF upgrade + FTS index | ✅ Complete | True hybrid retrieval: vector + FTS → RRF fusion; `KeywordRetriever` + `rrf_fuse()` added to `retrieve.py`; FTS index build added to `embed_to_lancedb.py` |
-| 10 | CLI query interface + documentation | ✅ Done early | `ask.py` complete; CLI working |
-| 11 | Final polish + architecture diagram | ⬜ Pending | |
-| 12 | Reflect + v2 roadmap | ⬜ Pending | |
+| 10 | CLI polish + documentation | ✅ Complete | `requirements.txt` added; `--debug` flag in `ask.py`; README rewritten with Quick Start, CLI tables, updated architecture |
+| 11 | Final polish + architecture diagram | ✅ Complete | `architecture.mermaid` updated to RRF state; `architecture_final.html` — clean single-pass final diagram |
+| 12 | Reflect + v2 roadmap | ✅ Complete | See v2 roadmap below |
+
+---
+
+## Week 12 Summary — Reflect + v2 Roadmap ✅
+
+Completed May 10, 2026.
+
+### What was built (12-week recap)
+
+Starting from 10 Freeplane mind maps and ending with a fully working personal Q&A system:
+
+| Layer | What was built |
+|---|---|
+| **Parsing** | `parse_mm_to_rdf.py` — 41,868 mind map nodes → 142,796 RDF triples |
+| **Ontology** | Custom `pkg:` namespace on top of SKOS, Schema.org, OWL, DC |
+| **Enrichment** | `lod_enrich.py` — 63 concepts linked to DBpedia/Wikidata via `owl:sameAs` |
+| **Embeddings** | `embed_to_lancedb.py` — 31,983 vectors (384-dim ONNX, no PyTorch) + FTS index |
+| **Retrieval** | `retrieve.py` — RRF fusion of vector + keyword search, then SPARQL graph expansion |
+| **Q&A** | `ask.py` — Claude Haiku, grounded answers, zero LLM calls in retrieval path |
+| **Testing** | `test_qa.py` — 20 Q&A pairs, 20/20 passing, ~4.4s avg |
+| **Docs** | README with Quick Start, CLI tables, architecture diagram |
+
+### What worked well
+
+- **RRF** was the single biggest quality improvement — the canonical win was surfacing `"don't call it ontology"` (a concept whose label contains the query term but embeds poorly) via FTS that vector search completely missed
+- **Zero-LLM retrieval path** keeps latency predictable and cost low; Claude only sees the final assembled context
+- **Parent-context prepending** during embedding (e.g. `"Business Model > Canvas"`) carries hierarchy into vector space cheaply without dense graph overhead
+- **Honest fallback** in the system prompt works — Claude correctly flagged thin coverage on Q09, Q11, Q15 rather than hallucinating
+
+### What was harder than expected
+
+- **rdflib memory** — loading all 11 TTL files into a single in-memory graph at query time adds ~2s cold-start; acceptable for a personal tool, a problem at scale
+- **FTS index not auto-built** — the index is created in `embed_to_lancedb.py` main block but not when importing; a fresh clone needs a full embed run to get FTS
+- **Venv drift** — lancedb, fastembed, anthropic were installed outside `.venv` during development and had to be re-pinned
+
+---
+
+## Week 11 Summary — Final Polish + Architecture Diagram ✅
+
+Completed May 10, 2026.
+
+### Changes
+
+- `architecture.mermaid` — updated to Week 9 RRF state (was still showing Week 7 sequential SPARQL+vector design)
+- `architecture_final.html` — new clean single-pass diagram showing full pipeline: ingestion → storage → parallel retrieval → RRF fusion → graph expansion → Claude → answer; includes stats bar (31,983 concepts, 142,796 triples, 20/20 tests, 4.4s)
+- `architecture_rrf.html` — retained as historical before/after comparison (Week 7 vs Week 9)
+
+---
+
+## v2 Roadmap
+
+These are directions worth exploring, roughly ordered by value/effort ratio.
+
+### High value, low effort
+
+| Idea | Rationale |
+|---|---|
+| **Conversational memory** | Multi-turn Q&A: pass last N turns in the user message. Lets you drill into a topic across questions. ~10 lines in `ask.py`. |
+| **Note-boosted ranking** | Concepts with `pkg:PersonalNote` triples are higher-signal than bare labels — boost their RRF score by a fixed factor. ~5 lines in `rrf_fuse()`. |
+| **Streaming responses** | `anthropic.stream()` already exists in the SDK. Cuts perceived latency from 4.4s to ~0.8s first-token. |
+| **`--output` flag** | Save each Q&A to a dated markdown file — builds a personal Q&A log automatically. |
+
+### Medium value, medium effort
+
+| Idea | Rationale |
+|---|---|
+| **Incremental re-embedding** | Hash each `.mm` file at embed time; on next run, only re-embed maps that changed. Currently a full re-embed is ~15 min. |
+| **Cross-map link mining** | Scan all maps for shared concept labels; auto-generate `skos:related` triples between them. Enables cross-domain retrieval to follow concept co-occurrence. |
+| **Query expansion via LLM** | For short or ambiguous queries (≤3 words), use a cheap Claude call to expand the query before retrieval. Trades one small API call for much better recall. |
+| **Richer LOD enrichment** | Currently 63 concepts linked; many high-value root concepts (DLVR, Ajared, product management frameworks) have no LOD links. Expand coverage to depth-3. |
+
+### Bigger bets
+
+| Idea | Rationale |
+|---|---|
+| **Web UI** | FastAPI + HTMX — streaming answer, source concept cards with source map badges, debug panel showing RRF scores. Makes the tool usable without a terminal. |
+| **Answer export to blog** | Direct pipeline from Q&A result → structured blog post draft. Given `blog.mm` already captures post ideas, this closes the loop from notes → published content. |
+| **Multi-modal nodes** | Freeplane nodes can have attached images. Parsing + embedding image content (via Claude vision) would extend coverage to diagrams and screenshots in maps. |
+| **SPARQL-first for structured queries** | For queries that pattern-match to a known structure ("What tasks are pending in X?", "List all books on Y"), route directly to SPARQL, bypassing embedding entirely. |
 
 ---
 

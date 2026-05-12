@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PKGraphRAG — System Architecture</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f0eeeb;
+    padding: 40px 32px 60px;
+    color: #111;
+  }
+  h1 {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  /* ── Layout ── */
+  .diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ── Lane labels ── */
+  .lane-row {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 0;
+  }
+  .lane-label {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+    padding: 8px 0;
+    min-width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lane-content {
+    flex: 1;
+  }
+
+  /* ── Section panels ── */
+  .section {
+    background: white;
+    border-radius: 10px;
+    padding: 16px 18px 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+    margin-bottom: 0;
+  }
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* ── Node grid ── */
+  .nodes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .node {
+    border-radius: 7px;
+    padding: 10px 12px;
+    font-size: 11px;
+    line-height: 1.5;
+    flex: 1;
+    min-width: 130px;
+  }
+  .node .node-title {
+    font-weight: 700;
+    font-size: 11.5px;
+    margin-bottom: 5px;
+  }
+  .node .node-detail {
+    font-size: 10px;
+    color: #555;
+    line-height: 1.55;
+  }
+
+  /* ── Colour themes ── */
+  .node-source    { background: #dce8f8; border: 1.5px solid #4a80d4; }
+  .node-ingest    { background: #d8f0d8; border: 1.5px solid #5aaa5a; }
+  .node-storage   { background: #fdefc8; border: 1.5px solid #e8b84b; }
+  .node-retrieval { background: #fdd8dc; border: 1.5px solid #e05c6e; }
+  .node-fusion    { background: #e8d8f8; border: 2px solid #9b5fcf; }
+  .node-graph     { background: #d8f0d8; border: 1.5px solid #5aaa5a; }
+  .node-llm       { background: #fde0cc; border: 1.5px solid #e87a2e; }
+  .node-output    { background: #dce8f8; border: 1.5px solid #4a80d4; }
+
+  /* ── Arrows ── */
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+    width: 100%;
+  }
+  .arrow-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .arrow-line {
+    width: 2px;
+    height: 18px;
+    background: #ccc;
+  }
+  .arrow-head {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #ccc;
+  }
+  .arrow-label {
+    font-size: 9px;
+    color: #aaa;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* ── Split arrows for parallel paths ── */
+  .split-arrow {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    padding: 6px 0;
+    position: relative;
+    width: 100%;
+  }
+  .split-arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 60px);
+    width: 120px;
+    height: 2px;
+    background: #ccc;
+    transform: translateY(-50%);
+  }
+  .split-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  /* ── Merge arrows ── */
+  .merge-arrow {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    padding: 6px 0;
+    position: relative;
+    width: 100%;
+  }
+  .merge-arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 60px);
+    width: 120px;
+    height: 2px;
+    background: #ccc;
+    transform: translateY(-50%);
+  }
+  .merge-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  /* ── Section separators ── */
+  .phase-sep {
+    width: 100%;
+    text-align: center;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #bbb;
+    padding: 10px 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .phase-sep::before, .phase-sep::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #ddd;
+  }
+
+  /* ── Stats bar ── */
+  .stats {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<h1>PKGraphRAG — System Architecture</h1>
+<p class="subtitle">Personal Knowledge Graph · RRF Hybrid Retrieval · Weeks 1–10 Complete</p>
+
+<div class="diagram">
+
+  <!-- ── BUILD-TIME LANE ───────────────────────────────────── -->
+  <div class="phase-sep">Build-time  ·  run once</div>
+
+  <div style="width:100%">
+    <div class="section">
+      <div class="section-title" style="color:#5aaa5a">⚙️  Ingestion Pipeline</div>
+      <div class="nodes">
+        <div class="node node-source">
+          <div class="node-title">🗺  Freeplane Mind Maps</div>
+          <div class="node-detail">10 active domains<br>41,868 nodes · XML format<br>pitchstone + neogov excluded</div>
+        </div>
+        <div class="node node-ingest">
+          <div class="node-title">parse_mm_to_rdf.py</div>
+          <div class="node-detail">.mm XML → RDF triples<br>skos:Concept hierarchy<br>pkg: custom types + notes</div>
+        </div>
+        <div class="node node-ingest">
+          <div class="node-title">lod_enrich.py</div>
+          <div class="node-detail">owl:sameAs links<br>DBpedia · Wikidata<br>63 concepts enriched</div>
+        </div>
+        <div class="node node-ingest">
+          <div class="node-title">embed_to_lancedb.py</div>
+          <div class="node-detail">BAAI/bge-small-en-v1.5<br>384-dim · ONNX (no PyTorch)<br>Parent context prepended<br>+ FTS index on labels</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">
+    <div class="arrow-inner">
+      <div class="arrow-line"></div>
+      <div class="arrow-head"></div>
+      <div class="arrow-label">RDF triples + vectors</div>
+    </div>
+  </div>
+
+  <!-- ── STORAGE LAYER ─────────────────────────────────────── -->
+  <div style="width:100%">
+    <div class="section">
+      <div class="section-title" style="color:#e8b84b">🗄  Storage Layer</div>
+      <div class="nodes">
+        <div class="node node-storage" style="flex:1.2">
+          <div class="node-title">RDF Graph  (rdflib in-memory)</div>
+          <div class="node-detail">142,796 triples · 11 TTL files<br>27,776 skos:Concept instances<br>SPARQL queries at runtime</div>
+        </div>
+        <div class="node node-storage" style="flex:1.2">
+          <div class="node-title">LanceDB  (embedded, no server)</div>
+          <div class="node-detail">31,983 vectors · 85 MB · 384-dim<br>Cosine similarity index (ANN)<br>FTS inverted index on labels</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RUNTIME LANE ──────────────────────────────────────── -->
+  <div class="phase-sep">Runtime  ·  per query</div>
+
+  <div class="arrow">
+    <div class="arrow-inner">
+      <div class="arrow-line"></div>
+      <div class="arrow-head"></div>
+      <div class="arrow-label">Natural language question</div>
+    </div>
+  </div>
+
+  <!-- Parallel paths -->
+  <div style="width:100%">
+    <div class="section">
+      <div class="section-title" style="color:#e05c6e">🔀  Parallel Retrieval Paths  (retrieve.py)</div>
+      <div class="nodes">
+        <div class="node node-retrieval" style="flex:1">
+          <div class="node-title">SemanticRetriever</div>
+          <div class="node-detail">fastembed: query → 384-dim vector<br>LanceDB cosine search<br>top-20 by similarity<br>Catches fuzzy / semantic matches</div>
+        </div>
+        <div class="node node-retrieval" style="flex:1">
+          <div class="node-title">KeywordRetriever</div>
+          <div class="node-detail">LanceDB FTS on concept labels<br>top-20 by BM25 score<br>Catches exact labels, acronyms<br>Fallback to vector-only if absent</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">
+    <div class="arrow-inner">
+      <div class="arrow-line"></div>
+      <div class="arrow-head"></div>
+      <div class="arrow-label">Two ranked URI lists</div>
+    </div>
+  </div>
+
+  <!-- RRF -->
+  <div style="width:100%">
+    <div class="section" style="border: 2px solid #9b5fcf;">
+      <div class="section-title" style="color:#9b5fcf">⚡  RRF Fusion  (rrf_fuse)</div>
+      <div class="nodes">
+        <div class="node node-fusion" style="flex:2">
+          <div class="node-title">Reciprocal Rank Fusion</div>
+          <div class="node-detail">
+            score(uri) = Σ 1 / (60 + rank_i)  over both lists<br>
+            Parameter-free — no manual weight tuning<br>
+            top-8 fused URIs passed to graph expansion<br>
+            ConceptContext carries in_vector / in_keyword provenance flags
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">
+    <div class="arrow-inner">
+      <div class="arrow-line"></div>
+      <div class="arrow-head"></div>
+      <div class="arrow-label">top-8 concept URIs</div>
+    </div>
+  </div>
+
+  <!-- Graph expansion -->
+  <div style="width:100%">
+    <div class="section">
+      <div class="section-title" style="color:#5aaa5a">🕸  Graph Expansion  (GraphRetriever · SPARQL)</div>
+      <div class="nodes">
+        <div class="node node-graph">
+          <div class="node-title">Hierarchy</div>
+          <div class="node-detail">Parent label<br>Children (up to 5)<br>Siblings</div>
+        </div>
+        <div class="node node-graph">
+          <div class="node-title">Annotations</div>
+          <div class="node-detail">Personal notes (pkg:PersonalNote)<br>up to 2 per concept</div>
+        </div>
+        <div class="node node-graph">
+          <div class="node-title">Resources</div>
+          <div class="node-detail">Web resources (pkg:hasResource)<br>up to 3 per concept</div>
+        </div>
+        <div class="node node-graph">
+          <div class="node-title">LOD Links</div>
+          <div class="node-detail">owl:sameAs to DBpedia<br>and Wikidata URIs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow">
+    <div class="arrow-inner">
+      <div class="arrow-line"></div>
+      <div class="arrow-head"></div>
+      <div class="arrow-label">Structured context block</div>
+    </div>
+  </div>
+
+  <!-- LLM -->
+  <div style="width:100%">
+    <div class="section">
+      <div class="section-title" style="color:#e87a2e">✨  Language Model  (ask.py)</div>
+      <div class="nodes">
+        <div class="node node-llm" style="flex:1.5">
+          <div class="node-title">Claude Haiku  (claude-haiku-4-5-20251001)</div>
+          <div class="node-detail">System prompt: answer from retrieved context only<br>Explicitly flags thin or off-topic coverage<br>Cites source map for each concept referenced<br>Zero LLM calls in the retrieval path</div>
+        </div>
+        <div class="node node-output" style="flex:1">
+          <div class="node-title">📋  Grounded Answer</div>
+          <div class="node-detail">20/20 Q&A tests passing<br>~4.4s end-to-end<br>Source map provenance in every answer<br>Token usage + timing reported</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Stats ─────────────────────────────────────────────────────────── -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-value">31,983</div>
+    <div class="stat-label">Embedded concepts</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">142,796</div>
+    <div class="stat-label">RDF triples</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">10</div>
+    <div class="stat-label">Source maps</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">20/20</div>
+    <div class="stat-label">Q&A tests passing</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">4.4s</div>
+    <div class="stat-label">Avg response time</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">384</div>
+    <div class="stat-label">Vector dimensions</div>
+  </div>
+</div>
+
+</body>
+</html>
