@@ -63,6 +63,35 @@ python retrieve.py "linked data" --format json
 python retrieve.py "career goals" --map careerDevelopment.mm --top-k 12
 ```
 
+### MCP Server (`mcp_server.py`)
+
+Use the knowledge graph as a tool directly inside **Claude Desktop** or **Claude Code** — no separate terminal needed.
+
+```bash
+# Register with Claude Code (one-time)
+claude mcp add pkgraphrag \
+  /Users/chunnodu/projects/graphrag/.venv/bin/python \
+  /Users/chunnodu/projects/graphrag/mcp_server.py
+```
+
+For **Claude Desktop**, add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+
+```json
+"pkgraphrag": {
+  "command": "/Users/chunnodu/projects/graphrag/.venv/bin/python",
+  "args": ["/Users/chunnodu/projects/graphrag/mcp_server.py"]
+}
+```
+
+Then restart Claude Desktop and ask questions naturally — Claude will call `search_knowledge_graph` automatically.
+
+| Tool | Description |
+|---|---|
+| `search_knowledge_graph(query, top_k, source_map)` | Hybrid RRF retrieval → graph expansion → formatted context |
+| `list_source_maps()` | Lists all 10 maps with domain labels |
+
+> Cold start: ~3.5s on first query (TTL + LanceDB load). Subsequent queries are instant.
+
 ### Run all 20 Q&A tests
 
 ```bash
@@ -146,8 +175,10 @@ retrieval/          Runtime retrieval pipeline
   hybrid.py         HybridRetriever   — orchestrator + CLI entry point
 
 qa/                 LLM layer
-  ask.py            ask() function, SYSTEM_PROMPT, CLI entry point
+  ask.py            ask() function, SYSTEM_PROMPT, CLI entry point (multi-provider)
   test_qa.py        20-question regression test suite
+
+mcp_server.py       MCP server — exposes retrieval as Claude tools (FastMCP)
 
 ingest/             Build-time pipeline (run once to rebuild the knowledge base)
   parse.py          .mm XML → RDF triples (rdflib)
@@ -195,10 +226,12 @@ See `pkg_ontology.ttl` for the full schema.
 
 ## Tech Stack
 
-- **Python 3.10+** · rdflib · fastembed · lancedb · pyarrow · anthropic
+- **Python 3.10+** · rdflib · fastembed · lancedb · pyarrow · anthropic · openai · mcp
 - **Embeddings:** `BAAI/bge-small-en-v1.5` (384-dim, ONNX via fastembed — no PyTorch)
 - **Vector DB:** LanceDB (embedded, no server)
 - **RDF:** Turtle serialisation, SPARQL via rdflib
+- **LLM providers:** Anthropic (default) or any OpenAI-compatible endpoint (Qwen, Ollama, Groq…)
+- **MCP:** FastMCP server for Claude Desktop / Claude Code tool integration
 - **Source format:** Freeplane `.mm` (XML)
 
 ---
