@@ -8,48 +8,49 @@ flowchart TB
     classDef llm       fill:#fde0cc,stroke:#e87a2e,stroke-width:1.5px,color:#1a1a1a
     classDef output    fill:#dce8f8,stroke:#4a80d4,stroke-width:1.5px,color:#1a1a1a
 
-    %% ── INGESTION PIPELINE (build-time) ─────────────────────────────────────
-    subgraph INGEST["⚙️  Ingestion Pipeline  (build-time)"]
+    %% ── INGESTION PIPELINE (build-time) ----------------------------------───
+    subgraph INGEST["Ingestion Pipeline  (build-time)"]
         direction TB
-        MM["🗺  Freeplane .mm Maps\n─────────────────\n10 active domains\n41,868 nodes total"]
-        PARSE["parse_mm_to_rdf.py\n─────────────────\n.mm XML → RDF triples\nskos:Concept hierarchy\npkg: custom types"]
-        LOD["lod_enrich.py\n─────────────────\nowl:sameAs links\nDBpedia · Wikidata\n63 concepts enriched"]
-        EMBED["embed_to_lancedb.py\n─────────────────\nBAAI/bge-small-en-v1.5\n384-dim · ONNX\n+ FTS index on labels"]
+        MM["Freeplane .mm Maps\n-----------------\n10 active domains\n41,868 nodes total"]
+        PARSE["parse_mm_to_rdf.py\n-----------------\n.mm XML to RDF triples\nskos:Concept hierarchy\npkg: custom types"]
+        LOD["lod_enrich.py\n-----------------\nowl:sameAs links\nDBpedia / Wikidata\n63 concepts enriched"]
+        EMBED["embed_to_lancedb.py\n-----------------\nBAAI/bge-small-en-v1.5\n384-dim, ONNX\n+ FTS index on labels"]
 
         MM --> PARSE
         PARSE --> LOD
         PARSE --> EMBED
     end
 
-    %% ── STORAGE LAYER ────────────────────────────────────────────────────────
-    subgraph STORE["🗄  Storage Layer"]
+    %% ── STORAGE LAYER ---------------------------------------------------─────
+    subgraph STORE["Storage Layer"]
         direction LR
-        TTL["RDF Graph (rdflib)\n─────────────────\n142,796 triples\n27,776 concepts\n11 TTL files"]
-        VDB["LanceDB\n─────────────────\n31,983 vectors · 85 MB\ncosine similarity index\n+ FTS inverted index"]
+        TTL["RDF Graph (rdflib)\n-----------------\n142,796 triples\n27,776 concepts\n11 TTL files"]
+        VDB["LanceDB\n-----------------\n31,983 vectors, 85 MB\ncosine similarity index\n+ FTS inverted index"]
     end
 
-    %% ── QUERY PIPELINE (runtime) ─────────────────────────────────────────────
-    subgraph QUERY["💬  Query Pipeline  (retrieve.py + ask.py · runtime)"]
+    %% ── QUERY PIPELINE (runtime) ----------------------------------───────────
+    subgraph QUERY["Query Pipeline  (retrieve.py + ask.py, runtime)"]
         direction TB
         NLQ["Natural Language Question"]
 
         subgraph PATHS["Parallel Retrieval Paths"]
             direction LR
-            VEC["SemanticRetriever\n─────────────────\nfastembed → cosine search\ntop-20 by similarity\nFuzzy / semantic match"]
-            KW["KeywordRetriever\n─────────────────\nLanceDB FTS on labels\ntop-20 by BM25\nExact / acronym match"]
+            VEC["SemanticRetriever\n-----------------\nfastembed cosine search\ntop-20 by similarity\nFuzzy / semantic match"]
+            KW["KeywordRetriever\n-----------------\nLanceDB FTS on labels\ntop-20 by BM25\nExact / acronym match"]
         end
 
-        RRF["rrf_fuse()\n─────────────────\nscore = Σ 1 ÷ (60 + rank)\nParameter-free fusion\ntop-8 URIs"]
+        RRF["rrf_fuse()\n-----------------\nscore = 1 div (60 + rank)\nParameter-free fusion\ntop-8 URIs"]
 
-        GRAPH["GraphRetriever (SPARQL)\n─────────────────\nParent · children · siblings\nPersonal notes\nWeb resources · LOD links"]
+        GRAPH["GraphRetriever (SPARQL)\n-----------------\nParent, children, siblings\nPersonal notes\nWeb resources, LOD links"]
 
-        CTX["Context Block\n─────────────────\nStructured plain-text\nSource map provenance\nVector+keyword flags"]
+        CTX["Context Block\n-----------------\nStructured plain-text\nSource map provenance\nVector+keyword flags"]
 
-        LLM["Claude Haiku\n─────────────────\nclaude-haiku-4-5-20251001\nAnswers from context only\nFlags thin coverage"]
+        LLM["Claude Haiku\n-----------------\nclaude-haiku-4-5-20251001\nAnswers from context only\nFlags thin coverage"]
 
-        ANS["Grounded Answer\n─────────────────\n20/20 Q&A passing\n~4.4s end-to-end\nInput + output token stats"]
+        ANS["Grounded Answer\n-----------------\n20/20 Q&A passing\n~4.4s end-to-end\nInput + output token stats"]
 
-        NLQ --> PATHS
+        NLQ --> VEC
+        NLQ --> KW
         VEC --> RRF
         KW  --> RRF
         RRF --> GRAPH
@@ -58,7 +59,7 @@ flowchart TB
         LLM --> ANS
     end
 
-    %% ── CROSS-LANE EDGES ─────────────────────────────────────────────────────
+    %% ── CROSS-LANE EDGES ---------------------------------------------------──
     LOD  -- "owl:sameAs triples" --> TTL
     PARSE -- "RDF triples" --> TTL
     EMBED -- "vectors + FTS index" --> VDB
@@ -66,7 +67,7 @@ flowchart TB
     VDB  -- "vector neighbours" --> VEC
     VDB  -- "FTS matches" --> KW
 
-    %% ── STYLES ───────────────────────────────────────────────────────────────
+    %% ── STYLES ---------------------------------------------------────────────
     class MM source
     class PARSE,LOD,EMBED ingest
     class TTL,VDB storage
