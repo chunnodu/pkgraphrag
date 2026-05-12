@@ -2,7 +2,7 @@
 
 A hybrid GraphRAG system built from personal Freeplane mindmaps. Combines deterministic SPARQL querying over an RDF knowledge graph with semantic vector search and full-text search via LanceDB, fused with Reciprocal Rank Fusion (RRF), to enable grounded natural-language Q&A over a personal knowledge base.
 
-**Status:** Weeks 1–10 of 12 complete · 20/20 Q&A tests passing
+**Status:** All 12 weeks complete ✅ · 20/20 Q&A tests passing
 
 ---
 
@@ -183,4 +183,4 @@ See `pkg_ontology.ttl` for the full schema.
 | 8 | Claude API integration: 20/20 Q&A tests passing (100%) | ✅ Done |
 | 9 | RRF upgrade: KeywordRetriever + FTS index + rrf_fuse() | ✅ Done |
 | 10 | CLI polish: --debug flag, requirements.txt, README | ✅ Done |
-| 11–12 | Final polish, architecture diagrams, v2 roadmap | ⬜ |
+| 11–12 | Final architecture diagram, retrospective, v2 roadmap | ✅ Done |
