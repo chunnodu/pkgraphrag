@@ -1,4 +1,4 @@
-"""Claude API integration: retrieves context then answers via Claude."""
+"""LLM integration: retrieves context then answers via a configurable model provider."""
 
 from __future__ import annotations
 
@@ -9,12 +9,11 @@ import textwrap
 import time
 from typing import Optional
 
-import anthropic
-
 from retrieval import HybridRetriever, RetrievalResult, DEFAULT_TOP_K
 
 DEFAULT_MODEL      = "claude-haiku-4-5-20251001"
 DEFAULT_MAX_TOKENS = 1024
+DEFAULT_PROVIDER   = "anthropic"
 
 SYSTEM_PROMPT = """You are a personal knowledge assistant with access to the user's \
 personal knowledge graph — a structured RDF graph built from their Freeplane mind maps \
@@ -38,23 +37,96 @@ and should never appear in answers.
 """
 
 
+def _call_anthropic(
+    prompt: str,
+    model: str,
+    max_tokens: int,
+    api_key: str,
+) -> tuple[str, int, int]:
+    try:
+        import anthropic
+    except ImportError:
+        raise ImportError("anthropic package not installed. Run: pip install anthropic")
+
+    client = anthropic.Anthropic(api_key=api_key)
+    resp   = client.messages.create(
+        model=model,
+        max_tokens=max_tokens,
+        system=SYSTEM_PROMPT,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return resp.content[0].text, resp.usage.input_tokens, resp.usage.output_tokens
+
+
+def _call_openai_compat(
+    prompt: str,
+    model: str,
+    max_tokens: int,
+    api_key: str,
+    base_url: Optional[str],
+) -> tuple[str, int, int]:
+    try:
+        from openai import OpenAI
+    except ImportError:
+        raise ImportError(
+            "openai package not installed. Run: pip install openai\n"
+            "Works with any OpenAI-compatible endpoint (Qwen, Ollama, Groq, Together…)"
+        )
+
+    kwargs = {"api_key": api_key}
+    if base_url:
+        kwargs["base_url"] = base_url
+
+    client = OpenAI(**kwargs)
+    resp   = client.chat.completions.create(
+        model=model,
+        max_tokens=max_tokens,
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user",   "content": prompt},
+        ],
+    )
+    usage = resp.usage
+    return (
+        resp.choices[0].message.content,
+        usage.prompt_tokens,
+        usage.completion_tokens,
+    )
+
+
 def ask(
     query: str,
     retriever: HybridRetriever,
     *,
-    model:      str          = DEFAULT_MODEL,
-    top_k:      int          = DEFAULT_TOP_K,
-    source_map: Optional[str] = None,
-    max_tokens: int          = DEFAULT_MAX_TOKENS,
-    verbose:    bool         = True,
-    debug:      bool         = False,
+    model:      str            = DEFAULT_MODEL,
+    provider:   str            = DEFAULT_PROVIDER,
+    base_url:   Optional[str]  = None,
+    top_k:      int            = DEFAULT_TOP_K,
+    source_map: Optional[str]  = None,
+    max_tokens: int            = DEFAULT_MAX_TOKENS,
+    verbose:    bool           = True,
+    debug:      bool           = False,
 ) -> dict:
-    """Retrieve context then call Claude. Returns a result dict."""
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    """Retrieve context then call the configured LLM. Returns a result dict.
+
+    provider="anthropic"  — uses ANTHROPIC_API_KEY, Anthropic SDK
+    provider="openai"     — uses OPENAI_API_KEY, OpenAI-compatible SDK
+                            set base_url for Qwen, Ollama, Groq, Together, etc.
+    """
+    provider = provider.lower()
+
+    if provider == "anthropic":
+        env_var = "ANTHROPIC_API_KEY"
+    elif provider == "openai":
+        env_var = "OPENAI_API_KEY"
+    else:
+        raise ValueError(f"Unknown provider '{provider}'. Choose 'anthropic' or 'openai'.")
+
+    api_key = os.environ.get(env_var)
     if not api_key:
         raise EnvironmentError(
-            "ANTHROPIC_API_KEY is not set.\n"
-            "Export it before running: export ANTHROPIC_API_KEY=sk-ant-..."
+            f"{env_var} is not set.\n"
+            f"Export it before running: export {env_var}=<your-key>"
         )
 
     t0 = time.perf_counter()
@@ -66,31 +138,31 @@ def ask(
     if verbose:
         print(f"  Retrieved {len(result.concepts)} concept(s) in {time.perf_counter() - t0:.2f}s")
 
-    t1     = time.perf_counter()
-    client = anthropic.Anthropic(api_key=api_key)
-    resp   = client.messages.create(
-        model=model,
-        max_tokens=max_tokens,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": f"{context_text}\n\nQUESTION: {query}"}],
-    )
-    answer  = resp.content[0].text
+    prompt = f"{context_text}\n\nQUESTION: {query}"
+
+    t1 = time.perf_counter()
+    if provider == "anthropic":
+        answer, in_tok, out_tok = _call_anthropic(prompt, model, max_tokens, api_key)
+    else:
+        answer, in_tok, out_tok = _call_openai_compat(prompt, model, max_tokens, api_key, base_url)
+
     elapsed = round(time.perf_counter() - t0, 2)
 
     if verbose:
-        print(f"  Claude answered in {time.perf_counter() - t1:.2f}s (total: {elapsed}s)\n")
+        print(f"  [{provider}/{model}] answered in {time.perf_counter() - t1:.2f}s (total: {elapsed}s)\n")
 
     return {
         "query":         query,
         "context_text":  context_text,
         "answer":        answer,
         "model":         model,
+        "provider":      provider,
         "top_k":         top_k,
         "source_map":    source_map,
         "elapsed_sec":   elapsed,
         "n_concepts":    len(result.concepts),
-        "input_tokens":  resp.usage.input_tokens,
-        "output_tokens": resp.usage.output_tokens,
+        "input_tokens":  in_tok,
+        "output_tokens": out_tok,
     }
 
 
@@ -98,20 +170,38 @@ def ask(
 
 def _parse_args():
     p = argparse.ArgumentParser(
-        description="GraphRAG Q&A — hybrid retrieval + Claude API",
+        description="GraphRAG Q&A — hybrid retrieval + configurable LLM",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=textwrap.dedent("""
             Examples:
               python ask.py "What do I know about business model design?"
               python ask.py "DLVR strategy" --debug --show-context
-              python ask.py "career goals" --map careerDevelopment.mm
-              python ask.py "linked data" --model claude-sonnet-4-6
+
+              # Anthropic (default)
+              python ask.py "career goals" --model claude-sonnet-4-6
+
+              # Qwen via Dashscope
+              python ask.py "career goals" --provider openai --model qwen-plus \\
+                --base-url https://dashscope.aliyuncs.com/compatible-mode/v1
+
+              # Local Ollama
+              python ask.py "career goals" --provider openai --model llama3 \\
+                --base-url http://localhost:11434/v1
+
+              # Groq
+              python ask.py "career goals" --provider openai --model llama-3.1-8b-instant \\
+                --base-url https://api.groq.com/openai/v1
         """),
     )
     p.add_argument("query")
     p.add_argument("--top-k",        type=int, default=DEFAULT_TOP_K)
     p.add_argument("--map",          default=None)
     p.add_argument("--model",        default=DEFAULT_MODEL)
+    p.add_argument("--provider",     default=DEFAULT_PROVIDER,
+                   choices=["anthropic", "openai"],
+                   help="LLM provider (default: anthropic)")
+    p.add_argument("--base-url",     default=None,
+                   help="Base URL for OpenAI-compatible endpoint (Qwen, Ollama, Groq…)")
     p.add_argument("--max-tokens",   type=int, default=DEFAULT_MAX_TOKENS)
     p.add_argument("--show-context", action="store_true")
     p.add_argument("--debug",        action="store_true")
@@ -126,13 +216,15 @@ def main():
             query      = args.query,
             retriever  = retriever,
             model      = args.model,
+            provider   = args.provider,
+            base_url   = args.base_url,
             top_k      = args.top_k,
             source_map = args.map,
             max_tokens = args.max_tokens,
             verbose    = True,
             debug      = args.debug,
         )
-    except EnvironmentError as e:
+    except (EnvironmentError, ValueError) as e:
         print(f"\n❌  {e}", file=sys.stderr)
         sys.exit(1)
 

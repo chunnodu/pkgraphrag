@@ -32,14 +32,25 @@ python ask.py "DLVR strategy" --debug --show-context
 python ask.py "machine learning pipelines" --top-k 10
 python ask.py "career goals" --map careerDevelopment.mm
 python ask.py "linked data" --model claude-sonnet-4-6 --max-tokens 2048
+
+# Qwen via Dashscope (OpenAI-compatible)
+export OPENAI_API_KEY=sk-...
+python ask.py "career goals" --provider openai --model qwen-plus \
+  --base-url https://dashscope.aliyuncs.com/compatible-mode/v1
+
+# Local Ollama
+python ask.py "career goals" --provider openai --model llama3 \
+  --base-url http://localhost:11434/v1
 ```
 
 | Flag | Default | Description |
 |---|---|---|
-| `--top-k` | 8 | Number of fused concepts passed to Claude |
+| `--top-k` | 8 | Number of fused concepts passed to LLM |
 | `--map` | all | Scope retrieval to one source map |
-| `--model` | haiku-4-5 | Claude model |
-| `--max-tokens` | 1024 | Max tokens in Claude response |
+| `--model` | haiku-4-5 | Model name |
+| `--provider` | anthropic | `anthropic` or `openai` (any OpenAI-compatible endpoint) |
+| `--base-url` | — | Base URL for OpenAI-compatible endpoint (Qwen, Ollama, Groq…) |
+| `--max-tokens` | 1024 | Max tokens in response |
 | `--show-context` | off | Print retrieved context before the answer |
 | `--debug` | off | Show per-path vector/keyword hits before RRF fusion |
 
