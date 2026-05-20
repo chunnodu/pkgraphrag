@@ -179,6 +179,7 @@ qa/                 LLM layer
   test_qa.py        20-question regression test suite
 
 mcp_server.py       MCP server — exposes retrieval as Claude tools (FastMCP)
+reindex.py          Rebuild LanceDB index from TTL files + recreate FTS index
 
 ingest/             Build-time pipeline (run once to rebuild the knowledge base)
   parse.py          .mm XML → RDF triples (rdflib)
